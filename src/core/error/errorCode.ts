@@ -1,0 +1,7 @@
+enum ErrorCode {
+  NOT_FOUND = 'NOT_FOUND_ERR',
+  NOT_AUTHENTICATED = 'NOT_AUTHENTICATED_ERR',
+  NOT_AUTHORIZED = 'NOT_AUTHORIZED_ERR',
+}
+
+export { ErrorCode };

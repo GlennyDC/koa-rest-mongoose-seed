@@ -1,0 +1,27 @@
+# We don't need GIT in the container
+.git
+.gitignore
+.gitattributes
+
+# Don't ever use the node_modules from the host
+node_modules/
+
+# Build
+dist/
+
+# Log
+*.log
+
+# OS
+.DS_Store
+
+# Other random files which we don't need
+*Dockerfile*
+*docker-compose*
+.dockerignore
+.editorconfig
+.eslintignore
+.eslintrc.json
+.prettierrc.json
+LICENSE
+README.md

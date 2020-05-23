@@ -1,0 +1,41 @@
+{
+  "name": "api-seed",
+  "version": "0.0.0",
+  "description": "Seed for easy and ready to go containerized GraphQL KOA API.",
+  "main": "src/index.ts",
+  "repository": "https://github.com/GlennyDC/api-seed",
+  "author": "Glenny De Cock",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "docker-compose -f env/docker-compose.dev.yaml up --build",
+    "start": "docker-compose -f env/docker-compose.prd.yaml up --build",
+    "test": "echo \"Error: no tests yet\" && exit 1"
+  },
+  "dependencies": {
+    "@graphql-toolkit/file-loading": "^0.10.6",
+    "apollo-server-koa": "^2.13.1",
+    "cls-hooked": "^4.2.2",
+    "config": "^3.3.1",
+    "graphql": "14.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.11.0",
+    "nanoid": "^3.1.9",
+    "node-fetch": "^2.6.0",
+    "ts-node": "^8.10.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/cls-hooked": "^4.3.0",
+    "@types/config": "^0.0.36",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/koa": "^2.11.3",
+    "@types/node": "^14.0.4",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "6.0.0",
+    "nodemon": "^2.0.4",
+    "prettier": "2.0.5",
+    "typescript": "^3.9.2"
+  }
+}

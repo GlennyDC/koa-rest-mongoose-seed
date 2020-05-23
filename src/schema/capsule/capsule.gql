@@ -1,0 +1,8 @@
+type Capsule {
+  id: ID!
+  landings: Int!
+  status: String!
+  originalLaunch: String!
+  type: String!
+  reuseCount: Int!
+}
