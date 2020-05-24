@@ -9,7 +9,6 @@
   "private": false,
   "scripts": {
     "dev": "docker-compose -f env/docker-compose.dev.yaml up --build",
-    "start": "docker-compose -f env/docker-compose.prd.yaml up --build",
     "test": "echo \"Error: no tests yet\" && exit 1"
   },
   "dependencies": {
