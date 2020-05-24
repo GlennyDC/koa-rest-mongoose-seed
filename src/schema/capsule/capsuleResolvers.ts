@@ -1,13 +1,14 @@
 import { capsuleFacade } from '../../facades';
+import { APICapsule } from '../../contracts';
 
 const capsuleResolvers = {
   Query: {
-    capsules: async (root: any, args: any) => {
+    capsules: async (parent, args, context): Promise<APICapsule[]> => {
       return capsuleFacade.capsules(args);
     },
-    capsule: async (root: any, args: any, ctx: any) => {
+    capsule: async (parent, args, context): Promise<APICapsule> => {
       const { id } = args;
-      return capsuleFacade.capsules(id);
+      return capsuleFacade.capsule(id);
     },
   },
 };
