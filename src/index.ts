@@ -1,5 +1,4 @@
 import Koa from 'koa';
-import { Socket } from 'net';
 import config from 'config';
 
 import { makeLogger, installMiddleware } from './core';
@@ -23,8 +22,16 @@ const server = app.listen(PORT, HOST_NAME, () => {
   );
 });
 
+// Log any handled Koa error
+app.on('error', (err) => {
+  logger.info(
+    'Following error was correctly handled in error middleware: ',
+    err,
+  );
+});
+
 // Graceful shutdown of the server
-const shutdown = () => {
+const shutdown = (): void => {
   // TODO: What todo else?
   server.close((err) => {
     if (err) {
@@ -44,5 +51,15 @@ process.on('SIGINT', () => {
 // SIGTERM signal (Docker stop)
 process.on('SIGTERM', () => {
   logger.warn(`Start graceful shutdown after SIGTERM signal`);
+  shutdown();
+});
+
+process.on('uncaughtException', (error) => {
+  logger.error('Uncaught exception', error);
+  shutdown();
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  logger.error('Unhandled rejection', JSON.stringify(reason), promise);
   shutdown();
 });

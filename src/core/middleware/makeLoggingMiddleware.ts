@@ -16,8 +16,8 @@ const loggingNamespace = createNamespace('logging');
  *
  * @see {@link https://nodejs.org/api/async_hooks.html|Node Async Hooks}
  */
-const makeLoggingMiddleware = () => {
-  return async (ctx: Koa.Context, next: Koa.Next) => {
+const makeLoggingMiddleware = (): Koa.Middleware => {
+  return async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
     await new Promise(
       loggingNamespace.bind((resolve, reject) => {
         loggingNamespace.set('requestId', nanoid(10));

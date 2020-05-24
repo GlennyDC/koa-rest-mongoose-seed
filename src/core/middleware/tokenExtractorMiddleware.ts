@@ -32,15 +32,15 @@ const extractTokenFromAuthorizationHeader = (
 };
 
 /**
- * Wrapper around the KOA middleware, conform the convention
+ * Wrapper around the Koa middleware, conform the convention
  * of wrapping custom middlewares.
  *
  * TODO: return type
  *
  * @returns
  */
-const makeTokenExtractorMiddleware = () => {
-  return async (ctx: Koa.Context, next: Koa.Next) => {
+const makeTokenExtractorMiddleware = (): Koa.Middleware => {
+  return async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
     const token = extractTokenFromAuthorizationHeader(ctx);
     if (token) {
       ctx.state.token = token;

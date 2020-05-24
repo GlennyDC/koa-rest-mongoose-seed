@@ -1,6 +1,6 @@
 import Koa from 'koa';
 
-import { makeErrorResponderMiddleware } from './errorResponderMiddleware';
+import { makeErrorResponderMiddleware } from './makeErrorResponderMiddleware';
 import { makeLoggingMiddleware } from './makeLoggingMiddleware';
 import { makeTokenExtractorMiddleware } from './tokenExtractorMiddleware';
 

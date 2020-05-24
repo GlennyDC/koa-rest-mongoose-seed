@@ -1,7 +1,7 @@
 {
   "name": "api-seed",
   "version": "0.0.0",
-  "description": "Seed for easy and ready to go containerized GraphQL KOA API.",
+  "description": "Seed for easy and ready to go containerized GraphQL Koa API.",
   "main": "src/index.ts",
   "repository": "https://github.com/GlennyDC/api-seed",
   "author": "Glenny De Cock",

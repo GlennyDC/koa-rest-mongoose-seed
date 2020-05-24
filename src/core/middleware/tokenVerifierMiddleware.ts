@@ -4,7 +4,7 @@ import { verifyToken } from '../auth/token';
 import { ErrorCode } from '../error';
 
 /**
- * Wrapper around the KOA middleware, conform the convention
+ * Wrapper around the Koa middleware, conform the convention
  * of wrapping custom middlewares.
  *
  * TODO: return type
