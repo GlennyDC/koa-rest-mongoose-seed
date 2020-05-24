@@ -1,4 +1,8 @@
-export interface TokenPayload {
-  userId: string;
-  userRoles: string[];
+interface TokenPayload {
+  user: {
+    id: string;
+    roles: string[];
+  };
 }
+
+export { TokenPayload };

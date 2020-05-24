@@ -5,11 +5,13 @@ const login = async (email: string, password: string) => {
   const user = await userService.getUserByEmail(email);
   if (!user) throw new Error('User not found');
   const jwt = makeToken({
-    userId: user.id,
-    userRoles: ['user', 'accountant'],
+    user: {
+      id: user.id,
+      roles: ['user', 'accountant'],
+    },
   });
 
-  return { user, token: jwt };
+  return { user, accessToken: jwt };
 };
 
 export { login };

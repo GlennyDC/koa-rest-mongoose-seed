@@ -1,6 +1,6 @@
 import { authService } from '../../services';
 
-const mutationResolvers = {
+const AuthResolvers = {
   Mutation: {
     login: async (root: any, args: any, ctx: any) => {
       const { email, password } = args;
@@ -9,4 +9,4 @@ const mutationResolvers = {
   },
 };
 
-export default mutationResolvers;
+export default AuthResolvers;

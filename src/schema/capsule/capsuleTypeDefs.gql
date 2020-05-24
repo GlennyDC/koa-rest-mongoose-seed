@@ -1,0 +1,13 @@
+extend type Query {
+  capsules(limit: Int, offset: Int, order: String, sort: Sort): [Capsule!]!
+  capsule(id: ID!): Capsule!
+}
+
+type Capsule {
+  id: ID!
+  landings: Int!
+  status: String!
+  originalLaunch: String!
+  type: String!
+  reuseCount: Int!
+}
