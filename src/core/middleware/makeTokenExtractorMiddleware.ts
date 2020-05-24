@@ -32,12 +32,10 @@ const extractTokenFromAuthorizationHeader = (
 };
 
 /**
- * Wrapper around the Koa middleware, conform the convention
- * of wrapping custom middlewares.
+ * Make a Koa middleware to extract the JWT (if any) from the request.
+ * If there is a JWT, set it to ctx.state.token.
  *
- * TODO: return type
- *
- * @returns
+ * @returns {Koa.Middleware} The Koa middleware responsible for extracting the JWT from the request
  */
 const makeTokenExtractorMiddleware = (): Koa.Middleware => {
   return async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
