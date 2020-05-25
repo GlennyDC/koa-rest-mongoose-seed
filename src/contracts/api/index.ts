@@ -1,1 +1,1 @@
-export { APICapsule } from './capsule';
+export { Capsule } from './capsule';

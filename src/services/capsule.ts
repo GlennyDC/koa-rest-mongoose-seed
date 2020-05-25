@@ -1,7 +1,7 @@
 import { makeLogger } from '../core';
+import { Capsule } from '../contracts';
 import { capsuleRepo } from '../integrations';
 import { capsuleMappers } from '../mappers';
-import { APICapsule } from '../contracts';
 
 const logger = makeLogger('service - capsule');
 
@@ -10,7 +10,7 @@ const getCapsules = async (
   offset: number,
   order: string,
   sort: string,
-): Promise<APICapsule[]> => {
+): Promise<Capsule[]> => {
   logger.info(
     `Get capsules limit [${limit}] offset [${offset}] order [${order}] sort [${sort}]`,
   );
@@ -20,17 +20,15 @@ const getCapsules = async (
     order,
     sort,
   );
-  const APICapsules = spaceXCapsules.map(
-    capsuleMappers.mapSpaceXCapsuleToAPICapsule,
-  );
-  return APICapsules;
+  const capsules = spaceXCapsules.map(capsuleMappers.mapSpaceXCapsuleToCapsule);
+  return capsules;
 };
 
-const getCapsuleById = async (id: string): Promise<APICapsule> => {
+const getCapsuleById = async (id: string): Promise<Capsule> => {
   logger.info(`Get capsule [${id}]`);
   const spaceXCapsule = await capsuleRepo.getCapsuleById(id);
-  const APICapsule = capsuleMappers.mapSpaceXCapsuleToAPICapsule(spaceXCapsule);
-  return APICapsule;
+  const capsule = capsuleMappers.mapSpaceXCapsuleToCapsule(spaceXCapsule);
+  return capsule;
 };
 
 export { getCapsules, getCapsuleById };

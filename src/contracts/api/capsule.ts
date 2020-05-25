@@ -1,4 +1,4 @@
-export interface APICapsule {
+export interface Capsule {
   id: string;
   capsuleId: string;
   status: string;

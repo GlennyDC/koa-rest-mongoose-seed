@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/camelcase */
-import { APICapsule, SpaceXCapsule } from '../contracts';
+import { Capsule, SpaceXCapsule } from '../contracts';
 
-export const mapSpaceXCapsuleToAPICapsule = (
-  capsule: SpaceXCapsule,
-): APICapsule => {
+/* eslint-disable @typescript-eslint/camelcase */
+export const mapSpaceXCapsuleToCapsule = (capsule: SpaceXCapsule): Capsule => {
   const {
     capsule_serial,
     capsule_id,
@@ -27,3 +25,4 @@ export const mapSpaceXCapsuleToAPICapsule = (
     reuseCount: reuse_count,
   };
 };
+/* eslint-enable @typescript-eslint/camelcase */
