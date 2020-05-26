@@ -10,8 +10,8 @@
   "scripts": {
     "dev": "docker-compose -f env/docker-compose.dev.yaml up --build",
     "test": "echo \"Error: no tests yet\" && exit 1",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "lint": "eslint . --ext .ts,.json",
+    "lint:fix": "eslint . --ext .ts,.json --fix",
     "prettify": "prettier --write ."
   },
   "dependencies": {
@@ -49,6 +49,9 @@
       "pre-commit": "lint-staged"
     }
   },
+
+
+
   "lint-staged": {
     "*.ts": "eslint --cache --fix"
   }
