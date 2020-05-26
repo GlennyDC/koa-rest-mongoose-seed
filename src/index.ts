@@ -1,8 +1,7 @@
-import Koa from 'koa';
 import config from 'config';
+import Koa from 'koa';
 
 import { makeLogger, installMiddleware } from './core';
-
 import installApolloServer from './installApolloServer';
 
 const PORT = config.get<number>('server.port');

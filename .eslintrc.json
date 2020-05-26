@@ -3,6 +3,13 @@
   "env": {
     "node": true
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts"]
+      }
+    }
+  },
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
@@ -13,5 +20,17 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:prettier/recommended"
-  ]
+  ],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external", "internal"]],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
+  }
 }

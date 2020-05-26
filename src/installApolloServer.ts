@@ -1,8 +1,8 @@
-import Koa from 'koa';
 import { ApolloServer, AuthenticationError } from 'apollo-server-koa';
+import Koa from 'koa';
 
-import makeSchema from './schema';
 import { extractToken } from './core/auth/token';
+import makeSchema from './schema';
 
 interface IntegrationContext {
   ctx: Koa.Context;
