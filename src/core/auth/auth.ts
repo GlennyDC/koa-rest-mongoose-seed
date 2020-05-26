@@ -25,6 +25,7 @@ const assertAuthenticated = async (ctx: Koa.Context): Promise<void> => {
  *   - The assertAuthenticated function has been invoked.
  *
  * @param {Koa.Context} ctx - Koa context
+ * @param {string[]} requiredPermissions - The required permissions
  */
 const assertAuthorized = async (
   ctx: Koa.Context,

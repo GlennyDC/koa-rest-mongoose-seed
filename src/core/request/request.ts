@@ -34,6 +34,8 @@ const makeQueryString = (
  * @param {string} baseURL - The base URL which consists of the scheme, optional authentication, domain and optional port
  * @param {string} path - The path of the resource
  * @param {ParsedUrlQueryInput} [queryParams] - Optional query parameters to be added to the URL
+ *
+ * @returns {string} The URL
  */
 const makeURL = (
   baseURL: string,
@@ -51,8 +53,14 @@ const makeURL = (
 };
 
 /**
- *
+ * @param {string} baseURL - The base URL
+ * @param {string} path - The path
+ * @param {HTTPMethod} method - The HTTP method
+ * @param {object} queryParams - Query params
+ * @param {object} headers - Headers
  * @private
+ *
+ * @returns {any} The result
  */
 const request = async <T>(
   baseURL: string,
