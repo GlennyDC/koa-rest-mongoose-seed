@@ -11,8 +11,7 @@
     "dev": "docker-compose -f env/docker-compose.dev.yaml up --build",
     "test": "echo \"Error: no tests yet\" && exit 1",
     "lint": "eslint . --ext .ts,.json",
-    "lint:fix": "eslint . --ext .ts,.json --fix",
-    "prettify": "prettier --write ."
+    "lint:fix": "eslint . --ext .ts,.json --fix"
   },
   "dependencies": {
     "@graphql-toolkit/file-loading": "^0.10.6",
@@ -43,13 +42,5 @@
     "nodemon": "^2.0.4",
     "prettier": "2.0.5",
     "typescript": "^3.9.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,json}": "eslint --cache --fix"
   }
 }
