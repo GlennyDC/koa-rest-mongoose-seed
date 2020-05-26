@@ -10,8 +10,8 @@
   "scripts": {
     "dev": "docker-compose -f env/docker-compose.dev.yaml up --build",
     "test": "echo \"Error: no tests yet\" && exit 1",
-    "lint": "eslint . --ext .ts,.json",
-    "lint:fix": "eslint . --ext .ts,.json --fix"
+    "lint": "eslint . --cache --ext .ts,.json",
+    "lint:fix": "eslint . --cache --ext .ts,.json --fix"
   },
   "dependencies": {
     "@graphql-toolkit/file-loading": "^0.10.6",
