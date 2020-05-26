@@ -31,6 +31,7 @@
           "order": "asc"
         }
       }
-    ]
+    ],
+    "import/first": "error"
   }
 }

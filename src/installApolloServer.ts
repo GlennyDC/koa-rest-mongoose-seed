@@ -2,7 +2,7 @@ import { ApolloServer, AuthenticationError } from 'apollo-server-koa';
 import Koa from 'koa';
 
 import { extractToken } from './core/auth/token';
-import makeSchema from './schema';
+import makeSchema from './schema/makeSchema';
 
 interface IntegrationContext {
   ctx: Koa.Context;
@@ -28,4 +28,4 @@ const installApolloServer = (app: Koa): void => {
   apolloServer.applyMiddleware({ app });
 };
 
-export default installApolloServer;
+export { installApolloServer };

@@ -2,7 +2,7 @@ import config from 'config';
 import Koa from 'koa';
 
 import { makeLogger, installMiddleware } from './core';
-import installApolloServer from './installApolloServer';
+import { installApolloServer } from './installApolloServer';
 
 const PORT = config.get<number>('server.port');
 const HOST_NAME = config.get<number>('server.hostName');

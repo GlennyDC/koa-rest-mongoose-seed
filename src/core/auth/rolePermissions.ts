@@ -17,4 +17,4 @@ const rolePermissions: RolePermissions = {
   ],
 };
 
-export default rolePermissions;
+export { rolePermissions };

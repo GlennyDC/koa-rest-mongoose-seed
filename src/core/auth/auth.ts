@@ -1,6 +1,6 @@
-import Koa = require('koa');
-import rolePermissions from './rolePermissions';
+import { rolePermissions } from './rolePermissions';
 import { makeToken, extractToken } from './token';
+import Koa = require('koa');
 
 /**
  * Assert if the viewer is successfully authenticated
