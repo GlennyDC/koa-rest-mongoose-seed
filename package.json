@@ -49,10 +49,7 @@
       "pre-commit": "lint-staged"
     }
   },
-
-
-
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.{ts,json}": "eslint --cache --fix"
   }
 }
