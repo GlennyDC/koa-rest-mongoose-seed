@@ -1,5 +1,5 @@
-import * as userService from './user';
 import { makeToken } from '../core';
+import * as userService from './user';
 
 const login = async (email: string, password: string) => {
   const user = await userService.getUserByEmail(email);

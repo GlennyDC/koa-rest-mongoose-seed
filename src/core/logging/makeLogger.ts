@@ -1,7 +1,7 @@
-import config from 'config';
-import { createLogger, format, transports, Logger } from 'winston';
-import { Format, TransformableInfo } from 'logform';
 import { getNamespace } from 'cls-hooked';
+import config from 'config';
+import { Format, TransformableInfo } from 'logform';
+import { createLogger, format, transports, Logger } from 'winston';
 
 const LOGGING_LEVEL = config.get<string>('server.logging.level');
 const ENABLE_CONSOLE_LOGGING = config.get<string>('server.logging.console');

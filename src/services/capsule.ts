@@ -1,5 +1,5 @@
-import { makeLogger } from '../core';
 import { Capsule } from '../contracts';
+import { makeLogger } from '../core';
 import { capsuleRepo } from '../integrations';
 import { capsuleMappers } from '../mappers';
 

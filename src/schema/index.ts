@@ -1,5 +1,5 @@
-import { makeExecutableSchema } from 'apollo-server-koa';
 import { loadFiles } from '@graphql-toolkit/file-loading';
+import { makeExecutableSchema } from 'apollo-server-koa';
 import { join } from 'path';
 
 // TODO: Types

@@ -1,5 +1,5 @@
-import { capsuleFacade } from '../../facades';
 import { Capsule } from '../../contracts';
+import { capsuleFacade } from '../../facades';
 
 const capsuleResolvers = {
   Query: {

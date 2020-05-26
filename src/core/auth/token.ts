@@ -1,6 +1,6 @@
+import { AuthenticationError } from 'apollo-server-koa';
 import config from 'config';
 import { sign, verify } from 'jsonwebtoken';
-import { AuthenticationError } from 'apollo-server-koa';
 
 import { TokenPayload } from '../types';
 

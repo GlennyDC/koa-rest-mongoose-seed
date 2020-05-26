@@ -2,8 +2,8 @@ import fetch, { Headers } from 'node-fetch';
 import { stringify, ParsedUrlQueryInput } from 'querystring';
 
 import { makeLogger } from '../logging';
-import { RequestError } from './requestError';
 import { HTTPMethod } from './httpMethod';
+import { RequestError } from './requestError';
 
 const logger = makeLogger('core - request');
 

@@ -1,5 +1,5 @@
-import { makeLogger } from '../core';
 import { Capsule } from '../contracts';
+import { makeLogger } from '../core';
 import { capsuleService } from '../services';
 
 const logger = makeLogger('facade - capsule');
