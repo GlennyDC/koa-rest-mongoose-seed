@@ -1,19 +1,19 @@
-import joi from '@hapi/joi';
+import Joi from '@hapi/joi';
 
 import { Capsule } from '../../contracts';
+import { validateArgs } from '../../core';
 import { capsuleFacade } from '../../facades';
 
 const capsuleResolvers = {
   Query: {
     capsules: async (_: any, args: any): Promise<Capsule[]> => {
-      const schema = joi.object({
-        limit: joi.number().optional(),
-        offset: joi.number().max(3).optional(),
-        order: joi.number().optional(),
+      const schema = Joi.object({
+        limit: Joi.number().optional(),
+        offset: Joi.number().max(3).optional(),
+        order: Joi.number().required(),
       });
 
-      const result = schema.validate(args);
-      console.log(result);
+      await validateArgs(args, schema);
 
       return capsuleFacade.capsules(args);
     },
