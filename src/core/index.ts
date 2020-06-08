@@ -3,4 +3,4 @@ export { makeToken, assertAuthenticated, assertAuthorized } from './auth';
 export { IntegrationError } from './error';
 export { request } from './request';
 export { installMiddleware } from './middleware';
-export { validateArgs } from './validation';
+export { validateArgs } from './inputValidation';

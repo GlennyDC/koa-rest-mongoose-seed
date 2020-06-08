@@ -9,6 +9,9 @@
       "node": {
         "extensions": [".ts"]
       }
+    },
+    "jsdoc": {
+      "mode": "typescript"
     }
   },
   "parser": "@typescript-eslint/parser",

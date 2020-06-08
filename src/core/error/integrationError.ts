@@ -1,10 +1,11 @@
-class IntegrationError extends Error {
-  constructor(message: string) {
-    super(message);
+import { ApolloError } from 'apollo-server-koa';
 
-    this.name = this.constructor.name;
+import { ErrorCode } from './errorCode';
 
-    Error.captureStackTrace(this, this.constructor);
+class IntegrationError extends ApolloError {
+  constructor() {
+    super('Authentication failed', ErrorCode.INTEGRATION_FAILED);
+    Object.defineProperty(this, 'name', { value: 'IntegrationError' });
   }
 }
 

@@ -10,7 +10,6 @@ const capsuleResolvers = {
       const schema = Joi.object({
         limit: Joi.number().optional(),
         offset: Joi.number().max(3).optional(),
-        order: Joi.number().required(),
       });
 
       await validateArgs(args, schema);
