@@ -2,7 +2,8 @@
 
 ## Features
 
-TODO
+#### Advanced input validation
+Although GraphQL already provides powerful query validation against the schema, a more advanced input validation is achieved with [Joi](https://github.com/hapijs/joi "Joi repository"). The GraphQL query validation indicates if a query is valid (e.g. do the requested fields exist, are all the required inputs present and of the correct type, ...). The Joi input validation on the other hand indicates if the received input is valid per field resolver against a custom defined schema (e.g. is a number not too big, if one input is present, another one should be present aswell, ...). If the provided input does not match its schema, an error with code `INPUT_INVALID_ERROR` will be returned by the server. 
 
 ## Design considerations
 
