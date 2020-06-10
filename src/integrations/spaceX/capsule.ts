@@ -21,7 +21,7 @@ const getCapsules = async (
     return capsules;
   } catch (err) {
     logger.error(
-      `Could not get capsules limit [${limit}] offset [${offset}] order [${order}] sort [${sort}`,
+      `Could not get capsules limit [${limit}] offset [${offset}] order [${order}] sort [${sort}]`,
     );
     throw new IntegrationError();
   }
