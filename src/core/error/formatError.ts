@@ -32,7 +32,7 @@ import { BaseError } from './baseError';
 const formatError = (error: any) => {
   const { originalError, path, locations } = error;
 
-  if (!(originalError instanceof BaseError)) {
+  if (originalError instanceof BaseError) {
     return toApolloError(error, originalError.code);
   } else {
     return toApolloError({ path, locations });
