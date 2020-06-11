@@ -9,8 +9,13 @@ abstract class BaseError extends Error {
     this.httpStatusCode = httpStatusCode;
     this.timestamp = new Date().toISOString();
 
-    // Set the name of the error
-    this.name = this.constructor.name;
+    /**
+     * Make the name property of the error non-enumerable.
+     * Which means that it won't show up when iterated through the object
+     * using Object.keys() or for...in loop. You can still access the property
+     * directly on the object though.
+     */
+    Object.defineProperty(this, 'name', { value: this.constructor.name });
   }
 }
 
