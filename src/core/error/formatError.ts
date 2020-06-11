@@ -1,41 +1,74 @@
-// @ts-nocheck
-import { toApolloError } from 'apollo-server-koa';
+import config from 'config';
+import { GraphQLError, GraphQLFormattedError } from 'graphql';
 
 import { BaseError } from './baseError';
+import { ErrorCode } from './errorCode';
 
-// const makePublicExtensionsMapFromError = (error: any): Record<string, any> => {
-//   const publicExtensionsMap = Object.keys(error).reduce(
-//     (acc: Record<string, any>, curr: string) => {
-//       if (curr !== 'name') {
-//         return { ...acc, [curr]: error[curr] };
-//       } else {
-//         return acc;
-//       }
-//     },
-//     {},
-//   );
+const EXPOSE_UNKNOWN_ERRORS = config.get<boolean>(
+  'server.graphql.exposeUnknownErrors',
+);
 
-//   return publicExtensionsMap;
-// };
+interface Extensions extends Record<string, any> {
+  code: string;
+}
 
-/**
- *
- * NOTE: Watch out for Apollo Server 3.0 release
- * (https://github.com/apollographql/apollo-server/milestone/16)
- * and especially this issue:
- * https://github.com/apollographql/apollo-server/issues/3835
- *
- * @param error
- *
- * @returns
- */
-const formatError = (error: any) => {
-  const { originalError, path, locations } = error;
+interface KnownGraphQLError extends GraphQLError {
+  originalError: BaseError;
+  extensions: any;
+}
+
+const makeExtensions = (
+  code: ErrorCode,
+  extensions: Record<string, any> = {},
+): Extensions => ({
+  code,
+  ...extensions.exception,
+});
+
+const makeKnownGraphQLFormattedError = (
+  error: KnownGraphQLError,
+): GraphQLFormattedError<Extensions> => {
+  const { message, originalError, path, locations, extensions } = error;
+
+  return {
+    message,
+    locations,
+    path,
+    extensions: makeExtensions(originalError.code, extensions),
+  };
+};
+
+const makeUnKnownGraphQLFormattedError = (
+  error: GraphQLError,
+): GraphQLFormattedError<Extensions> => {
+  const { message, path, locations, extensions } = error;
+
+  if (EXPOSE_UNKNOWN_ERRORS) {
+    return {
+      message,
+      locations,
+      path,
+      extensions: makeExtensions(ErrorCode.INTERNAL_SERVER_ERROR, extensions),
+    };
+  } else {
+    return {
+      message: 'Internal server error',
+      locations,
+      path,
+      extensions: makeExtensions(ErrorCode.INTERNAL_SERVER_ERROR, {}),
+    };
+  }
+};
+
+const formatError = (
+  error: GraphQLError,
+): GraphQLFormattedError<Extensions> => {
+  const { originalError } = error;
 
   if (originalError instanceof BaseError) {
-    return toApolloError(error, originalError.code);
+    return makeKnownGraphQLFormattedError(error as KnownGraphQLError);
   } else {
-    return toApolloError({ path, locations });
+    return makeUnKnownGraphQLFormattedError(error);
   }
 };
 

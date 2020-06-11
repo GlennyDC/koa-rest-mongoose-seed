@@ -5,7 +5,7 @@ class InputValidationError extends BaseError {
   readonly validationErrors: Record<string, string>;
 
   constructor(validationErrors: Record<string, string>) {
-    super('Input validation failed', ErrorCode.INPUT_INVALID, 400);
+    super('Invalid input', ErrorCode.INPUT_INVALID, 400);
     this.validationErrors = validationErrors;
   }
 }

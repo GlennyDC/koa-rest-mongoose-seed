@@ -1,11 +1,9 @@
-import { ApolloError } from 'apollo-server-koa';
-
+import { BaseError } from './baseError';
 import { ErrorCode } from './errorCode';
 
-class IntegrationError extends ApolloError {
+class IntegrationError extends BaseError {
   constructor() {
-    super('Authentication failed', ErrorCode.INTEGRATION_FAILED);
-    Object.defineProperty(this, 'name', { value: 'IntegrationError' });
+    super('Integration failed', ErrorCode.INTEGRATION_FAILED, 503);
   }
 }
 

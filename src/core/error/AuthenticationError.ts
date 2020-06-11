@@ -1,11 +1,9 @@
-import { ApolloError } from 'apollo-server-koa';
-
+import { BaseError } from './baseError';
 import { ErrorCode } from './errorCode';
 
-class AuthenticationError extends ApolloError {
+class AuthenticationError extends BaseError {
   constructor() {
-    super('Authentication failed', ErrorCode.NOT_AUTHENTICATED);
-    Object.defineProperty(this, 'name', { value: 'AuthenticationError' });
+    super('Must authenticate', ErrorCode.NOT_AUTHENTICATED, 401);
   }
 }
 

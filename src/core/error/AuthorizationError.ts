@@ -1,11 +1,9 @@
-import { ApolloError } from 'apollo-server-koa';
-
+import { BaseError } from './baseError';
 import { ErrorCode } from './errorCode';
 
-class AuthorizationError extends ApolloError {
+class AuthorizationError extends BaseError {
   constructor() {
-    super('Authorization failed', ErrorCode.NOT_AUTHORIZED);
-    Object.defineProperty(this, 'name', { value: 'AuthorizationError' });
+    super('Not authorized', ErrorCode.NOT_AUTHORIZED, 403);
   }
 }
 
