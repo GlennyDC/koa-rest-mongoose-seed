@@ -1,7 +1,7 @@
 import { ErrorCode } from '../errorCode';
 
 /**
- * Abastract class for all known server errors.
+ * Abstract class for all known server errors.
  */
 abstract class BaseError extends Error {
   readonly code: ErrorCode;
