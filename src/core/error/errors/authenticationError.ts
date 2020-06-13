@@ -1,5 +1,5 @@
+import { ErrorCode } from '../errorCode';
 import { BaseError } from './baseError';
-import { ErrorCode } from './errorCode';
 
 class AuthenticationError extends BaseError {
   constructor() {

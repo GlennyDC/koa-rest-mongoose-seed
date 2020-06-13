@@ -14,7 +14,7 @@ const makeErrorResponderMiddleware = (): Koa.Middleware => {
       await next();
       // Handle 404 errors just like any other error
       if (ctx.response.status === 404 && !ctx.response.body) {
-        ctx.throw(404, '404 Not found');
+        ctx.throw(404, '404 Not found'); // TODO: Throw our NOT FOUND ERROR?
       }
     } catch (err) {
       ctx.status = err.status || 500;

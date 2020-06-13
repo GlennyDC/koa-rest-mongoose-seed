@@ -1,9 +1,9 @@
+import { ErrorCode } from '../errorCode';
 import { BaseError } from './baseError';
-import { ErrorCode } from './errorCode';
 
 class IntegrationError extends BaseError {
   constructor() {
-    super('Integration failed', ErrorCode.INTEGRATION_FAILED, 503);
+    super('Bad gateway', ErrorCode.INTEGRATION_FAILED, 502);
   }
 }
 

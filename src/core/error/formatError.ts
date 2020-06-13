@@ -1,8 +1,8 @@
 import config from 'config';
 import { GraphQLError, GraphQLFormattedError } from 'graphql';
 
-import { BaseError } from './baseError';
 import { ErrorCode } from './errorCode';
+import { BaseError } from './errors/baseError';
 
 const EXPOSE_UNKNOWN_ERRORS = config.get<boolean>(
   'server.graphql.exposeUnknownErrors',

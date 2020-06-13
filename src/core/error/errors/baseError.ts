@@ -1,10 +1,18 @@
-import { ErrorCode } from './errorCode';
+import { ErrorCode } from '../errorCode';
 
+/**
+ * Abastract class for all known server errors.
+ */
 abstract class BaseError extends Error {
   readonly code: ErrorCode;
   readonly httpStatusCode: number;
   readonly timestamp: string;
 
+  /**
+   * @param {string} message - Description of the error intended for developers
+   * @param {ErrorCode} code - Short human-readable, globally unique code of the error that enables the client to perform corrective actions
+   * @param {number} httpStatusCode - HTTP status code
+   */
   constructor(message: string, code: ErrorCode, httpStatusCode: number) {
     super(message);
     this.code = code;
