@@ -1,5 +1,5 @@
-import { SpaceXCapsule } from '../../contracts';
 import { request, IntegrationError, makeLogger } from '../../core';
+import { SpaceXCapsule } from '../../types';
 
 const logger = makeLogger('SpaceX - capsule');
 

@@ -1,5 +1,7 @@
 import Koa from 'koa';
 
+import { NotFoundError } from '../error';
+
 /**
  * Make a Koa error responder middleware in case an error occurs.
  * Emit the error to the app error event listener for centralized error logging.
@@ -14,7 +16,8 @@ const makeErrorResponderMiddleware = (): Koa.Middleware => {
       await next();
       // Handle 404 errors just like any other error
       if (ctx.response.status === 404 && !ctx.response.body) {
-        ctx.throw(404, '404 Not found'); // TODO: Throw our NOT FOUND ERROR?
+        // ctx.throw(404, '404 Not found'); // TODO: Throw our NOT FOUND ERROR?
+        throw new NotFoundError();
       }
     } catch (err) {
       ctx.status = err.status || 500;

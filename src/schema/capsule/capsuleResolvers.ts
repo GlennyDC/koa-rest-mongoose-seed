@@ -1,8 +1,8 @@
 import Joi from '@hapi/joi';
 
-import { Capsule } from '../../contracts';
 import { validateArgs } from '../../core';
 import { capsuleFacade } from '../../facades';
+import { Capsule } from '../../types';
 
 const capsuleResolvers = {
   Query: {

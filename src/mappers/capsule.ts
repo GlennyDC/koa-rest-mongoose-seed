@@ -1,4 +1,4 @@
-import { Capsule, SpaceXCapsule } from '../contracts';
+import { Capsule, SpaceXCapsule } from '../types';
 
 /* eslint-disable @typescript-eslint/camelcase */
 export const mapSpaceXCapsuleToCapsule = (capsule: SpaceXCapsule): Capsule => {

@@ -1,9 +1,9 @@
 import fetch, { Headers } from 'node-fetch';
 import { stringify, ParsedUrlQueryInput } from 'querystring';
 
+import { RequestError } from '../error';
 import { makeLogger } from '../logging';
 import { HTTPMethod } from './httpMethod';
-import { RequestError } from './requestError';
 
 const logger = makeLogger('core - request');
 
@@ -78,7 +78,6 @@ const request = async <T>(
     logger.error(
       `Something went wrong with [${method}] [${URL}]: [${response.status}] [${response.statusText}]`,
     );
-    throw new RequestError(response.statusText); // TODO: Define an error format and standardize the error handling
   }
 
   // TODO: What if the response is not json?

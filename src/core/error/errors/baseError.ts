@@ -5,18 +5,18 @@ import { ErrorCode } from '../errorCode';
  */
 abstract class BaseError extends Error {
   readonly code: ErrorCode;
-  readonly httpStatusCode: number;
+  readonly status: number;
   readonly timestamp: string;
 
   /**
    * @param {string} message - Description of the error intended for developers
    * @param {ErrorCode} code - Short human-readable, globally unique code of the error that enables the client to perform corrective actions
-   * @param {number} httpStatusCode - HTTP status code
+   * @param {number} status - HTTP status code
    */
-  constructor(message: string, code: ErrorCode, httpStatusCode: number) {
+  constructor(message: string, code: ErrorCode, status: number) {
     super(message);
     this.code = code;
-    this.httpStatusCode = httpStatusCode;
+    this.status = status;
     this.timestamp = new Date().toISOString();
 
     /**

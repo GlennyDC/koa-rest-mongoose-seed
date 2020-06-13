@@ -6,7 +6,7 @@ import { formatError } from './core';
 import makeSchema from './schema/makeSchema';
 
 const EXPOSE_ERROR_STACKTRACES = config.get<boolean>(
-  'server.graphql.exposeErrorStacktraces',
+  'server.graphql.exposeErrorStackTraces',
 );
 
 const installApolloServer = (app: Koa): void => {
