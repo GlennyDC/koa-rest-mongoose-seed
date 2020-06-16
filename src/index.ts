@@ -34,7 +34,7 @@ const shutdown = (): void => {
   // TODO: What todo else?
   server.close((err) => {
     if (err) {
-      logger.error(`Could not gracefully close server`, err);
+      logger.error(`Could not gracefully close server: `, err);
       process.exitCode = 1;
     }
     process.exit();
@@ -54,11 +54,11 @@ process.on('SIGTERM', () => {
 });
 
 process.on('uncaughtException', (error) => {
-  logger.error('Uncaught exception', error);
+  logger.error('Uncaught exception: ', error);
   shutdown();
 });
 
 process.on('unhandledRejection', (reason, promise) => {
-  logger.error('Unhandled rejection', JSON.stringify(reason), promise);
+  logger.error('Unhandled rejection: ', JSON.stringify(reason), promise);
   shutdown();
 });
