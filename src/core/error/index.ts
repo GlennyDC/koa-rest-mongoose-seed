@@ -8,4 +8,4 @@ export {
   BusinessError,
 } from './errors';
 
-export { formatError } from './formatError';
+export { transformGraphQLError } from './transformGraphQLError';
