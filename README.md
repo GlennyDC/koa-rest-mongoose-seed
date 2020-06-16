@@ -38,6 +38,7 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - [ ] Add a database (PostgreSQl?, MongoDb?)
 - [ ] Add an ORM (Sequelize?, Mongoose?)
 - [ ] Figure out a robust and almost transparent for front-end refetch token mechanism
+- [ ] Add DataLoader to solve the N+1 GraphQL problem
 
 ### Nice to have
 
