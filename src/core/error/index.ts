@@ -5,6 +5,7 @@ export {
   IntegrationError,
   InputValidationError,
   RequestError,
+  BusinessError,
 } from './errors';
 
 export { formatError } from './formatError';

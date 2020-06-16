@@ -1,9 +1,14 @@
 import { ErrorCode } from '../errorCode';
 import { BaseError } from './baseError';
 
+/**
+ * Error class for all requests that access a resource that does not exist.
+ *
+ * @see {@link https://tools.ietf.org/html/rfc7231#section-6.5.4|404 Not found}
+ */
 class NotFoundError extends BaseError {
-  constructor() {
-    super('Resource not found', ErrorCode.NOT_FOUND, 404);
+  constructor(message: string, code: ErrorCode) {
+    super(message, code, 404);
   }
 }
 

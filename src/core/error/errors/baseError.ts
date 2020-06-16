@@ -1,7 +1,9 @@
 import { ErrorCode } from '../errorCode';
 
 /**
- * Abstract class for all known server errors.
+ * Abstract error class for all known server errors.
+ *
+ * Note: every property (including the message) on this class is public and **will** be send to the client.
  */
 abstract class BaseError extends Error {
   readonly code: ErrorCode;
