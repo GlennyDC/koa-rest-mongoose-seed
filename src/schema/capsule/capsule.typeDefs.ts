@@ -1,4 +1,4 @@
-extend type Query {
+export default `extend type Query {
   capsules(limit: Int, offset: Int, order: String, sort: Sort): [Capsule!]!
   capsule(id: ID!): Capsule!
 }
@@ -11,3 +11,4 @@ type Capsule {
   type: String!
   reuseCount: Int!
 }
+`;

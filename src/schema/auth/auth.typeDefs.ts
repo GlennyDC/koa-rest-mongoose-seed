@@ -1,4 +1,4 @@
-extend type Mutation {
+export default `extend type Mutation {
   login(email: String!, password: String!): Auth
 }
 
@@ -6,3 +6,4 @@ type Auth {
   accessToken: String!
   user: User!
 }
+`;
