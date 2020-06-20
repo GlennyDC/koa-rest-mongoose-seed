@@ -18,7 +18,7 @@ const capsules = async ({
   sort = 'asc',
 }: QueryArgs): Promise<Capsule[]> => {
   logger.debug(
-    `AGet capsules limit [${limit}] offset [${offset}] order [${order}] sort [${sort}]`,
+    `Get capsules limit [${limit}] offset [${offset}] order [${order}] sort [${sort}]`,
   );
   return capsuleService.getCapsules(limit, offset, order, sort);
 };

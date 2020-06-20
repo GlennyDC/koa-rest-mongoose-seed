@@ -50,6 +50,10 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - Split main entrypoint in two parts: Node related and server related
 - Add protected branches mechanism (switch to GitLab?)
 
+### Overkill
+
+- Implement own `nodemon` | `tsc-watch` based on `chokidar` because not a single existing solution enables really really fast transpiling of TypeScript + additionally optional copying of files in dist folder. `tsc` and `tsc-watch` are really fast due to incremental recompiling but changes in non `.ts` files don't trigger the transpiler (of course). `gulp` offers a solution by setting up our own watch task but the transpiling takes about 2.5s (too slow). `gulp-typescript` doesn't make use of incremental recompiling, that way we may as well be better off with `ts-node`. I just **really** **really** want to use .gql files for schema definition and very fast transpiling times. Meh. 
+
 ### Remarks
 
-- Check for a more strict eslint config. For example the `require-await`rule is not enabled per default.
+- Check for a more strict eslint config. For example the `require-await` rule is not enabled per default.
