@@ -8,10 +8,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "docker-compose -f env/docker-compose.dev.yaml up --build",
+    "dev": "NODE_ENV=development tsc-watch -p tsconfig.json --onSuccess 'node dist/index.js'",
     "prebuild": "rimraf dist/*",
-    "build": "concurrently --raw 'tsc --project tsconfig.json' 'copyfiles -u 1 src/schema/**/*.gql dist/'",
-    "start": "node dist/index.js",
+    "build": "concurrently --kill-others-on-fail --raw 'tsc -p tsconfig.json' 'copyfiles -u 1 src/schema/**/*.gql dist/'",
+    "start": "NODE_ENV=production node dist/index.js",
     "test": "echo \"Error: no tests yet\" && exit 1",
     "lint": "eslint . --cache --ext .ts,.json",
     "lint:fix": "eslint . --cache --ext .ts,.json --fix"
@@ -30,7 +30,6 @@
   },
   "devDependencies": {
     "@types/cls-hooked": "^4.3.0",
-    "@types/config": "^0.0.36",
     "@types/hapi__joi": "^17.1.0",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/koa": "^2.11.3",
@@ -50,6 +49,7 @@
     "nodemon": "^2.0.4",
     "prettier": "2.0.5",
     "rimraf": "^3.0.2",
+    "tsc-watch": "^4.2.8",
     "typescript": "^3.9.2"
   }
 }

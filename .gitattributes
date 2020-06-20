@@ -1,5 +1,2 @@
 # Enforce LF line endings on every file
 * text=auto eol=lf
-
-# Automagically encrypt environment variables
-config/** filter=git-crypt diff=git-crypt

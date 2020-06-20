@@ -1,6 +1,0 @@
-{
-  "watch": ["config", "src"],
-  "ext": "ts,gql",
-  "exec": "node dist/index.ts",
-  "delay": 100
-}
