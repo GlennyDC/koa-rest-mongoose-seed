@@ -1,11 +1,11 @@
-import config from 'config';
 import Koa from 'koa';
 
+import { config } from './config';
 import { makeLogger, installMiddleware } from './core';
 import { installApolloServer } from './installApolloServer';
 
-const PORT = config.get<number>('server.port');
-const HOST_NAME = config.get<number>('server.hostName');
+const PORT = config.server.port;
+const HOST_NAME = config.server.hostName;
 
 const app = new Koa();
 

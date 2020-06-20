@@ -1,13 +1,11 @@
 import { ApolloServer } from 'apollo-server-koa';
-import config from 'config';
 import Koa from 'koa';
 
+import { config } from './config';
 import { transformGraphQLError } from './core';
 import makeSchema from './schema/makeSchema';
 
-const EXPOSE_ERROR_STACKTRACES = config.get<boolean>(
-  'server.graphql.exposeErrorStackTraces',
-);
+const EXPOSE_ERROR_STACKTRACES = config.server.graphql.exposeErrorStackTraces;
 
 const installApolloServer = (app: Koa): void => {
   const schema = makeSchema();

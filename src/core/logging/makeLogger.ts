@@ -1,11 +1,12 @@
 import { getNamespace } from 'cls-hooked';
-import config from 'config';
 import { Format, TransformableInfo } from 'logform';
 import { createLogger, format, transports, Logger } from 'winston';
 
-const LOGGING_LEVEL = config.get<string>('server.logging.level');
-const ENABLE_CONSOLE_LOGGING = config.get<string>('server.logging.console');
-const ENABLE_FILE_LOGGING = config.get<string>('server.logging.file');
+import { config } from '../../config';
+
+const LOGGING_LEVEL = config.server.logging.level;
+const ENABLE_CONSOLE_LOGGING = config.server.logging.console;
+const ENABLE_FILE_LOGGING = config.server.logging.file;
 
 /**
  * Make the format for console logs.

@@ -1,12 +1,10 @@
-import config from 'config';
 import { GraphQLError, GraphQLFormattedError } from 'graphql';
 
+import { config } from '../../config';
 import { ErrorCode } from './errorCode';
 import { BaseError } from './errors/baseError';
 
-const EXPOSE_UNKNOWN_ERRORS = config.get<boolean>(
-  'server.graphql.exposeUnknownErrors',
-);
+const EXPOSE_UNKNOWN_ERRORS = config.server.graphql.exposeUnknownErrors;
 
 interface Extensions extends Record<string, any> {
   code: string;

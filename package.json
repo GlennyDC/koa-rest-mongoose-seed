@@ -9,6 +9,9 @@
   "private": false,
   "scripts": {
     "dev": "docker-compose -f env/docker-compose.dev.yaml up --build",
+    "prebuild": "rimraf dist/*",
+    "build": "concurrently --raw 'tsc --project tsconfig.json' 'copyfiles -u 1 src/schema/**/*.gql dist/'",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no tests yet\" && exit 1",
     "lint": "eslint . --cache --ext .ts,.json",
     "lint:fix": "eslint . --cache --ext .ts,.json --fix"
@@ -18,13 +21,11 @@
     "@hapi/joi": "^17.1.1",
     "apollo-server-koa": "^2.14.4",
     "cls-hooked": "^4.2.2",
-    "config": "^3.3.1",
     "graphql": "^15.1.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.11.0",
     "nanoid": "^3.1.9",
     "node-fetch": "^2.6.0",
-    "ts-node": "^8.10.1",
     "winston": "^3.2.1"
   },
   "devDependencies": {
@@ -36,6 +37,8 @@
     "@types/node": "^14.0.4",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
+    "concurrently": "^5.2.0",
+    "copyfiles": "^2.3.0",
     "eslint": "6.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
@@ -46,6 +49,7 @@
     "lint-staged": ">=10",
     "nodemon": "^2.0.4",
     "prettier": "2.0.5",
+    "rimraf": "^3.0.2",
     "typescript": "^3.9.2"
   }
 }
