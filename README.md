@@ -21,7 +21,7 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - [ ] Add uniform error handling
 - [ ] Fine tune ESlint, husky and lint-staged
 - [ ] Add correct TypeScript types
-- [ ] Get rid of ts-node and use tsc for dev and prd
+- [x] Get rid of ts-node and use tsc for dev and prd
 - [ ] Add working multi-stage Docker setup
 - [ ] Add uniform JSDocs
 - [ ] Complete this README
@@ -47,7 +47,6 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - Switch from cls-hooked to native Node async_hooks for performance optimalization
 - Respect the default exports from node_modules (no `esModuleInterop` and `allowSyntheticDefaultImports`?)
 - Lay out foundation to optionally add a REST API
-- Add some sort of GraphQL batching / caching (DataLoader?)
 - Add HTTP caching (Redis?)
 - Split main entrypoint in two parts: Node related and server related
 - Add protected branches mechanism (switch to GitLab?)
