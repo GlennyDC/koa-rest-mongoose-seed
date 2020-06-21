@@ -1,7 +1,7 @@
 {
   "name": "api-seed",
   "version": "0.0.0",
-  "description": "Seed for easy and ready to go containerized GraphQL Koa API.",
+  "description": "Seed for an easy and ready to go containerized GraphQL Koa API.",
   "main": "src/index.ts",
   "repository": "https://github.com/GlennyDC/api-seed",
   "author": "Glenny De Cock",
@@ -44,22 +44,17 @@
     "chokidar-cli": "^2.1.0",
     "concurrently": "^5.2.0",
     "copyfiles": "^2.3.0",
-    "del": "^5.1.0",
     "eslint": "6.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsdoc": "^25.4.3",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-promise": "^4.2.1",
-    "gulp": "^4.0.2",
-    "gulp-nodemon": "^2.5.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
     "husky": ">=4",
     "lint-staged": ">=10",
     "nodemon": "^2.0.4",
     "prettier": "2.0.5",
     "rimraf": "^3.0.2",
-    "tsc-watch": "^4.2.8",
     "typescript": "^3.9.2"
   }
 }
