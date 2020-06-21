@@ -8,6 +8,8 @@ export default {
       file: false,
     },
     graphql: {
+      enablePlayground: true,
+      enableIntrospection: true,
       exposeErrorStackTraces: true,
       exposeUnknownErrors: true,
     },

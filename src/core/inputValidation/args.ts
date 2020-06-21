@@ -59,6 +59,7 @@ const validateArgs = async (
   schema: Joi.Schema,
 ): Promise<Record<string, any>> => {
   try {
+    // TODO: Add silly logging
     return await validateValueAgainstJoiSchema(args, schema);
   } catch (err) {
     const validationErrors = formatJoiError(err);
