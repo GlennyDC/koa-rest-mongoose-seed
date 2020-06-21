@@ -1,7 +1,5 @@
 # We don't need GIT in the container
-.git
-.gitignore
-.gitattributes
+.git*
 
 # Don't ever use the node_modules from the host
 node_modules/
@@ -20,8 +18,6 @@ dist/
 *docker-compose*
 .dockerignore
 .editorconfig
-.eslintignore
-.eslintrc.json
-.prettierrc.json
+.huskyrc.json
+.lintstagedrc.json
 LICENSE
-README.md
