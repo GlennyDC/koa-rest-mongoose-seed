@@ -6,6 +6,8 @@
 
 Although GraphQL already provides a powerful query validation scheme, a more advanced input validation is achieved with [Joi](https://github.com/hapijs/joi 'Joi repository'). The GraphQL query validation indicates if a query is valid (e.g. do the requested fields exist, are all the required inputs present and of the correct type, ...). The Joi input validation on the other hand indicates if the received input is valid against a custom defined schema (e.g. is a number not too big, if one input is present, another one should be present aswell, ...). If the provided input does not match its schema, an error with code `INPUT_INVALID_ERROR` will be returned by the server. The error is enhanced with a brief description of the validation errors.
 
+## Scripts
+
 ## Design considerations
 
 TODO
@@ -49,10 +51,6 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - Add HTTP caching (Redis?)
 - Split main entrypoint in two parts: Node related and server related
 - Add protected branches mechanism (switch to GitLab?)
-
-### Overkill
-
-- Implement own `nodemon` | `tsc-watch` based on `chokidar` because not a single existing solution enables really really fast transpiling of TypeScript + additionally optional copying of files in dist folder. `tsc` and `tsc-watch` are really fast due to incremental recompiling but changes in non `.ts` files don't trigger the transpiler (of course). `gulp` offers a solution by setting up our own watch task but the transpiling takes about 2.5s (too slow). `gulp-typescript` doesn't make use of incremental recompiling, that way we may as well be better off with `ts-node`. I just **really** **really** want to use .gql files for schema definition and very fast transpiling times. Meh. 
 
 ### Remarks
 
