@@ -3,9 +3,12 @@ services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prd
       target: prd
     ports:
       - '3000:3000'
+    # Run an init inside the container that forwards signals
+    # and reaps processes.
+    init: true
     image: api_seed
     container_name: api_seed

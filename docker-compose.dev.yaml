@@ -8,7 +8,13 @@ services:
       - '3000:3000'
     volumes:
       - .:/app:delegated
-      # Don't use the node_modules from the host
-      - /app/node_modules
+      - empty:/app/node_modules
+    # Run an init inside the container that forwards signals
+    # and reaps processes.
+    init: true
     image: api_seed_dev
     container_name: api_seed_dev
+
+# Don't bind the node_modules from the host
+volumes:
+  empty:
