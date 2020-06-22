@@ -5,7 +5,7 @@ import { join } from 'path';
 // TODO: Types
 const makeSchema = () => {
   const typeDefs = loadFiles<string>(join(__dirname, '**/*.typeDefs.gql'));
-  const resolvers = loadFiles<IResolvers>(join(__dirname, '**/*.resolvers.js'));
+  const resolvers = loadFiles<IResolvers>(join(__dirname, '**/*.resolvers.*'));
   const schema = makeExecutableSchema({
     typeDefs,
     resolvers,

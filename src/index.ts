@@ -17,7 +17,9 @@ installApolloServer(app);
 
 const server = app.listen(PORT, HOST_NAME, () => {
   logger.info(
-    `Server ready at ${HOST_NAME}:${PORT} in ${process.env.NODE_ENV} mode`,
+    `Server ready at ${HOST_NAME}:${PORT} in ${
+      process.env.NODE_ENV || 'development'
+    } mode`,
   );
 });
 

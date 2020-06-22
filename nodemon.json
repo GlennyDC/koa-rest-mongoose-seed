@@ -1,9 +1,6 @@
 {
-  "watch": ["dist"],
-  "ext": "js,gql",
-  "exec": "node dist/index.js",
-  "delay": 200,
-  "env": {
-    "NODE_ENV": "development"
-  }
+  "watch": ["src"],
+  "ext": "ts,gql",
+  "exec": "ts-node  src/index.ts",
+  "delay": 100
 }
