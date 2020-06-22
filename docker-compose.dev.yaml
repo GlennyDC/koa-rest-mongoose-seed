@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app:delegated
+      # Don't use the node_modules from the host
+      - /app/node_modules
+    image: api_seed_dev
+    container_name: api_seed_dev

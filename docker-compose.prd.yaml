@@ -7,5 +7,5 @@ services:
       target: prd
     ports:
       - '3000:3000'
-    image: api
-    container_name: api
+    image: api_seed
+    container_name: api_seed

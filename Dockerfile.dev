@@ -1,0 +1,9 @@
+FROM node:14.2-alpine
+ENV NODE_ENV=development
+RUN mkdir /app && chown -R node:node /app
+WORKDIR /app
+USER node
+COPY --chown=node:node package.json yarn.lock ./
+RUN yarn install
+COPY --chown=node:node . .
+CMD ["yarn", "run", "dev"]
