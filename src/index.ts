@@ -1,7 +1,7 @@
 import Koa from 'koa';
 
 import { config } from './config';
-import { makeLogger, installMiddleware } from './core';
+import { makeLogger, applyMiddleware } from './core';
 import { installApolloServer } from './installApolloServer';
 
 const PORT = config.server.port;
@@ -9,7 +9,7 @@ const HOST_NAME = config.server.hostName;
 
 const app = new Koa();
 
-installMiddleware(app);
+applyMiddleware(app);
 
 const logger = makeLogger('app');
 

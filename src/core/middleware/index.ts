@@ -1,1 +1,1 @@
-export { installMiddleware } from './installMiddleware';
+export { applyMiddleware } from './applyMiddleware';
