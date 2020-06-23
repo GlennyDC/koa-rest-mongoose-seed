@@ -46,8 +46,8 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - [ ] Add automatic resolver types with https://graphql-code-generator.com/
 - [ ] Add tests (Jest?)
 - [ ] Add test coverage (Istanbul?)
-- [ ] Add robust GraphQL input validation with Joi
-- [ ] Add common middlewares such as koa-helmet, cors, ...
+- [x] Add robust GraphQL input validation with Joi
+- [x] Add common middlewares such as koa-helmet, cors, ...
 - [ ] Add JSDoc to HTML generator
 - [ ] Add a database (PostgreSQl?, MongoDb?)
 - [ ] Add an ORM (Sequelize?, Mongoose?)
