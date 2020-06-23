@@ -32,7 +32,7 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - [ ] Add uniform error handling
 - [ ] Fine tune ESlint, husky and lint-staged
 - [ ] Add correct TypeScript types
-- [ ] Fix production and development stacktrace mapping to ts instead of compiled js files
+- [x] Fix production and development stacktrace mapping to ts instead of compiled js files
 - [x] Get rid of ts-node and use tsc for dev and prd
 - [x] Add working multi-stage Docker setup
 - [ ] Add uniform JSDocs
