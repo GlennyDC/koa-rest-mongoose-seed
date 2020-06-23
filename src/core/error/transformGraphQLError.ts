@@ -1,4 +1,4 @@
-import { GraphQLError, GraphQLFormattedError } from 'graphql';
+import type { GraphQLError, GraphQLFormattedError } from 'graphql';
 
 import { config } from '../../config';
 import { ErrorCode } from './errorCode';
@@ -6,28 +6,24 @@ import { BaseError } from './errors/baseError';
 
 const EXPOSE_UNKNOWN_ERRORS = config.server.graphql.exposeUnknownErrors;
 
-interface Extensions extends Record<string, any> {
-  code: string;
-}
-
-interface KnownGraphQLError extends GraphQLError {
-  originalError: BaseError;
-  extensions: any;
-}
+type Extensions = Record<string, any> & { code: string };
+type KnownGraphQLError = GraphQLError & { originalError: BaseError };
 
 const makeExtensions = (
   code: ErrorCode,
   extensions: Record<string, any> = {},
-): Extensions => ({
-  code,
-  ...extensions.exception,
-});
+): Extensions => {
+  console.log(extensions);
+  return {
+    ...extensions.exception,
+    code,
+  };
+};
 
 const makeKnownGraphQLFormattedError = (
   error: KnownGraphQLError,
 ): GraphQLFormattedError<Extensions> => {
-  const { message, originalError, path, locations, extensions } = error;
-
+  const { message, locations, path, originalError, extensions } = error;
   return {
     message,
     locations,
@@ -40,22 +36,15 @@ const makeUnKnownGraphQLFormattedError = (
   error: GraphQLError,
 ): GraphQLFormattedError<Extensions> => {
   const { message, path, locations, extensions } = error;
-
-  if (EXPOSE_UNKNOWN_ERRORS) {
-    return {
-      message,
-      locations,
-      path,
-      extensions: makeExtensions(ErrorCode.INTERNAL_SERVER_ERROR, extensions),
-    };
-  } else {
-    return {
-      message: 'Internal server error',
-      locations,
-      path,
-      extensions: makeExtensions(ErrorCode.INTERNAL_SERVER_ERROR, {}),
-    };
-  }
+  return {
+    message: EXPOSE_UNKNOWN_ERRORS ? message : 'Internal server error',
+    locations,
+    path,
+    extensions: makeExtensions(
+      ErrorCode.INTERNAL_SERVER_ERROR,
+      EXPOSE_UNKNOWN_ERRORS ? extensions : {},
+    ),
+  };
 };
 
 /**
@@ -64,7 +53,7 @@ const makeUnKnownGraphQLFormattedError = (
  *
  * Note: unknown errors are optionally masked to a 500 INTERNAL_SERVER_ERROR.
  *
- * @param {GraphQLError} error - Error found during the parse, validate, or execute phases of performing a GraphQL operation
+ * @param {GraphQLError} error - Error found during the parse, validate, or execute phase of performing a GraphQL operation
  *
  * @returns {GraphQLFormattedError<Extensions>} The error to be send to the client
  *

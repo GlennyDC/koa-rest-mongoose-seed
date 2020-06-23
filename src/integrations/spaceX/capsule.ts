@@ -3,6 +3,14 @@ import { SpaceXCapsule } from '../../types';
 
 const logger = makeLogger('SpaceX - capsule');
 
+class TestError extends Error {
+  extraStuff: string;
+  constructor() {
+    super('This is the test error');
+    this.extraStuff = 'hello extra stuff';
+  }
+}
+
 const getCapsules = async (
   limit: number,
   offset: number,
@@ -18,12 +26,12 @@ const getCapsules = async (
       'capsules',
       { limit, offset, order, sort },
     );
-    return capsules;
+    throw new TestError();
   } catch (err) {
     logger.error(
       `Could not get capsules limit [${limit}] offset [${offset}] order [${order}] sort [${sort}]`,
     );
-    throw new IntegrationError();
+    throw new TestError();
   }
 };
 

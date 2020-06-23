@@ -11,7 +11,7 @@ export default {
       enablePlayground: true,
       enableIntrospection: true,
       exposeErrorStackTraces: true,
-      exposeUnknownErrors: true,
+      exposeUnknownErrors: false,
     },
   },
   auth: {
