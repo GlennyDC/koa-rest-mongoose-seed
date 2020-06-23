@@ -49,6 +49,7 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - [x] Add robust GraphQL input validation with Joi
 - [x] Add common middlewares such as koa-helmet, cors, ...
 - [ ] Add JSDoc to HTML generator
+- [ ] Add `import type` where necessary
 - [ ] Add a database (PostgreSQl?, MongoDb?)
 - [ ] Add an ORM (Sequelize?, Mongoose?)
 - [ ] Figure out a robust and almost transparent for front-end refetch token mechanism
