@@ -12,7 +12,7 @@
     "docker:prd": "docker-compose -f docker-compose.prd.yaml up --build",
     "prebuild": "rimraf dist/*",
     "build": "yarn run build:ts && yarn run copy:gql",
-    "start": "NODE_ENV=production node dist/index.js",
+    "start": "NODE_ENV=production node -r source-map-support/register dist/index.js",
     "dev": "nodemon --config nodemon.json",
     "build:ts": "tsc -p tsconfig.json",
     "copy:gql": "copyfiles -u 1 src/schema/**/*.gql dist/",
