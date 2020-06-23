@@ -9,17 +9,25 @@ abstract class BaseError extends Error {
   readonly code: ErrorCode;
   readonly status: number;
   readonly timestamp: string;
+  readonly wrappedError?: Error;
 
   /**
    * @param {string} message - Description of the error intended for developers
    * @param {ErrorCode} code - Short human-readable, globally unique code of the error that enables the client to perform corrective actions
    * @param {number} status - HTTP status code
+   * @param {Error} wrappedError - Any error that cause this error
    */
-  constructor(message: string, code: ErrorCode, status: number) {
+  constructor(
+    message: string,
+    code: ErrorCode,
+    status: number,
+    wrappedError?: Error,
+  ) {
     super(message);
     this.code = code;
     this.status = status;
     this.timestamp = new Date().toISOString();
+    this.wrappedError = wrappedError;
 
     /**
      * Maintain proper stack trace for where our error was thrown

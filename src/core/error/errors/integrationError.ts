@@ -8,11 +8,12 @@ import { BaseError } from './baseError';
  * @see {@link https://tools.ietf.org/html/rfc7231#section-6.6.3|502 Bad gateway}
  */
 class IntegrationError extends BaseError {
-  constructor() {
+  constructor(wrappedError?: Error) {
     super(
       'The server was unable to fulfill the request because it received an invalid response from another server.',
       ErrorCode.INTEGRATION_ERROR,
       502,
+      wrappedError,
     );
   }
 }
