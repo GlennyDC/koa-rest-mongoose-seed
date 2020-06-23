@@ -23,7 +23,7 @@ const getCapsules = async (
     logger.error(
       `Could not get capsules limit [${limit}] offset [${offset}] order [${order}] sort [${sort}]`,
     );
-    throw new IntegrationError();
+    throw new IntegrationError(err);
   }
 };
 
@@ -37,7 +37,7 @@ const getCapsuleById = async (id: string): Promise<SpaceXCapsule> => {
     return capsule;
   } catch (err) {
     logger.error(`Could not get capsule [${id}]`);
-    throw new IntegrationError();
+    throw new IntegrationError(err);
   }
 };
 
