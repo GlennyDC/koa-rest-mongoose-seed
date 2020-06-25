@@ -13,7 +13,6 @@ const makeExtensions = (
   code: ErrorCode,
   extensions: Record<string, any> = {},
 ): Extensions => {
-  console.log(extensions);
   return {
     ...extensions.exception,
     code,

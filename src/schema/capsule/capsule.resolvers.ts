@@ -2,11 +2,11 @@ import Joi from '@hapi/joi';
 
 import { validateArgs } from '../../core';
 import { capsuleFacade } from '../../facades';
-import { Capsule } from '../../types';
+import type { Capsule, Resolvers } from '../../types';
 
-const capsuleResolvers = {
+const capsuleResolvers: Resolvers = {
   Query: {
-    capsules: async (_: any, args: any): Promise<Capsule[]> => {
+    capsules: async (_, args): Promise<Capsule[]> => {
       const schema = Joi.object({
         limit: Joi.number().optional(),
         offset: Joi.number().max(3).optional(),

@@ -11,4 +11,3 @@ type Capsule {
   type: String!
   reuseCount: Int!
 }
-

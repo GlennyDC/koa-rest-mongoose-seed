@@ -6,4 +6,3 @@ type Auth {
   accessToken: String!
   user: User!
 }
-

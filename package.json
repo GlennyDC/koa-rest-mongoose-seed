@@ -8,14 +8,16 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "docker:dev": "docker-compose -f docker-compose.dev.yaml up --build",
-    "docker:prd": "docker-compose -f docker-compose.prd.yaml up --build",
-    "prebuild": "rimraf dist/*",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up --build",
+    "docker:prd": "docker-compose -f docker-compose.prd.yml up --build",
+    "prebuild": "rimraf dist/* && yarn run generate:gql-types",
     "build": "yarn run build:ts && yarn run copy:gql",
     "start": "NODE_ENV=production node -r source-map-support/register dist/index.js",
     "dev": "nodemon --config nodemon.json",
     "build:ts": "tsc -p tsconfig.json",
     "copy:gql": "copyfiles -u 1 src/schema/**/*.gql dist/",
+    "generate:gql-types": "graphql-codegen --config codegen.yml",
+    "watch:gql": "graphql-codegen --config codegen.yml --watch 'src/schema/**/*.gql'",
     "test": "echo \"Error: no tests yet\" && exit 1",
     "lint": "eslint . --cache --ext .ts,.json",
     "lint:fix": "eslint . --cache --ext .ts,.json --fix"
@@ -35,6 +37,9 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.15.4",
+    "@graphql-codegen/typescript": "1.15.4",
+    "@graphql-codegen/typescript-resolvers": "1.15.4",
     "@types/cls-hooked": "^4.3.0",
     "@types/hapi__joi": "^17.1.0",
     "@types/jsonwebtoken": "^8.5.0",

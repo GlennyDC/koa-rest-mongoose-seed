@@ -7,14 +7,13 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - .:/app:delegated
-      - empty:/app/node_modules
+      # Don't do this: - .:/app:delegated, this will cause a lot of problems
+      # with the node_modules being mounted from the host, you never want to
+      # use node_modules from the host in your container
+      - ./src:/app/src:delegated
+      - ./package.json:/app/package.json:delegated
     # Run an init inside the container that forwards signals
     # and reaps processes.
     init: true
     image: api_seed_dev
     container_name: api_seed_dev
-
-# Don't bind the node_modules from the host
-volumes:
-  empty:
