@@ -17,5 +17,5 @@ WORKDIR /app
 USER node
 COPY --from=base --chown=node:node /app/package.json /app/yarn.lock ./
 RUN yarn install --production --frozen-lockfile && yarn cache clean
-COPY --from=base /app/dist ./dist
+COPY --from=base --chown=node:node /app/dist ./dist
 ENTRYPOINT ["node", "-r", "source-map-support/register", "dist/index.js"]
