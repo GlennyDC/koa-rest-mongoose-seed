@@ -14,6 +14,22 @@ export type Scalars = {
   Float: number;
 };
 
+export type Auth = {
+  __typename?: 'Auth';
+  accessToken: Scalars['String'];
+  user: User;
+};
+
+export type Capsule = {
+  __typename?: 'Capsule';
+  id: Scalars['ID'];
+  landings: Scalars['Int'];
+  status: Scalars['String'];
+  originalLaunch: Scalars['String'];
+  type: Scalars['String'];
+  reuseCount: Scalars['Int'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   login?: Maybe<Auth>;
@@ -22,12 +38,6 @@ export type Mutation = {
 export type MutationLoginArgs = {
   email: Scalars['String'];
   password: Scalars['String'];
-};
-
-export type Auth = {
-  __typename?: 'Auth';
-  accessToken: Scalars['String'];
-  user: User;
 };
 
 export type Query = {
@@ -45,16 +55,6 @@ export type QueryCapsulesArgs = {
   offset?: Maybe<Scalars['Int']>;
   order?: Maybe<Scalars['String']>;
   sort?: Maybe<Sort>;
-};
-
-export type Capsule = {
-  __typename?: 'Capsule';
-  id: Scalars['ID'];
-  landings: Scalars['Int'];
-  status: Scalars['String'];
-  originalLaunch: Scalars['String'];
-  type: Scalars['String'];
-  reuseCount: Scalars['Int'];
 };
 
 export enum Sort {
@@ -184,29 +184,51 @@ export type DirectiveResolverFn<
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Mutation: ResolverTypeWrapper<{}>;
-  String: ResolverTypeWrapper<Scalars['String']>;
-  Auth: ResolverTypeWrapper<Auth>;
   Query: ResolverTypeWrapper<{}>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
-  Int: ResolverTypeWrapper<Scalars['Int']>;
   Capsule: ResolverTypeWrapper<Capsule>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
+  String: ResolverTypeWrapper<Scalars['String']>;
   Sort: Sort;
+  Mutation: ResolverTypeWrapper<{}>;
+  Auth: ResolverTypeWrapper<Auth>;
   User: ResolverTypeWrapper<User>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Mutation: {};
-  String: Scalars['String'];
-  Auth: Auth;
   Query: {};
   ID: Scalars['ID'];
-  Int: Scalars['Int'];
   Capsule: Capsule;
+  Int: Scalars['Int'];
+  String: Scalars['String'];
+  Mutation: {};
+  Auth: Auth;
   User: User;
   Boolean: Scalars['Boolean'];
+};
+
+export type AuthResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Auth'] = ResolversParentTypes['Auth']
+> = {
+  accessToken?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
+};
+
+export type CapsuleResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Capsule'] = ResolversParentTypes['Capsule']
+> = {
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  landings?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  status?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  originalLaunch?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  reuseCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
 export type MutationResolvers<
@@ -219,15 +241,6 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationLoginArgs, 'email' | 'password'>
   >;
-};
-
-export type AuthResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Auth'] = ResolversParentTypes['Auth']
-> = {
-  accessToken?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
 export type QueryResolvers<
@@ -248,19 +261,6 @@ export type QueryResolvers<
   >;
 };
 
-export type CapsuleResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Capsule'] = ResolversParentTypes['Capsule']
-> = {
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  landings?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  status?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  originalLaunch?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  reuseCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
-};
-
 export type UserResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']
@@ -272,10 +272,10 @@ export type UserResolvers<
 };
 
 export type Resolvers<ContextType = any> = {
-  Mutation?: MutationResolvers<ContextType>;
   Auth?: AuthResolvers<ContextType>;
-  Query?: QueryResolvers<ContextType>;
   Capsule?: CapsuleResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
+  Query?: QueryResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
 };
 
