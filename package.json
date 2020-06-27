@@ -23,7 +23,7 @@
     "lint:fix": "eslint . --cache --ext .ts,.json --fix"
   },
   "dependencies": {
-    "@graphql-toolkit/file-loading": "^0.10.6",
+    "@graphql-toolkit/file-loading": "^0.10.7",
     "@hapi/joi": "^17.1.1",
     "apollo-server-koa": "^2.15.0",
     "cls-hooked": "^4.2.2",
