@@ -1,4 +1,4 @@
-FROM node:14.2-alpine AS base
+FROM node:14.4.0-alpine AS base
 ENV NODE_ENV=development
 RUN mkdir /app && chown -R node:node /app
 WORKDIR /app
@@ -9,7 +9,7 @@ COPY --chown=node:node . .
 RUN yarn build
 CMD ["node", "dist/index.js"]
 
-FROM node:14.2-alpine AS prd
+FROM node:14.4.0-alpine AS prd
 ENV NODE_ENV=production
 EXPOSE 3000
 RUN mkdir /app && chown -R node:node /app
