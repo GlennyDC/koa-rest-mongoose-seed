@@ -21,7 +21,8 @@ const server = app.listen(PORT, HOST_NAME, () => {
   );
 });
 
-// Log any handled Koa error
+// Log any handled Koa error (will probably never occur
+// except for 404 Not found)
 app.on('error', (err) => {
   logger.info(
     'Following error was correctly handled in error middleware: ',
@@ -31,7 +32,7 @@ app.on('error', (err) => {
 
 // Graceful shutdown of the server
 const shutdown = (): void => {
-  // TODO: What todo else?
+  logger.warn('Starting shutdown of server...');
   server.close((err) => {
     if (err) {
       logger.error(`Could not gracefully close server: `, err);
@@ -41,15 +42,15 @@ const shutdown = (): void => {
   });
 };
 
-// SIGINT signal (CTRL-C in Docker)
+// SIGINT signal (CTRL-C)
 process.on('SIGINT', () => {
-  logger.warn(`Start graceful shutdown after SIGINT signal`);
+  logger.warn('Received SIGINT signal');
   shutdown();
 });
 
 // SIGTERM signal (Docker stop)
 process.on('SIGTERM', () => {
-  logger.warn(`Start graceful shutdown after SIGTERM signal`);
+  logger.warn('Received SIGTERM signal');
   shutdown();
 });
 

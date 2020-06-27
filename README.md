@@ -37,7 +37,7 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - [x] Add working multi-stage Docker setup
 - [ ] Add uniform JSDocs
 - [ ] Complete this README
-- [ ] Add some sort of automatic outdated dependencies / vulnerabilities resolver (Dependabot?, Snyk?)
+- [x] Add some sort of automatic outdated dependencies / vulnerabilities resolver (Dependabot?, Snyk?)
 - [ ] Add morgan logging (with request ids ofcourse)
 - [ ] Apply pretty much everything from https://github.com/goldbergyoni/nodebestpractices
 - [ ] CI (switch to GitLab?)
