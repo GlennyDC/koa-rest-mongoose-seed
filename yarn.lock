@@ -640,10 +640,10 @@
     unixify "1.0.0"
     valid-url "1.0.9"
 
-"@graphql-toolkit/file-loading@^0.10.6":
-  version "0.10.6"
-  resolved "https://registry.yarnpkg.com/@graphql-toolkit/file-loading/-/file-loading-0.10.6.tgz#27af8c1856fbc3dc0f36cace9001107fa2620713"
-  integrity sha512-ezydYtzz+4lXjRrYkn7L5Cp/SbcdoGbKUBS8gTXX0Bq3C8mUXte0XL3oNwqR7k9enNNtD55MxYGCXG8qpr6yxQ==
+"@graphql-toolkit/file-loading@^0.10.7":
+  version "0.10.7"
+  resolved "https://registry.yarnpkg.com/@graphql-toolkit/file-loading/-/file-loading-0.10.7.tgz#d2778d5e0d66ec0faf4dbb22cf5f36dbaad3c8b4"
+  integrity sha512-rmGCIQWckry4jxKrrSZxU+70isZEOroCs7WptJVHNWkxixTxbJc85yxbTOKvXjG7BuLO7XTzN6mfMy9H/1NIAw==
   dependencies:
     globby "11.0.0"
     unixify "1.0.0"
