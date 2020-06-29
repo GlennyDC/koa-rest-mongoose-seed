@@ -1,38 +1,23 @@
-import Koa from 'koa';
+import http from 'http';
 
+import { app } from './app';
 import { config } from './config';
-import { makeLogger, applyMiddleware } from './core';
-import { installApolloServer } from './installApolloServer';
+import { makeLogger } from './core';
 
 const PORT = config.server.port;
 const HOST_NAME = config.server.hostName;
 
-const app = new Koa();
+const logger = makeLogger('server');
 
-applyMiddleware(app);
-
-const logger = makeLogger('app');
-
-installApolloServer(app);
-
-const server = app.listen(PORT, HOST_NAME, () => {
+const server = http.createServer(app.callback()).listen(PORT, HOST_NAME, () => {
   logger.info(
     `Server ready at ${HOST_NAME}:${PORT} in ${process.env.NODE_ENV} mode`,
   );
 });
 
-// Log any handled Koa error (will probably never occur
-// except for 404 Not found)
-app.on('error', (err) => {
-  logger.info(
-    'Following error was correctly handled in error middleware: ',
-    err,
-  );
-});
-
 // Graceful shutdown of the server
 const shutdown = (): void => {
-  logger.warn('Starting shutdown of server...');
+  logger.info('Starting shutdown of server...');
   server.close((err) => {
     if (err) {
       logger.error(`Could not gracefully close server: `, err);
