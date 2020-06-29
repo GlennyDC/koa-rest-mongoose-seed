@@ -1,5 +1,6 @@
 import { loadFiles } from '@graphql-toolkit/file-loading';
-import { makeExecutableSchema, IResolvers } from 'apollo-server-koa';
+import { makeExecutableSchema } from 'apollo-server-koa';
+import type { IResolvers } from 'apollo-server-koa';
 import { join } from 'path';
 
 // TODO: Types

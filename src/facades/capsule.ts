@@ -1,6 +1,6 @@
 import { makeLogger } from '../core';
 import { capsuleService } from '../services';
-import { Capsule } from '../types';
+import type { Capsule } from '../types';
 
 const logger = makeLogger('facade - capsule');
 

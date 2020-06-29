@@ -1,7 +1,7 @@
 import { makeLogger } from '../core';
 import { capsuleRepo } from '../integrations';
 import { capsuleMappers } from '../mappers';
-import { Capsule } from '../types';
+import type { Capsule } from '../types';
 
 const logger = makeLogger('service - capsule');
 

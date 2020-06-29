@@ -1,4 +1,4 @@
-import Koa from 'koa';
+import type Koa from 'koa';
 
 /**
  * Extract the provided JWT (if any) from the authorization header.

@@ -1,7 +1,7 @@
 import { sign, verify } from 'jsonwebtoken';
 
 import { config } from '../../config';
-import { TokenPayload } from '../types';
+import type { TokenPayload } from '../types';
 
 const AUTH_TOKEN_ISSUER = config.auth.tokenIssuer;
 const AUTH_TOKEN_AUDIENCE = config.auth.tokenAudience;

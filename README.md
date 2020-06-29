@@ -42,14 +42,14 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - [ ] Apply pretty much everything from https://github.com/goldbergyoni/nodebestpractices
 - [ ] CI (switch to GitLab?)
 - [ ] CD (switch to GitLab?)
-- [ ] Bump dependency versions
-- [ ] Add automatic resolver types with https://graphql-code-generator.com/
+- [x] Bump dependency versions
+- [x] Add automatic resolver types with https://graphql-code-generator.com/
 - [ ] Add tests (Jest?)
 - [ ] Add test coverage (Istanbul?)
 - [x] Add robust GraphQL input validation with Joi
 - [x] Add common middlewares such as koa-helmet, cors, ...
 - [ ] Add JSDoc to HTML generator
-- [ ] Add `import type` where necessary
+- [x] Add `import type` where necessary
 - [ ] Add a database (PostgreSQl?, MongoDb?)
 - [ ] Add an ORM (Sequelize?, Mongoose?)
 - [ ] Figure out a robust and almost transparent for front-end refetch token mechanism

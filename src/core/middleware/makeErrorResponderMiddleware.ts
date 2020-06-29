@@ -1,4 +1,4 @@
-import Koa from 'koa';
+import type Koa from 'koa';
 
 /**
  * Make a Koa error responder middleware in case an error occurs.

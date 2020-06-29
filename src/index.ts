@@ -9,13 +9,13 @@ const HOST_NAME = config.server.hostName;
 
 const logger = makeLogger('server');
 
-const server = http
-  .createServer(createApp().callback())
-  .listen(PORT, HOST_NAME, () => {
-    logger.info(
-      `Server ready at ${HOST_NAME}:${PORT} in ${process.env.NODE_ENV} mode`,
-    );
-  });
+const app = createApp();
+
+const server = http.createServer(app.callback()).listen(PORT, HOST_NAME, () => {
+  logger.info(
+    `Server ready at ${HOST_NAME}:${PORT} in ${process.env.NODE_ENV} mode`,
+  );
+});
 
 // Graceful shutdown of the server
 const shutdown = (): void => {

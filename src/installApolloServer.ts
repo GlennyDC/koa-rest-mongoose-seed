@@ -1,5 +1,5 @@
 import { ApolloServer } from 'apollo-server-koa';
-import Koa from 'koa';
+import type Koa from 'koa';
 
 import { config } from './config';
 import { transformGraphQLError } from './core';

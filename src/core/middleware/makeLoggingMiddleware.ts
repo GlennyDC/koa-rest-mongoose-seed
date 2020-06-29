@@ -1,5 +1,5 @@
 import { createNamespace } from 'cls-hooked';
-import Koa from 'koa';
+import type Koa from 'koa';
 import { nanoid } from 'nanoid';
 
 const loggingNamespace = createNamespace('logging');
