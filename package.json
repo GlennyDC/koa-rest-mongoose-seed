@@ -17,7 +17,7 @@
     "build:ts": "tsc -p tsconfig.json",
     "copy:gql": "copyfiles -u 1 src/schema/**/*.gql dist/",
     "generate:gql-types": "graphql-codegen --config codegen.yml",
-    "watch:gql": "graphql-codegen --config codegen.yml --watch 'src/schema/**/*.gql'",
+    "watch:gql-types": "graphql-codegen --config codegen.yml --watch 'src/schema/**/*.gql'",
     "test": "echo \"Error: no tests yet\" && exit 1",
     "lint": "eslint . --cache --ext .ts,.json",
     "lint:fix": "eslint . --cache --ext .ts,.json --fix"
