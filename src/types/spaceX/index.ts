@@ -1,1 +1,0 @@
-export { SpaceXCapsule } from './capsule';

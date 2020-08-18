@@ -1,1 +1,0 @@
-export { Capsule } from './capsule';

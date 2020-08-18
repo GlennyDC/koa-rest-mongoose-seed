@@ -1,0 +1,9 @@
+extend type Book {
+  categories: [Category!]!
+}
+
+type Category {
+  id: ID!
+  title: String!
+  isFun: Boolean!
+}

@@ -27,6 +27,7 @@
     "@hapi/joi": "^17.1.1",
     "apollo-server-koa": "^2.15.0",
     "cls-hooked": "^4.2.2",
+    "dataloader": "^2.0.0",
     "graphql": "^14",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.0",
@@ -37,6 +38,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@graphql-codegen/add": "^2.0.1",
     "@graphql-codegen/cli": "1.15.4",
     "@graphql-codegen/typescript": "1.15.4",
     "@graphql-codegen/typescript-resolvers": "1.15.4",
