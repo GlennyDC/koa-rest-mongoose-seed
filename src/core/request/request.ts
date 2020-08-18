@@ -2,10 +2,10 @@ import fetch, { Headers } from 'node-fetch';
 import { stringify, ParsedUrlQueryInput } from 'querystring';
 
 import { RequestError } from '../error';
-import { makeLogger } from '../logging';
+import { createLogger } from '../logging';
 import { HTTPMethod } from './httpMethod';
 
-const logger = makeLogger('core - request');
+const logger = createLogger('core - request');
 
 /**
  * Make a query string for a URL.

@@ -1,8 +1,8 @@
-import { makeLogger } from '../core';
+import { createLogger } from '../core';
 import { capsuleService } from '../services';
 import type { Capsule } from '../types';
 
-const logger = makeLogger('facade - capsule');
+const logger = createLogger('facade - capsule');
 
 interface QueryArgs {
   limit?: number;

@@ -1,7 +1,7 @@
-import { request, IntegrationError, makeLogger } from '../../core';
+import { request, IntegrationError, createLogger } from '../../core';
 import type { SpaceXCapsule } from '../../types';
 
-const logger = makeLogger('SpaceX - capsule');
+const logger = createLogger('SpaceX - capsule');
 
 const getCapsules = async (
   limit: number,

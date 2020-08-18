@@ -1,9 +1,9 @@
-import { makeLogger } from '../core';
+import { createLogger } from '../core';
 import { capsuleRepo } from '../integrations';
 import { capsuleMappers } from '../mappers';
 import type { Capsule } from '../types';
 
-const logger = makeLogger('service - capsule');
+const logger = createLogger('service - capsule');
 
 const getCapsules = async (
   limit: number,

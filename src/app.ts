@@ -1,9 +1,9 @@
 import Koa from 'koa';
 
-import { makeLogger, applyMiddleware } from './core';
+import { createLogger, applyMiddleware } from './core';
 import { installApolloServer } from './installApolloServer';
 
-const logger = makeLogger('app');
+const logger = createLogger('app');
 
 const createApp = (): Koa => {
   logger.info('Starting creation of app...');

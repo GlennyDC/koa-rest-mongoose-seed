@@ -2,12 +2,12 @@ import http from 'http';
 
 import { createApp } from './app';
 import { config } from './config';
-import { makeLogger } from './core';
+import { createLogger } from './core';
 
 const PORT = config.server.port;
 const HOST_NAME = config.server.hostName;
 
-const logger = makeLogger('server');
+const logger = createLogger('server');
 
 const app = createApp();
 

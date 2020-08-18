@@ -1,12 +1,11 @@
 import { getNamespace } from 'cls-hooked';
 import { Format, TransformableInfo } from 'logform';
-import { createLogger, format, transports, Logger } from 'winston';
+import winston from 'winston';
 
 import { config } from '../../config';
 
 const LOGGING_LEVEL = config.server.logging.level;
 const ENABLE_CONSOLE_LOGGING = config.server.logging.console;
-const ENABLE_FILE_LOGGING = config.server.logging.file;
 
 /**
  * Make the format for console logs.
@@ -14,10 +13,10 @@ const ENABLE_FILE_LOGGING = config.server.logging.file;
  * @returns {Format} The Winston Console transport format
  */
 const makeConsoleFormat = (): Format =>
-  format.combine(
-    format.colorize({ message: true }),
-    format.timestamp(),
-    format.printf((info) => {
+  winston.format.combine(
+    winston.format.colorize({ message: true }),
+    winston.format.timestamp(),
+    winston.format.printf((info) => {
       const loggingNamespace = getNamespace('logging');
       const requestId = loggingNamespace.get('requestId');
       const { level, message, timestamp, moduleName } = info;
@@ -31,7 +30,7 @@ const makeConsoleFormat = (): Format =>
 /**
  * Make the format for file logs.
  *
- * @returns {Format} The Winston File transport format
+ * @returns {Format} The Winston File transport winston.format
  */
 const makeFileFormat = (): Format => {
   const message = Symbol.for('message');
@@ -44,33 +43,29 @@ const makeFileFormat = (): Format => {
     return logEntry;
   };
 
-  return format.combine(format.timestamp(), format(jsonFormatter)());
+  return winston.format.combine(
+    winston.format.timestamp(),
+    winston.format(jsonFormatter)(),
+  );
 };
 
 /**
- * Make a logger.
+ * Create a logger.
  *
- * @param {string} moduleName - The name of the module wich will use the logger
+ * @param {string} moduleName - The name of the module which will use the logger
  *
- * @returns {Logger} A Winston logger
+ * @returns {winston.Logger} A Winston logger
  */
-const makeLogger = (moduleName: string): Logger =>
-  createLogger({
+const createLogger = (moduleName: string): winston.Logger =>
+  winston.createLogger({
     level: LOGGING_LEVEL,
     transports: [
-      new transports.Console({
+      new winston.transports.Console({
         format: makeConsoleFormat(),
         silent: !ENABLE_CONSOLE_LOGGING,
-      }),
-      new transports.File({
-        filename: 'app.log',
-        maxsize: 5242880, // 5 MB (binary)
-        maxFiles: 5,
-        format: makeFileFormat(),
-        silent: !ENABLE_FILE_LOGGING,
       }),
     ],
     defaultMeta: { moduleName },
   });
 
-export { makeLogger };
+export { createLogger };
