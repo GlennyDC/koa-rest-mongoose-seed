@@ -1,13 +1,15 @@
 import { createLogger } from '../../global';
 import { Author } from './author';
 import { authors } from './author.data';
+import { db } from './author.model';
 
 const logger = createLogger('author-service');
 
 export const getAuthors = async (limit: number): Promise<Author[]> => {
   logger.verbose(`Get authors with a limit of [${limit}]`);
 
-  return authors.slice(0, limit);
+  const authors = await db.find({}).limit(limit);
+  return authors;
 };
 
 export const getAuthorsByIds = async (
