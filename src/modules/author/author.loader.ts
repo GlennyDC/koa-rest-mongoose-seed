@@ -8,8 +8,9 @@ const loaderFn = async (
 ): Promise<(Author | Error)[]> => {
   const authors = await authorService.getAuthorsByIds(keys);
 
-  const authorMap = new Map<string, Author>();
-  authors.forEach((author) => authorMap.set(author.id, author));
+  const authorMap = new Map<string, Author>(
+    authors.map((author) => [author.id, author]),
+  );
 
   return keys.map(
     (key) => authorMap.get(key) || new Error(`No result for key [${key}]`),
@@ -18,5 +19,5 @@ const loaderFn = async (
 
 export type AuthorLoader = DataLoader<string, Author>;
 
-export const makeAuthorLoader = (): AuthorLoader =>
+export const createAuthorLoader = (): AuthorLoader =>
   new DataLoader<string, Author>(loaderFn);

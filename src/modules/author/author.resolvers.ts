@@ -7,14 +7,10 @@ const logger = createLogger('author-resolver');
 
 const authorResolvers: Resolvers = {
   Book: {
-    authors: async (
-      { id, authorIds },
-      _,
-      { authorLoader },
-    ): Promise<Author[]> => {
-      logger.silly(`Get all authors of book [${id}]`);
+    authors: async (args, _, ctx): Promise<Author[]> => {
+      logger.silly(`Get all authors of book [${args.id}]`);
 
-      const authors = await authorLoader.loadMany(authorIds);
+      const authors = await ctx.authorLoader.loadMany(args.authorIds);
 
       return authors as Author[];
     },
