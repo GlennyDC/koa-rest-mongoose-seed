@@ -1,11 +1,19 @@
 version: '3.8'
 services:
+  db:
+    image: 'mongo'
+    ports:
+      - '27017:27017'
+    logging:
+      driver: 'none'
   api:
     build:
       context: .
       dockerfile: Dockerfile.dev
     ports:
       - '3000:3000'
+    depends_on:
+      - db
     volumes:
       # Don't do this: - .:/app:delegated, this will cause a lot of problems
       # with the node_modules being mounted from the host, you never want to
