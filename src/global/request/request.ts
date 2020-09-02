@@ -5,7 +5,7 @@ import { RequestError } from '../error';
 import { createLogger } from '../logging';
 import { HTTPMethod } from './httpMethod';
 
-const logger = createLogger('core - request');
+const logger = createLogger('request');
 
 /**
  * Make a query string for a URL.

@@ -1,4 +1,4 @@
-import { request, IntegrationError, createLogger } from '../../core';
+import { request, IntegrationError, createLogger } from '../../global';
 import type { SpaceXCapsule } from './capsule';
 
 const logger = createLogger('SpaceX - capsule');

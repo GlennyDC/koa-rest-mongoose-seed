@@ -1,7 +1,6 @@
 import Joi from '@hapi/joi';
 
-import { validateArgs } from '../../core';
-import { Resolvers } from '../../global';
+import { Resolvers, validateArgs } from '../../global';
 import { Capsule } from './capsule';
 import * as capsuleService from './capsule.service';
 

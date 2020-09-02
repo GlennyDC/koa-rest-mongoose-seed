@@ -1,5 +1,4 @@
-import { createLogger } from '../../core';
-import { Resolvers } from '../../global';
+import { Resolvers, createLogger } from '../../global';
 import { Book } from './book';
 import * as bookService from './book.service';
 

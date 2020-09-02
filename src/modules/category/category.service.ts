@@ -1,4 +1,4 @@
-import { createLogger } from '../../core';
+import { createLogger } from '../../global';
 import { Category } from './category';
 import { categories } from './category.data';
 

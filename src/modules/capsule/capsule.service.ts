@@ -1,4 +1,4 @@
-import { createLogger } from '../../core';
+import { createLogger } from '../../global';
 import type { Capsule } from './capsule';
 import { mapSpaceXCapsuleToCapsule } from './capsule.mappers';
 import * as capsuleRepo from './capsule.spacex';

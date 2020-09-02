@@ -2,7 +2,7 @@ import http from 'http';
 
 import { createApp } from './app';
 import { config } from './config';
-import { createLogger } from './core';
+import { createLogger } from './global';
 
 const PORT = config.server.port;
 const HOST_NAME = config.server.hostName;

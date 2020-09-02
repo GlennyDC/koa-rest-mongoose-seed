@@ -1,7 +1,7 @@
 import Koa from 'koa';
 
-import { createLogger, applyMiddleware } from './core';
-import { installApolloServer } from './core/installApolloServer';
+import { createLogger, applyMiddleware } from './global';
+import { installApolloServer } from './global/installApolloServer';
 
 const logger = createLogger('app');
 

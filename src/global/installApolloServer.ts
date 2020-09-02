@@ -5,8 +5,8 @@ import { GraphQLSchema } from 'graphql';
 import type Koa from 'koa';
 import { join } from 'path';
 
-import { transformGraphQLError } from '.';
 import { config } from '../config';
+import { transformGraphQLError } from './error';
 
 const EXPOSE_ERROR_STACKTRACES = config.server.graphql.exposeErrorStackTraces;
 const ENABLE_PLAYGROUND = config.server.graphql.enablePlayground;

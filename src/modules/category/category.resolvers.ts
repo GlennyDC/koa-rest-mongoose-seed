@@ -1,5 +1,4 @@
-import { createLogger } from '../../core';
-import { Resolvers } from '../../global';
+import { Resolvers, createLogger } from '../../global';
 import { Category } from './category';
 
 const logger = createLogger('category-resolver');

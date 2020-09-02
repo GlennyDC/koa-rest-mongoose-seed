@@ -1,4 +1,4 @@
-import { makeToken } from '../../core';
+import { makeToken } from '../../global';
 import * as userService from '../user/user.service';
 
 export const login = async (email: string, password: string) => {

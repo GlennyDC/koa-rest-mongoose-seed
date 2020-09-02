@@ -1,4 +1,4 @@
-import { createLogger } from '../../core';
+import { createLogger } from '../../global';
 import { Author } from './author';
 import { authors } from './author.data';
 
