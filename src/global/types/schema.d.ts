@@ -275,7 +275,7 @@ export type QueryResolvers<ContextType = Context, ParentType extends ResolversPa
   book?: Resolver<ResolversTypes['Book'], ParentType, ContextType, RequireFields<QueryBookArgs, 'id'>>;
   books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType, RequireFields<QueryBooksArgs, never>>;
   capsule?: Resolver<ResolversTypes['Capsule'], ParentType, ContextType, RequireFields<QueryCapsuleArgs, 'id'>>;
-  capsules?: Resolver<Array<ResolversTypes['Capsule']>, ParentType, ContextType, RequireFields<QueryCapsulesArgs, never>>;
+  capsules?: Resolver<Array<ResolversTypes['Capsule']>, ParentType, ContextType, RequireFields<QueryCapsulesArgs, 'limit' | 'offset' | 'order' | 'sort'>>;
 };
 
 export type UserResolvers<ContextType = Context, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {

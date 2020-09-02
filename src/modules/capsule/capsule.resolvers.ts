@@ -15,7 +15,12 @@ const capsuleResolvers: Resolvers = {
 
       await validateArgs(args, schema);
 
-      return capsuleService.getCapsules(...args);
+      return capsuleService.getCapsules(
+        args.limit,
+        args.offset,
+        args.order,
+        args.sort,
+      );
     },
     capsule: async (_: any, args: any): Promise<Capsule> => {
       const { id } = args;

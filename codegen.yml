@@ -1,6 +1,5 @@
-overwrite: true
 schema: src/modules/**/*.gql
-silent: true
+silent: false
 generates:
   src/global/types/schema.d.ts:
     plugins:
