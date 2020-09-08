@@ -1,13 +1,15 @@
 import { sign, verify } from 'jsonwebtoken';
 
-import { config } from '../../config';
+import { getConfig } from '../config';
 import type { TokenPayload } from '../types';
 
-const AUTH_TOKEN_ISSUER = config.auth.tokenIssuer;
-const AUTH_TOKEN_AUDIENCE = config.auth.tokenAudience;
-const AUTH_TOKEN_SECRET = config.auth.tokenSecret;
-const AUTH_TOKEN_SUBJECT = config.auth.tokenSubject;
-const AUTH_TOKEN_EXPIRATION_INTERVAL = config.auth.tokenExpirationInterval;
+const AUTH_TOKEN_ISSUER = getConfig<string>('AUTH_TOKEN_ISSUER');
+const AUTH_TOKEN_AUDIENCE = getConfig<string>('AUTH_TOKEN_AUDIENCE');
+const AUTH_TOKEN_SUBJECT = getConfig<string>('AUTH_TOKEN_SUBJECT');
+const AUTH_TOKEN_SECRET = getConfig<string>('AUTH_TOKEN_SECRET');
+const AUTH_TOKEN_EXPIRATION_INTERVAL = getConfig<number>(
+  'AUTH_TOKEN_EXPIRATION_INTERVAL',
+);
 
 /**
  * Verify a JWT.

@@ -2,10 +2,9 @@ import { getNamespace } from 'cls-hooked';
 import { Format, TransformableInfo } from 'logform';
 import winston from 'winston';
 
-import { config } from '../../config';
+import { getConfig } from '../config';
 
-const LOGGING_LEVEL = config.server.logging.level;
-const ENABLE_CONSOLE_LOGGING = config.server.logging.console;
+const LOGGING_LEVEL = getConfig<string>('LOGGING_LEVEL');
 
 /**
  * Make the format for console logs.
@@ -62,7 +61,6 @@ const createLogger = (moduleName: string): winston.Logger =>
     transports: [
       new winston.transports.Console({
         format: makeConsoleFormat(),
-        silent: !ENABLE_CONSOLE_LOGGING,
       }),
     ],
     defaultMeta: { moduleName },

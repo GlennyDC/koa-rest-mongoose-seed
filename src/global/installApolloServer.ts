@@ -5,12 +5,18 @@ import { GraphQLSchema } from 'graphql';
 import type Koa from 'koa';
 import { join } from 'path';
 
-import { config } from '../config';
+import { getConfig } from './config';
 import { transformGraphQLError } from './error';
 
-const EXPOSE_ERROR_STACKTRACES = config.server.graphql.exposeErrorStackTraces;
-const ENABLE_PLAYGROUND = config.server.graphql.enablePlayground;
-const ENABLE_INTROSPECTION = config.server.graphql.enableIntrospection;
+const ENABLE_GRAPHQL_PLAYGROUND = getConfig<boolean>(
+  'ENABLE_GRAPHQL_PLAYGROUND',
+);
+const ENABLE_GRAPHQL_INTROSPECTION = getConfig<boolean>(
+  'ENABLE_GRAPHQL_INTROSPECTION',
+);
+const EXPOSE_ERROR_STACK_TRACES = getConfig<boolean>(
+  'EXPOSE_ERROR_STACK_TRACES',
+);
 
 const bootstrapSchema = (): GraphQLSchema => {
   const typeDefs = loadFiles<string>(
@@ -30,9 +36,9 @@ const installApolloServer = (app: Koa): void => {
   const schema = bootstrapSchema();
   const apolloServer = new ApolloServer({
     schema,
-    debug: EXPOSE_ERROR_STACKTRACES,
-    playground: ENABLE_PLAYGROUND,
-    introspection: ENABLE_INTROSPECTION,
+    debug: EXPOSE_ERROR_STACK_TRACES,
+    playground: ENABLE_GRAPHQL_PLAYGROUND,
+    introspection: ENABLE_GRAPHQL_INTROSPECTION,
     formatError: transformGraphQLError,
   });
   apolloServer.applyMiddleware({ app });

@@ -1,11 +1,10 @@
 import http from 'http';
 
 import { createApp } from './app';
-import { config } from './config';
-import { createLogger } from './global';
+import { createLogger, getConfig } from './global';
 
-const PORT = config.server.port;
-const HOST_NAME = config.server.hostName;
+const SERVER_PORT = getConfig<number>('SERVER_PORT');
+const SERVER_HOSTNAME = getConfig<string>('SERVER_HOSTNAME');
 
 const logger = createLogger('server');
 
@@ -15,9 +14,9 @@ const logger = createLogger('server');
 
     const server = http
       .createServer(app.callback())
-      .listen(PORT, HOST_NAME, () => {
+      .listen(SERVER_PORT, SERVER_HOSTNAME, () => {
         logger.info(
-          `Server ready at ${HOST_NAME}:${PORT} in ${process.env.NODE_ENV} mode`,
+          `Server ready at ${SERVER_HOSTNAME}:${SERVER_PORT} in ${process.env.NODE_ENV} mode`,
         );
       });
 

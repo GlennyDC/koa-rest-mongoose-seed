@@ -1,10 +1,10 @@
 import type { GraphQLError, GraphQLFormattedError } from 'graphql';
 
-import { config } from '../../config';
+import { getConfig } from '../config';
 import { ErrorCode } from './errorCode';
 import { BaseError } from './errors/baseError';
 
-const EXPOSE_UNKNOWN_ERRORS = config.server.graphql.exposeUnknownErrors;
+const EXPOSE_UNKNOWN_ERRORS = getConfig<boolean>('EXPOSE_UNKNOWN_ERRORS');
 
 type Extensions = Record<string, any> & { code: string };
 type KnownGraphQLError = GraphQLError & { originalError: BaseError };
