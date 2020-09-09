@@ -2,7 +2,7 @@ import { getNamespace } from 'cls-hooked';
 import { Format, TransformableInfo } from 'logform';
 import winston from 'winston';
 
-import { getEnvironmentVariable } from '../getEnvironmentVariable';
+import { getEnvironmentVariable } from './getEnvironmentVariable';
 
 const LOGGING_LEVEL = getEnvironmentVariable<string>('LOGGING_LEVEL');
 

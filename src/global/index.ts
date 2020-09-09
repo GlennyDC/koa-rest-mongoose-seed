@@ -1,5 +1,5 @@
 export { Resolvers } from './types';
-export { createLogger } from './logging';
+export { createLogger } from './createLogger';
 export { makeToken, assertAuthenticated, assertAuthorized } from './auth';
 export { IntegrationError, transformGraphQLError } from './error';
 export { request } from './request';
