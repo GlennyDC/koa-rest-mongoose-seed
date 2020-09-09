@@ -19,23 +19,6 @@ export type Scalars = {
   Float: number;
 };
 
-export type Mutation = {
-  __typename?: 'Mutation';
-  login?: Maybe<Auth>;
-};
-
-
-export type MutationLoginArgs = {
-  email: Scalars['String'];
-  password: Scalars['String'];
-};
-
-export type Auth = {
-  __typename?: 'Auth';
-  accessToken: Scalars['String'];
-  user: User;
-};
-
 export type Book = {
   __typename?: 'Book';
   authors: Array<Author>;
@@ -111,11 +94,35 @@ export enum Sort {
   Desc = 'DESC'
 }
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  register: Auth;
+  login?: Maybe<Auth>;
+};
+
+
+export type MutationRegisterArgs = {
+  emailAddress: Scalars['String'];
+  password: Scalars['String'];
+};
+
+
+export type MutationLoginArgs = {
+  emailAddress: Scalars['String'];
+  password: Scalars['String'];
+};
+
 export type User = {
   __typename?: 'User';
   id: Scalars['ID'];
-  email: Scalars['String'];
+  emailAddress: Scalars['String'];
   roles: Array<Scalars['String']>;
+};
+
+export type Auth = {
+  __typename?: 'Auth';
+  accessToken: Scalars['String'];
+  user: User;
 };
 
 
@@ -196,11 +203,9 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Mutation: ResolverTypeWrapper<{}>;
-  String: ResolverTypeWrapper<Scalars['String']>;
-  Auth: ResolverTypeWrapper<Auth>;
   Book: ResolverTypeWrapper<IBook>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
+  String: ResolverTypeWrapper<Scalars['String']>;
   Query: ResolverTypeWrapper<{}>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   Author: ResolverTypeWrapper<IAuthor>;
@@ -208,33 +213,25 @@ export type ResolversTypes = {
   Category: ResolverTypeWrapper<ICategory>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Sort: Sort;
+  Mutation: ResolverTypeWrapper<{}>;
   User: ResolverTypeWrapper<User>;
+  Auth: ResolverTypeWrapper<Auth>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Mutation: {};
-  String: Scalars['String'];
-  Auth: Auth;
   Book: IBook;
   ID: Scalars['ID'];
+  String: Scalars['String'];
   Query: {};
   Int: Scalars['Int'];
   Author: IAuthor;
   Capsule: Capsule;
   Category: ICategory;
   Boolean: Scalars['Boolean'];
+  Mutation: {};
   User: User;
-};
-
-export type MutationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  login?: Resolver<Maybe<ResolversTypes['Auth']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'email' | 'password'>>;
-};
-
-export type AuthResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Auth'] = ResolversParentTypes['Auth']> = {
-  accessToken?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
+  Auth: Auth;
 };
 
 export type BookResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = {
@@ -278,22 +275,33 @@ export type CategoryResolvers<ContextType = Context, ParentType extends Resolver
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
+export type MutationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  register?: Resolver<ResolversTypes['Auth'], ParentType, ContextType, RequireFields<MutationRegisterArgs, 'emailAddress' | 'password'>>;
+  login?: Resolver<Maybe<ResolversTypes['Auth']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'emailAddress' | 'password'>>;
+};
+
 export type UserResolvers<ContextType = Context, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  emailAddress?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   roles?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
+export type AuthResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Auth'] = ResolversParentTypes['Auth']> = {
+  accessToken?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
+};
+
 export type Resolvers<ContextType = Context> = {
-  Mutation?: MutationResolvers<ContextType>;
-  Auth?: AuthResolvers<ContextType>;
   Book?: BookResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Author?: AuthorResolvers<ContextType>;
   Capsule?: CapsuleResolvers<ContextType>;
   Category?: CategoryResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
+  Auth?: AuthResolvers<ContextType>;
 };
 
 

@@ -1,10 +1,17 @@
+import { Resolvers, createLogger } from '../../global';
 import * as userService from './user.service';
 
-const UserResolvers = {
+const logger = createLogger('author-resolver');
+
+const UserResolvers: Resolvers = {
   Mutation: {
-    login: async (root: any, args: any, ctx: any) => {
-      const { email, password } = args;
-      return userService.login(email, password);
+    register: async (root, args, ctx) => {
+      const { emailAddress, password } = args;
+      return userService.register(emailAddress, password);
+    },
+    login: async (root, args, ctx) => {
+      const { emailAddress, password } = args;
+      return userService.login(emailAddress, password);
     },
   },
 };

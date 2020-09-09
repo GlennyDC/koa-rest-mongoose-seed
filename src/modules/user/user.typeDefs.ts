@@ -2,12 +2,13 @@ import { gql } from 'apollo-server-koa';
 
 const userTypeDefs = gql`
   extend type Mutation {
-    login(email: String!, password: String!): Auth
+    register(emailAddress: String!, password: String!): Auth!
+    login(emailAddress: String!, password: String!): Auth
   }
 
   type User {
     id: ID!
-    email: String!
+    emailAddress: String!
     roles: [String!]!
   }
 
