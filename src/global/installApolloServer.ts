@@ -20,7 +20,7 @@ const EXPOSE_ERROR_STACK_TRACES = getEnvironmentVariable<boolean>(
 
 const bootstrapSchema = (): GraphQLSchema => {
   const typeDefs = loadFiles<string>(
-    join(__dirname, '../modules/**/*.typeDefs.gql'),
+    join(__dirname, '../modules/**/*.typeDefs.ts'),
   );
   const resolvers = loadFiles<IResolvers>(
     join(__dirname, '../modules/**/*.resolvers.*'),
