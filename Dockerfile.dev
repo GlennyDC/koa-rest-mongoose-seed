@@ -1,4 +1,4 @@
-FROM node:14.4.0-alpine
+FROM node:14.9.0-alpine
 ENV NODE_ENV=development
 RUN mkdir /app && chown -R node:node /app
 WORKDIR /app
