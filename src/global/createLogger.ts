@@ -17,10 +17,12 @@ const makeConsoleFormat = (): Format =>
     winston.format.timestamp(),
     winston.format.printf((info) => {
       const loggingNamespace = getNamespace('logging');
-      const requestId = loggingNamespace.get('requestId');
       const { level, message, timestamp, moduleName } = info;
-      if (requestId) {
-        return `[${timestamp}] [${requestId}] [${level}] [${moduleName}] - ${message}`;
+      if (loggingNamespace) {
+        const requestId = loggingNamespace.get('requestId');
+        if (requestId) {
+          return `[${timestamp}] [${requestId}] [${level}] [${moduleName}] - ${message}`;
+        }
       }
       return `[${timestamp}] [${level}] [${moduleName}] - ${message}`;
     }),
@@ -35,7 +37,7 @@ const makeFileFormat = (): Format => {
   const message = Symbol.for('message');
   const jsonFormatter = (logEntry: any): TransformableInfo => {
     const loggingNamespace = getNamespace('logging');
-    const requestId = loggingNamespace.get('requestId');
+    const requestId = loggingNamespace && loggingNamespace.get('requestId'); // FIXME
     const base = { requestId };
     const json = Object.assign(base, logEntry);
     logEntry[message] = JSON.stringify(json);
