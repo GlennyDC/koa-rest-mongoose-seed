@@ -1,5 +1,5 @@
 import { loadFiles } from '@graphql-toolkit/file-loading';
-import { ApolloServer, makeExecutableSchema } from 'apollo-server-koa';
+import { ApolloServer, makeExecutableSchema, gql } from 'apollo-server-koa';
 import type { IResolvers } from 'apollo-server-koa';
 import { GraphQLSchema } from 'graphql';
 import type Koa from 'koa';
@@ -19,14 +19,23 @@ const EXPOSE_ERROR_STACK_TRACES = getEnvironmentVariable<boolean>(
 );
 
 const bootstrapSchema = (): GraphQLSchema => {
+  const queryTypeDef = gql`
+    type Query
+  `;
+
+  const mutationTypeDef = gql`
+    type Mutation
+  `;
+
   const typeDefs = loadFiles<string>(
     join(__dirname, '../modules/**/*.typeDefs.ts'),
   );
+
   const resolvers = loadFiles<IResolvers>(
     join(__dirname, '../modules/**/*.resolvers.*'),
   );
   const schema = makeExecutableSchema({
-    typeDefs,
+    typeDefs: [queryTypeDef, mutationTypeDef, ...typeDefs],
     resolvers,
   });
   return schema;
