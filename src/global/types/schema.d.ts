@@ -19,45 +19,6 @@ export type Scalars = {
   Float: number;
 };
 
-export type Auth = {
-  __typename?: 'Auth';
-  accessToken: Scalars['String'];
-  user: User;
-};
-
-export type Author = {
-  __typename?: 'Author';
-  age: Scalars['Int'];
-  books: Array<Book>;
-  id: Scalars['ID'];
-  name: Scalars['String'];
-};
-
-export type Book = {
-  __typename?: 'Book';
-  authors: Array<Author>;
-  categories: Array<Category>;
-  id: Scalars['ID'];
-  title: Scalars['String'];
-};
-
-export type Capsule = {
-  __typename?: 'Capsule';
-  id: Scalars['ID'];
-  landings: Scalars['Int'];
-  status: Scalars['String'];
-  originalLaunch: Scalars['String'];
-  type: Scalars['String'];
-  reuseCount: Scalars['Int'];
-};
-
-export type Category = {
-  __typename?: 'Category';
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  isFun: Scalars['Boolean'];
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   login?: Maybe<Auth>;
@@ -67,6 +28,20 @@ export type Mutation = {
 export type MutationLoginArgs = {
   email: Scalars['String'];
   password: Scalars['String'];
+};
+
+export type Auth = {
+  __typename?: 'Auth';
+  accessToken: Scalars['String'];
+  user: User;
+};
+
+export type Book = {
+  __typename?: 'Book';
+  authors: Array<Author>;
+  categories: Array<Category>;
+  id: Scalars['ID'];
+  title: Scalars['String'];
 };
 
 export type Query = {
@@ -104,6 +79,31 @@ export type QueryCapsulesArgs = {
   offset?: Maybe<Scalars['Int']>;
   order?: Maybe<Scalars['String']>;
   sort?: Maybe<Sort>;
+};
+
+export type Author = {
+  __typename?: 'Author';
+  age: Scalars['Int'];
+  books: Array<Book>;
+  id: Scalars['ID'];
+  name: Scalars['String'];
+};
+
+export type Capsule = {
+  __typename?: 'Capsule';
+  id: Scalars['ID'];
+  landings: Scalars['Int'];
+  status: Scalars['String'];
+  originalLaunch: Scalars['String'];
+  type: Scalars['String'];
+  reuseCount: Scalars['Int'];
+};
+
+export type Category = {
+  __typename?: 'Category';
+  id: Scalars['ID'];
+  title: Scalars['String'];
+  isFun: Scalars['Boolean'];
 };
 
 export enum Sort {
@@ -196,35 +196,39 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
+  Mutation: ResolverTypeWrapper<{}>;
+  String: ResolverTypeWrapper<Scalars['String']>;
+  Auth: ResolverTypeWrapper<Auth>;
+  Book: ResolverTypeWrapper<IBook>;
+  ID: ResolverTypeWrapper<Scalars['ID']>;
   Query: ResolverTypeWrapper<{}>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   Author: ResolverTypeWrapper<IAuthor>;
-  Book: ResolverTypeWrapper<IBook>;
-  Category: ResolverTypeWrapper<ICategory>;
-  ID: ResolverTypeWrapper<Scalars['ID']>;
-  String: ResolverTypeWrapper<Scalars['String']>;
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Capsule: ResolverTypeWrapper<Capsule>;
+  Category: ResolverTypeWrapper<ICategory>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Sort: Sort;
-  Mutation: ResolverTypeWrapper<{}>;
-  Auth: ResolverTypeWrapper<Auth>;
   User: ResolverTypeWrapper<User>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
+  Mutation: {};
+  String: Scalars['String'];
+  Auth: Auth;
+  Book: IBook;
+  ID: Scalars['ID'];
   Query: {};
   Int: Scalars['Int'];
   Author: IAuthor;
-  Book: IBook;
-  Category: ICategory;
-  ID: Scalars['ID'];
-  String: Scalars['String'];
-  Boolean: Scalars['Boolean'];
   Capsule: Capsule;
-  Mutation: {};
-  Auth: Auth;
+  Category: ICategory;
+  Boolean: Scalars['Boolean'];
   User: User;
+};
+
+export type MutationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  login?: Resolver<Maybe<ResolversTypes['Auth']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'email' | 'password'>>;
 };
 
 export type AuthResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Auth'] = ResolversParentTypes['Auth']> = {
@@ -233,19 +237,27 @@ export type AuthResolvers<ContextType = Context, ParentType extends ResolversPar
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
-export type AuthorResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']> = {
-  age?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType>;
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
-};
-
 export type BookResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = {
   authors?: Resolver<Array<ResolversTypes['Author']>, ParentType, ContextType>;
   categories?: Resolver<Array<ResolversTypes['Category']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
+};
+
+export type QueryResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  authors?: Resolver<Array<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<QueryAuthorsArgs, never>>;
+  book?: Resolver<ResolversTypes['Book'], ParentType, ContextType, RequireFields<QueryBookArgs, 'id'>>;
+  books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType, RequireFields<QueryBooksArgs, never>>;
+  capsule?: Resolver<ResolversTypes['Capsule'], ParentType, ContextType, RequireFields<QueryCapsuleArgs, 'id'>>;
+  capsules?: Resolver<Array<ResolversTypes['Capsule']>, ParentType, ContextType, RequireFields<QueryCapsulesArgs, 'limit' | 'offset' | 'order' | 'sort'>>;
+};
+
+export type AuthorResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']> = {
+  age?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
@@ -266,18 +278,6 @@ export type CategoryResolvers<ContextType = Context, ParentType extends Resolver
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
-export type MutationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  login?: Resolver<Maybe<ResolversTypes['Auth']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'email' | 'password'>>;
-};
-
-export type QueryResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  authors?: Resolver<Array<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<QueryAuthorsArgs, never>>;
-  book?: Resolver<ResolversTypes['Book'], ParentType, ContextType, RequireFields<QueryBookArgs, 'id'>>;
-  books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType, RequireFields<QueryBooksArgs, never>>;
-  capsule?: Resolver<ResolversTypes['Capsule'], ParentType, ContextType, RequireFields<QueryCapsuleArgs, 'id'>>;
-  capsules?: Resolver<Array<ResolversTypes['Capsule']>, ParentType, ContextType, RequireFields<QueryCapsulesArgs, 'limit' | 'offset' | 'order' | 'sort'>>;
-};
-
 export type UserResolvers<ContextType = Context, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -286,13 +286,13 @@ export type UserResolvers<ContextType = Context, ParentType extends ResolversPar
 };
 
 export type Resolvers<ContextType = Context> = {
+  Mutation?: MutationResolvers<ContextType>;
   Auth?: AuthResolvers<ContextType>;
-  Author?: AuthorResolvers<ContextType>;
   Book?: BookResolvers<ContextType>;
+  Query?: QueryResolvers<ContextType>;
+  Author?: AuthorResolvers<ContextType>;
   Capsule?: CapsuleResolvers<ContextType>;
   Category?: CategoryResolvers<ContextType>;
-  Mutation?: MutationResolvers<ContextType>;
-  Query?: QueryResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
 };
 
