@@ -23,5 +23,7 @@ services:
     # Run an init inside the container that forwards signals
     # and reaps processes.
     init: true
+    env_file:
+      - env/.env.dev
     image: api_seed_dev
     container_name: api_seed_dev
