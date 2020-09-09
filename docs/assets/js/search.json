@@ -1,0 +1,4547 @@
+{
+  "kinds": {
+    "1": "Module",
+    "4": "Enumeration",
+    "16": "Enumeration member",
+    "32": "Variable",
+    "64": "Function",
+    "128": "Class",
+    "256": "Interface",
+    "512": "Constructor",
+    "1024": "Property",
+    "2048": "Method",
+    "2097152": "Object literal",
+    "4194304": "Type alias",
+    "16777216": "Reference"
+  },
+  "rows": [
+    {
+      "id": 0,
+      "kind": 1,
+      "name": "\"modules/author/author.data\"",
+      "url": "modules/_modules_author_author_data_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 1,
+      "kind": 32,
+      "name": "authors",
+      "url": "modules/_modules_author_author_data_.html#authors",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/author/author.data\""
+    },
+    {
+      "id": 2,
+      "kind": 1,
+      "name": "\"modules/author/author.model\"",
+      "url": "modules/_modules_author_author_model_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 3,
+      "kind": 256,
+      "name": "Author",
+      "url": "interfaces/_modules_author_author_model_.author.html",
+      "classes": "tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\""
+    },
+    {
+      "id": 4,
+      "kind": 1024,
+      "name": "id",
+      "url": "interfaces/_modules_author_author_model_.author.html#id",
+      "classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 5,
+      "kind": 1024,
+      "name": "name",
+      "url": "interfaces/_modules_author_author_model_.author.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 6,
+      "kind": 1024,
+      "name": "age",
+      "url": "interfaces/_modules_author_author_model_.author.html#age",
+      "classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 7,
+      "kind": 1024,
+      "name": "bookIds",
+      "url": "interfaces/_modules_author_author_model_.author.html#bookids",
+      "classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 8,
+      "kind": 2048,
+      "name": "increment",
+      "url": "interfaces/_modules_author_author_model_.author.html#increment",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 9,
+      "kind": 2048,
+      "name": "model",
+      "url": "interfaces/_modules_author_author_model_.author.html#model",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 10,
+      "kind": 2048,
+      "name": "$isDeleted",
+      "url": "interfaces/_modules_author_author_model_.author.html#_isdeleted",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 11,
+      "kind": 2048,
+      "name": "remove",
+      "url": "interfaces/_modules_author_author_model_.author.html#remove",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 12,
+      "kind": 2048,
+      "name": "deleteOne",
+      "url": "interfaces/_modules_author_author_model_.author.html#deleteone",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 13,
+      "kind": 2048,
+      "name": "save",
+      "url": "interfaces/_modules_author_author_model_.author.html#save",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 14,
+      "kind": 1024,
+      "name": "__v",
+      "url": "interfaces/_modules_author_author_model_.author.html#__v",
+      "classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 15,
+      "kind": 2048,
+      "name": "addListener",
+      "url": "interfaces/_modules_author_author_model_.author.html#addlistener",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 16,
+      "kind": 2048,
+      "name": "on",
+      "url": "interfaces/_modules_author_author_model_.author.html#on",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 17,
+      "kind": 2048,
+      "name": "once",
+      "url": "interfaces/_modules_author_author_model_.author.html#once",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 18,
+      "kind": 2048,
+      "name": "removeListener",
+      "url": "interfaces/_modules_author_author_model_.author.html#removelistener",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 19,
+      "kind": 2048,
+      "name": "off",
+      "url": "interfaces/_modules_author_author_model_.author.html#off",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 20,
+      "kind": 2048,
+      "name": "removeAllListeners",
+      "url": "interfaces/_modules_author_author_model_.author.html#removealllisteners",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 21,
+      "kind": 2048,
+      "name": "setMaxListeners",
+      "url": "interfaces/_modules_author_author_model_.author.html#setmaxlisteners",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 22,
+      "kind": 2048,
+      "name": "getMaxListeners",
+      "url": "interfaces/_modules_author_author_model_.author.html#getmaxlisteners",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 23,
+      "kind": 2048,
+      "name": "listeners",
+      "url": "interfaces/_modules_author_author_model_.author.html#listeners",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 24,
+      "kind": 2048,
+      "name": "rawListeners",
+      "url": "interfaces/_modules_author_author_model_.author.html#rawlisteners",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 25,
+      "kind": 2048,
+      "name": "emit",
+      "url": "interfaces/_modules_author_author_model_.author.html#emit",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 26,
+      "kind": 2048,
+      "name": "listenerCount",
+      "url": "interfaces/_modules_author_author_model_.author.html#listenercount",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 27,
+      "kind": 2048,
+      "name": "prependListener",
+      "url": "interfaces/_modules_author_author_model_.author.html#prependlistener",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 28,
+      "kind": 2048,
+      "name": "prependOnceListener",
+      "url": "interfaces/_modules_author_author_model_.author.html#prependoncelistener",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 29,
+      "kind": 2048,
+      "name": "eventNames",
+      "url": "interfaces/_modules_author_author_model_.author.html#eventnames",
+      "classes": "tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 30,
+      "kind": 1024,
+      "name": "collection",
+      "url": "interfaces/_modules_author_author_model_.author.html#collection",
+      "classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 31,
+      "kind": 1024,
+      "name": "db",
+      "url": "interfaces/_modules_author_author_model_.author.html#db",
+      "classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 32,
+      "kind": 1024,
+      "name": "schema",
+      "url": "interfaces/_modules_author_author_model_.author.html#schema",
+      "classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\".Author"
+    },
+    {
+      "id": 33,
+      "kind": 32,
+      "name": "authorSchema",
+      "url": "modules/_modules_author_author_model_.html#authorschema",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\""
+    },
+    {
+      "id": 34,
+      "kind": 32,
+      "name": "authorModel",
+      "url": "modules/_modules_author_author_model_.html#authormodel",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/author/author.model\""
+    },
+    {
+      "id": 35,
+      "kind": 16777216,
+      "name": "db",
+      "url": "modules/_modules_author_author_model_.html#db",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"modules/author/author.model\""
+    },
+    {
+      "id": 36,
+      "kind": 1,
+      "name": "\"modules/author/author.service\"",
+      "url": "modules/_modules_author_author_service_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 37,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_modules_author_author_service_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/author/author.service\""
+    },
+    {
+      "id": 38,
+      "kind": 64,
+      "name": "getAuthors",
+      "url": "modules/_modules_author_author_service_.html#getauthors",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/author/author.service\""
+    },
+    {
+      "id": 39,
+      "kind": 64,
+      "name": "getAuthorsByIds",
+      "url": "modules/_modules_author_author_service_.html#getauthorsbyids",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/author/author.service\""
+    },
+    {
+      "id": 40,
+      "kind": 1,
+      "name": "\"modules/author/author.loader\"",
+      "url": "modules/_modules_author_author_loader_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 41,
+      "kind": 64,
+      "name": "loaderFn",
+      "url": "modules/_modules_author_author_loader_.html#loaderfn",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/author/author.loader\""
+    },
+    {
+      "id": 42,
+      "kind": 4194304,
+      "name": "AuthorLoader",
+      "url": "modules/_modules_author_author_loader_.html#authorloader",
+      "classes": "tsd-kind-type-alias tsd-parent-kind-module",
+      "parent": "\"modules/author/author.loader\""
+    },
+    {
+      "id": 43,
+      "kind": 64,
+      "name": "createAuthorLoader",
+      "url": "modules/_modules_author_author_loader_.html#createauthorloader",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/author/author.loader\""
+    },
+    {
+      "id": 44,
+      "kind": 1,
+      "name": "\"modules/book/book.data\"",
+      "url": "modules/_modules_book_book_data_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 45,
+      "kind": 32,
+      "name": "books",
+      "url": "modules/_modules_book_book_data_.html#books",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/book/book.data\""
+    },
+    {
+      "id": 46,
+      "kind": 1,
+      "name": "\"modules/book/book.service\"",
+      "url": "modules/_modules_book_book_service_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 47,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_modules_book_book_service_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/book/book.service\""
+    },
+    {
+      "id": 48,
+      "kind": 64,
+      "name": "getBookById",
+      "url": "modules/_modules_book_book_service_.html#getbookbyid",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/book/book.service\""
+    },
+    {
+      "id": 49,
+      "kind": 64,
+      "name": "getBooks",
+      "url": "modules/_modules_book_book_service_.html#getbooks",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/book/book.service\""
+    },
+    {
+      "id": 50,
+      "kind": 64,
+      "name": "getBooksByIds",
+      "url": "modules/_modules_book_book_service_.html#getbooksbyids",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/book/book.service\""
+    },
+    {
+      "id": 51,
+      "kind": 1,
+      "name": "\"modules/book/book.loader\"",
+      "url": "modules/_modules_book_book_loader_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 52,
+      "kind": 64,
+      "name": "loaderFn",
+      "url": "modules/_modules_book_book_loader_.html#loaderfn",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/book/book.loader\""
+    },
+    {
+      "id": 53,
+      "kind": 4194304,
+      "name": "BookLoader",
+      "url": "modules/_modules_book_book_loader_.html#bookloader",
+      "classes": "tsd-kind-type-alias tsd-parent-kind-module",
+      "parent": "\"modules/book/book.loader\""
+    },
+    {
+      "id": 54,
+      "kind": 64,
+      "name": "makeBookLoader",
+      "url": "modules/_modules_book_book_loader_.html#makebookloader",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/book/book.loader\""
+    },
+    {
+      "id": 55,
+      "kind": 1,
+      "name": "\"modules/category/category.data\"",
+      "url": "modules/_modules_category_category_data_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 56,
+      "kind": 32,
+      "name": "categories",
+      "url": "modules/_modules_category_category_data_.html#categories",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/category/category.data\""
+    },
+    {
+      "id": 57,
+      "kind": 1,
+      "name": "\"modules/category/category.service\"",
+      "url": "modules/_modules_category_category_service_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 58,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_modules_category_category_service_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/category/category.service\""
+    },
+    {
+      "id": 59,
+      "kind": 64,
+      "name": "getCategoriesByIds",
+      "url": "modules/_modules_category_category_service_.html#getcategoriesbyids",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/category/category.service\""
+    },
+    {
+      "id": 60,
+      "kind": 1,
+      "name": "\"modules/category/category.loader\"",
+      "url": "modules/_modules_category_category_loader_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 61,
+      "kind": 64,
+      "name": "loaderFn",
+      "url": "modules/_modules_category_category_loader_.html#loaderfn",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/category/category.loader\""
+    },
+    {
+      "id": 62,
+      "kind": 4194304,
+      "name": "CategoryLoader",
+      "url": "modules/_modules_category_category_loader_.html#categoryloader",
+      "classes": "tsd-kind-type-alias tsd-parent-kind-module",
+      "parent": "\"modules/category/category.loader\""
+    },
+    {
+      "id": 63,
+      "kind": 64,
+      "name": "makeCategoryLoader",
+      "url": "modules/_modules_category_category_loader_.html#makecategoryloader",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/category/category.loader\""
+    },
+    {
+      "id": 64,
+      "kind": 1,
+      "name": "\"global/types/index\"",
+      "url": "modules/_global_types_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 65,
+      "kind": 16777216,
+      "name": "Resolvers",
+      "url": "modules/_global_types_index_.html#resolvers",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/types/index\""
+    },
+    {
+      "id": 66,
+      "kind": 16777216,
+      "name": "TokenPayload",
+      "url": "modules/_global_types_index_.html#tokenpayload",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/types/index\""
+    },
+    {
+      "id": 67,
+      "kind": 1,
+      "name": "\"global/getEnvironmentVariable\"",
+      "url": "modules/_global_getenvironmentvariable_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 68,
+      "kind": 64,
+      "name": "getEnvironmentVariable",
+      "url": "modules/_global_getenvironmentvariable_.html#getenvironmentvariable",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"global/getEnvironmentVariable\""
+    },
+    {
+      "id": 69,
+      "kind": 1,
+      "name": "\"global/createLogger\"",
+      "url": "modules/_global_createlogger_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 70,
+      "kind": 32,
+      "name": "LOGGING_LEVEL",
+      "url": "modules/_global_createlogger_.html#logging_level",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/createLogger\""
+    },
+    {
+      "id": 71,
+      "kind": 64,
+      "name": "makeConsoleFormat",
+      "url": "modules/_global_createlogger_.html#makeconsoleformat",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/createLogger\""
+    },
+    {
+      "id": 72,
+      "kind": 64,
+      "name": "makeFileFormat",
+      "url": "modules/_global_createlogger_.html#makefileformat",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/createLogger\""
+    },
+    {
+      "id": 73,
+      "kind": 64,
+      "name": "createLogger",
+      "url": "modules/_global_createlogger_.html#createlogger",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/createLogger\""
+    },
+    {
+      "id": 74,
+      "kind": 1,
+      "name": "\"global/auth/rolePermissions\"",
+      "url": "modules/_global_auth_rolepermissions_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 75,
+      "kind": 256,
+      "name": "RolePermissions",
+      "url": "interfaces/_global_auth_rolepermissions_.rolepermissions.html",
+      "classes": "tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/auth/rolePermissions\""
+    },
+    {
+      "id": 76,
+      "kind": 2097152,
+      "name": "rolePermissions",
+      "url": "modules/_global_auth_rolepermissions_.html#rolepermissions-1",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-module",
+      "parent": "\"global/auth/rolePermissions\""
+    },
+    {
+      "id": 77,
+      "kind": 32,
+      "name": "user",
+      "url": "modules/_global_auth_rolepermissions_.html#rolepermissions-1.user",
+      "classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+      "parent": "\"global/auth/rolePermissions\".rolePermissions"
+    },
+    {
+      "id": 78,
+      "kind": 32,
+      "name": "accountant",
+      "url": "modules/_global_auth_rolepermissions_.html#rolepermissions-1.accountant",
+      "classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+      "parent": "\"global/auth/rolePermissions\".rolePermissions"
+    },
+    {
+      "id": 79,
+      "kind": 1,
+      "name": "\"global/auth/token\"",
+      "url": "modules/_global_auth_token_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 80,
+      "kind": 32,
+      "name": "AUTH_TOKEN_ISSUER",
+      "url": "modules/_global_auth_token_.html#auth_token_issuer",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 81,
+      "kind": 32,
+      "name": "AUTH_TOKEN_AUDIENCE",
+      "url": "modules/_global_auth_token_.html#auth_token_audience",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 82,
+      "kind": 32,
+      "name": "AUTH_TOKEN_SUBJECT",
+      "url": "modules/_global_auth_token_.html#auth_token_subject",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 83,
+      "kind": 32,
+      "name": "AUTH_TOKEN_SECRET",
+      "url": "modules/_global_auth_token_.html#auth_token_secret",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 84,
+      "kind": 32,
+      "name": "AUTH_TOKEN_EXPIRATION_INTERVAL",
+      "url": "modules/_global_auth_token_.html#auth_token_expiration_interval",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 85,
+      "kind": 64,
+      "name": "verifyToken",
+      "url": "modules/_global_auth_token_.html#verifytoken",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-private tsd-is-not-exported",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 86,
+      "kind": 64,
+      "name": "signToken",
+      "url": "modules/_global_auth_token_.html#signtoken",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-private tsd-is-not-exported",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 87,
+      "kind": 64,
+      "name": "makeToken",
+      "url": "modules/_global_auth_token_.html#maketoken",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 88,
+      "kind": 64,
+      "name": "extractToken",
+      "url": "modules/_global_auth_token_.html#extracttoken",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/auth/token\""
+    },
+    {
+      "id": 89,
+      "kind": 1,
+      "name": "\"global/auth/auth\"",
+      "url": "modules/_global_auth_auth_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 90,
+      "kind": 64,
+      "name": "assertAuthenticated",
+      "url": "modules/_global_auth_auth_.html#assertauthenticated",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/auth/auth\""
+    },
+    {
+      "id": 91,
+      "kind": 64,
+      "name": "assertAuthorized",
+      "url": "modules/_global_auth_auth_.html#assertauthorized",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/auth/auth\""
+    },
+    {
+      "id": 92,
+      "kind": 1,
+      "name": "\"global/auth/index\"",
+      "url": "modules/_global_auth_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 93,
+      "kind": 16777216,
+      "name": "assertAuthenticated",
+      "url": "modules/_global_auth_index_.html#assertauthenticated",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/auth/index\""
+    },
+    {
+      "id": 94,
+      "kind": 16777216,
+      "name": "assertAuthorized",
+      "url": "modules/_global_auth_index_.html#assertauthorized",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/auth/index\""
+    },
+    {
+      "id": 95,
+      "kind": 16777216,
+      "name": "makeToken",
+      "url": "modules/_global_auth_index_.html#maketoken",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/auth/index\""
+    },
+    {
+      "id": 96,
+      "kind": 16777216,
+      "name": "extractToken",
+      "url": "modules/_global_auth_index_.html#extracttoken",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/auth/index\""
+    },
+    {
+      "id": 97,
+      "kind": 1,
+      "name": "\"global/error/errorCode\"",
+      "url": "modules/_global_error_errorcode_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 98,
+      "kind": 4,
+      "name": "ErrorCode",
+      "url": "enums/_global_error_errorcode_.errorcode.html",
+      "classes": "tsd-kind-enum tsd-parent-kind-module",
+      "parent": "\"global/error/errorCode\""
+    },
+    {
+      "id": 99,
+      "kind": 16,
+      "name": "INTERNAL_SERVER_ERROR",
+      "url": "enums/_global_error_errorcode_.errorcode.html#internal_server_error",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/error/errorCode\".ErrorCode"
+    },
+    {
+      "id": 100,
+      "kind": 16,
+      "name": "AUTHENTICATION_ERROR",
+      "url": "enums/_global_error_errorcode_.errorcode.html#authentication_error",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/error/errorCode\".ErrorCode"
+    },
+    {
+      "id": 101,
+      "kind": 16,
+      "name": "AUTHORIZATION_ERROR",
+      "url": "enums/_global_error_errorcode_.errorcode.html#authorization_error",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/error/errorCode\".ErrorCode"
+    },
+    {
+      "id": 102,
+      "kind": 16,
+      "name": "INPUT_VALIDATION_ERROR",
+      "url": "enums/_global_error_errorcode_.errorcode.html#input_validation_error",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/error/errorCode\".ErrorCode"
+    },
+    {
+      "id": 103,
+      "kind": 16,
+      "name": "INTEGRATION_ERROR",
+      "url": "enums/_global_error_errorcode_.errorcode.html#integration_error",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/error/errorCode\".ErrorCode"
+    },
+    {
+      "id": 104,
+      "kind": 16,
+      "name": "REQUEST_FAILED",
+      "url": "enums/_global_error_errorcode_.errorcode.html#request_failed",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/error/errorCode\".ErrorCode"
+    },
+    {
+      "id": 105,
+      "kind": 1,
+      "name": "\"global/error/errors/baseError\"",
+      "url": "modules/_global_error_errors_baseerror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 106,
+      "kind": 128,
+      "name": "BaseError",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"global/error/errors/baseError\""
+    },
+    {
+      "id": 107,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 108,
+      "kind": 1024,
+      "name": "status",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#status",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 109,
+      "kind": 1024,
+      "name": "timestamp",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#timestamp",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 110,
+      "kind": 1024,
+      "name": "wrappedError",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#wrappederror",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 111,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 112,
+      "kind": 1024,
+      "name": "name",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 113,
+      "kind": 1024,
+      "name": "message",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#message",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 114,
+      "kind": 1024,
+      "name": "stack",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#stack",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 115,
+      "kind": 1024,
+      "name": "Error",
+      "url": "classes/_global_error_errors_baseerror_.baseerror.html#error",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-static",
+      "parent": "\"global/error/errors/baseError\".BaseError"
+    },
+    {
+      "id": 116,
+      "kind": 1,
+      "name": "\"global/error/errors/authenticationError\"",
+      "url": "modules/_global_error_errors_authenticationerror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 117,
+      "kind": 128,
+      "name": "AuthenticationError",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"global/error/errors/authenticationError\""
+    },
+    {
+      "id": 118,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"global/error/errors/authenticationError\".AuthenticationError"
+    },
+    {
+      "id": 119,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authenticationError\".AuthenticationError"
+    },
+    {
+      "id": 120,
+      "kind": 1024,
+      "name": "status",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html#status",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authenticationError\".AuthenticationError"
+    },
+    {
+      "id": 121,
+      "kind": 1024,
+      "name": "timestamp",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html#timestamp",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authenticationError\".AuthenticationError"
+    },
+    {
+      "id": 122,
+      "kind": 1024,
+      "name": "wrappedError",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html#wrappederror",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authenticationError\".AuthenticationError"
+    },
+    {
+      "id": 123,
+      "kind": 1024,
+      "name": "name",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authenticationError\".AuthenticationError"
+    },
+    {
+      "id": 124,
+      "kind": 1024,
+      "name": "message",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html#message",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authenticationError\".AuthenticationError"
+    },
+    {
+      "id": 125,
+      "kind": 1024,
+      "name": "stack",
+      "url": "classes/_global_error_errors_authenticationerror_.authenticationerror.html#stack",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authenticationError\".AuthenticationError"
+    },
+    {
+      "id": 126,
+      "kind": 1,
+      "name": "\"global/error/errors/authorizationError\"",
+      "url": "modules/_global_error_errors_authorizationerror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 127,
+      "kind": 128,
+      "name": "AuthorizationError",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"global/error/errors/authorizationError\""
+    },
+    {
+      "id": 128,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"global/error/errors/authorizationError\".AuthorizationError"
+    },
+    {
+      "id": 129,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authorizationError\".AuthorizationError"
+    },
+    {
+      "id": 130,
+      "kind": 1024,
+      "name": "status",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html#status",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authorizationError\".AuthorizationError"
+    },
+    {
+      "id": 131,
+      "kind": 1024,
+      "name": "timestamp",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html#timestamp",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authorizationError\".AuthorizationError"
+    },
+    {
+      "id": 132,
+      "kind": 1024,
+      "name": "wrappedError",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html#wrappederror",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authorizationError\".AuthorizationError"
+    },
+    {
+      "id": 133,
+      "kind": 1024,
+      "name": "name",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authorizationError\".AuthorizationError"
+    },
+    {
+      "id": 134,
+      "kind": 1024,
+      "name": "message",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html#message",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authorizationError\".AuthorizationError"
+    },
+    {
+      "id": 135,
+      "kind": 1024,
+      "name": "stack",
+      "url": "classes/_global_error_errors_authorizationerror_.authorizationerror.html#stack",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/authorizationError\".AuthorizationError"
+    },
+    {
+      "id": 136,
+      "kind": 1,
+      "name": "\"global/error/errors/inputValidationError\"",
+      "url": "modules/_global_error_errors_inputvalidationerror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 137,
+      "kind": 128,
+      "name": "InputValidationError",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"global/error/errors/inputValidationError\""
+    },
+    {
+      "id": 138,
+      "kind": 1024,
+      "name": "validationErrors",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#validationerrors",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 139,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 140,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 141,
+      "kind": 1024,
+      "name": "status",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#status",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 142,
+      "kind": 1024,
+      "name": "timestamp",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#timestamp",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 143,
+      "kind": 1024,
+      "name": "wrappedError",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#wrappederror",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 144,
+      "kind": 1024,
+      "name": "name",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 145,
+      "kind": 1024,
+      "name": "message",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#message",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 146,
+      "kind": 1024,
+      "name": "stack",
+      "url": "classes/_global_error_errors_inputvalidationerror_.inputvalidationerror.html#stack",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/inputValidationError\".InputValidationError"
+    },
+    {
+      "id": 147,
+      "kind": 1,
+      "name": "\"global/error/errors/integrationError\"",
+      "url": "modules/_global_error_errors_integrationerror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 148,
+      "kind": 128,
+      "name": "IntegrationError",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"global/error/errors/integrationError\""
+    },
+    {
+      "id": 149,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"global/error/errors/integrationError\".IntegrationError"
+    },
+    {
+      "id": 150,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/integrationError\".IntegrationError"
+    },
+    {
+      "id": 151,
+      "kind": 1024,
+      "name": "status",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html#status",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/integrationError\".IntegrationError"
+    },
+    {
+      "id": 152,
+      "kind": 1024,
+      "name": "timestamp",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html#timestamp",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/integrationError\".IntegrationError"
+    },
+    {
+      "id": 153,
+      "kind": 1024,
+      "name": "wrappedError",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html#wrappederror",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/integrationError\".IntegrationError"
+    },
+    {
+      "id": 154,
+      "kind": 1024,
+      "name": "name",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/integrationError\".IntegrationError"
+    },
+    {
+      "id": 155,
+      "kind": 1024,
+      "name": "message",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html#message",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/integrationError\".IntegrationError"
+    },
+    {
+      "id": 156,
+      "kind": 1024,
+      "name": "stack",
+      "url": "classes/_global_error_errors_integrationerror_.integrationerror.html#stack",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/integrationError\".IntegrationError"
+    },
+    {
+      "id": 157,
+      "kind": 1,
+      "name": "\"global/error/errors/notFoundError\"",
+      "url": "modules/_global_error_errors_notfounderror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 158,
+      "kind": 128,
+      "name": "NotFoundError",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"global/error/errors/notFoundError\""
+    },
+    {
+      "id": 159,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"global/error/errors/notFoundError\".NotFoundError"
+    },
+    {
+      "id": 160,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/notFoundError\".NotFoundError"
+    },
+    {
+      "id": 161,
+      "kind": 1024,
+      "name": "status",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html#status",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/notFoundError\".NotFoundError"
+    },
+    {
+      "id": 162,
+      "kind": 1024,
+      "name": "timestamp",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html#timestamp",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/notFoundError\".NotFoundError"
+    },
+    {
+      "id": 163,
+      "kind": 1024,
+      "name": "wrappedError",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html#wrappederror",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/notFoundError\".NotFoundError"
+    },
+    {
+      "id": 164,
+      "kind": 1024,
+      "name": "name",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/notFoundError\".NotFoundError"
+    },
+    {
+      "id": 165,
+      "kind": 1024,
+      "name": "message",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html#message",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/notFoundError\".NotFoundError"
+    },
+    {
+      "id": 166,
+      "kind": 1024,
+      "name": "stack",
+      "url": "classes/_global_error_errors_notfounderror_.notfounderror.html#stack",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/notFoundError\".NotFoundError"
+    },
+    {
+      "id": 167,
+      "kind": 1,
+      "name": "\"global/error/errors/requestError\"",
+      "url": "modules/_global_error_errors_requesterror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 168,
+      "kind": 128,
+      "name": "RequestError",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"global/error/errors/requestError\""
+    },
+    {
+      "id": 169,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"global/error/errors/requestError\".RequestError"
+    },
+    {
+      "id": 170,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/requestError\".RequestError"
+    },
+    {
+      "id": 171,
+      "kind": 1024,
+      "name": "status",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html#status",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/requestError\".RequestError"
+    },
+    {
+      "id": 172,
+      "kind": 1024,
+      "name": "timestamp",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html#timestamp",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/requestError\".RequestError"
+    },
+    {
+      "id": 173,
+      "kind": 1024,
+      "name": "wrappedError",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html#wrappederror",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/requestError\".RequestError"
+    },
+    {
+      "id": 174,
+      "kind": 1024,
+      "name": "name",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/requestError\".RequestError"
+    },
+    {
+      "id": 175,
+      "kind": 1024,
+      "name": "message",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html#message",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/requestError\".RequestError"
+    },
+    {
+      "id": 176,
+      "kind": 1024,
+      "name": "stack",
+      "url": "classes/_global_error_errors_requesterror_.requesterror.html#stack",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/requestError\".RequestError"
+    },
+    {
+      "id": 177,
+      "kind": 1,
+      "name": "\"global/error/errors/businessError\"",
+      "url": "modules/_global_error_errors_businesserror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 178,
+      "kind": 128,
+      "name": "BusinessError",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"global/error/errors/businessError\""
+    },
+    {
+      "id": 179,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"global/error/errors/businessError\".BusinessError"
+    },
+    {
+      "id": 180,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/businessError\".BusinessError"
+    },
+    {
+      "id": 181,
+      "kind": 1024,
+      "name": "status",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html#status",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/businessError\".BusinessError"
+    },
+    {
+      "id": 182,
+      "kind": 1024,
+      "name": "timestamp",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html#timestamp",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/businessError\".BusinessError"
+    },
+    {
+      "id": 183,
+      "kind": 1024,
+      "name": "wrappedError",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html#wrappederror",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/businessError\".BusinessError"
+    },
+    {
+      "id": 184,
+      "kind": 1024,
+      "name": "name",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html#name",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/businessError\".BusinessError"
+    },
+    {
+      "id": 185,
+      "kind": 1024,
+      "name": "message",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html#message",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/businessError\".BusinessError"
+    },
+    {
+      "id": 186,
+      "kind": 1024,
+      "name": "stack",
+      "url": "classes/_global_error_errors_businesserror_.businesserror.html#stack",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"global/error/errors/businessError\".BusinessError"
+    },
+    {
+      "id": 187,
+      "kind": 1,
+      "name": "\"global/error/errors/index\"",
+      "url": "modules/_global_error_errors_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 188,
+      "kind": 16777216,
+      "name": "AuthenticationError",
+      "url": "modules/_global_error_errors_index_.html#authenticationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/errors/index\""
+    },
+    {
+      "id": 189,
+      "kind": 16777216,
+      "name": "AuthorizationError",
+      "url": "modules/_global_error_errors_index_.html#authorizationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/errors/index\""
+    },
+    {
+      "id": 190,
+      "kind": 16777216,
+      "name": "InputValidationError",
+      "url": "modules/_global_error_errors_index_.html#inputvalidationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/errors/index\""
+    },
+    {
+      "id": 191,
+      "kind": 16777216,
+      "name": "IntegrationError",
+      "url": "modules/_global_error_errors_index_.html#integrationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/errors/index\""
+    },
+    {
+      "id": 192,
+      "kind": 16777216,
+      "name": "NotFoundError",
+      "url": "modules/_global_error_errors_index_.html#notfounderror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/errors/index\""
+    },
+    {
+      "id": 193,
+      "kind": 16777216,
+      "name": "RequestError",
+      "url": "modules/_global_error_errors_index_.html#requesterror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/errors/index\""
+    },
+    {
+      "id": 194,
+      "kind": 16777216,
+      "name": "BusinessError",
+      "url": "modules/_global_error_errors_index_.html#businesserror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/errors/index\""
+    },
+    {
+      "id": 195,
+      "kind": 1,
+      "name": "\"global/error/transformGraphQLError\"",
+      "url": "modules/_global_error_transformgraphqlerror_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 196,
+      "kind": 32,
+      "name": "EXPOSE_UNKNOWN_ERRORS",
+      "url": "modules/_global_error_transformgraphqlerror_.html#expose_unknown_errors",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/error/transformGraphQLError\""
+    },
+    {
+      "id": 197,
+      "kind": 4194304,
+      "name": "Extensions",
+      "url": "modules/_global_error_transformgraphqlerror_.html#extensions",
+      "classes": "tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/error/transformGraphQLError\""
+    },
+    {
+      "id": 198,
+      "kind": 4194304,
+      "name": "KnownGraphQLError",
+      "url": "modules/_global_error_transformgraphqlerror_.html#knowngraphqlerror",
+      "classes": "tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/error/transformGraphQLError\""
+    },
+    {
+      "id": 199,
+      "kind": 64,
+      "name": "makeExtensions",
+      "url": "modules/_global_error_transformgraphqlerror_.html#makeextensions",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/error/transformGraphQLError\""
+    },
+    {
+      "id": 200,
+      "kind": 64,
+      "name": "makeKnownGraphQLFormattedError",
+      "url": "modules/_global_error_transformgraphqlerror_.html#makeknowngraphqlformattederror",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/error/transformGraphQLError\""
+    },
+    {
+      "id": 201,
+      "kind": 64,
+      "name": "makeUnKnownGraphQLFormattedError",
+      "url": "modules/_global_error_transformgraphqlerror_.html#makeunknowngraphqlformattederror",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/error/transformGraphQLError\""
+    },
+    {
+      "id": 202,
+      "kind": 64,
+      "name": "transformGraphQLError",
+      "url": "modules/_global_error_transformgraphqlerror_.html#transformgraphqlerror",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/error/transformGraphQLError\""
+    },
+    {
+      "id": 203,
+      "kind": 1,
+      "name": "\"global/error/index\"",
+      "url": "modules/_global_error_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 204,
+      "kind": 16777216,
+      "name": "AuthenticationError",
+      "url": "modules/_global_error_index_.html#authenticationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/index\""
+    },
+    {
+      "id": 205,
+      "kind": 16777216,
+      "name": "AuthorizationError",
+      "url": "modules/_global_error_index_.html#authorizationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/index\""
+    },
+    {
+      "id": 206,
+      "kind": 16777216,
+      "name": "NotFoundError",
+      "url": "modules/_global_error_index_.html#notfounderror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/index\""
+    },
+    {
+      "id": 207,
+      "kind": 16777216,
+      "name": "IntegrationError",
+      "url": "modules/_global_error_index_.html#integrationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/index\""
+    },
+    {
+      "id": 208,
+      "kind": 16777216,
+      "name": "InputValidationError",
+      "url": "modules/_global_error_index_.html#inputvalidationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/index\""
+    },
+    {
+      "id": 209,
+      "kind": 16777216,
+      "name": "RequestError",
+      "url": "modules/_global_error_index_.html#requesterror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/index\""
+    },
+    {
+      "id": 210,
+      "kind": 16777216,
+      "name": "BusinessError",
+      "url": "modules/_global_error_index_.html#businesserror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/index\""
+    },
+    {
+      "id": 211,
+      "kind": 16777216,
+      "name": "transformGraphQLError",
+      "url": "modules/_global_error_index_.html#transformgraphqlerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/error/index\""
+    },
+    {
+      "id": 212,
+      "kind": 1,
+      "name": "\"global/request/httpMethod\"",
+      "url": "modules/_global_request_httpmethod_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 213,
+      "kind": 4,
+      "name": "HTTPMethod",
+      "url": "enums/_global_request_httpmethod_.httpmethod.html",
+      "classes": "tsd-kind-enum tsd-parent-kind-module",
+      "parent": "\"global/request/httpMethod\""
+    },
+    {
+      "id": 214,
+      "kind": 16,
+      "name": "GET",
+      "url": "enums/_global_request_httpmethod_.httpmethod.html#get",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/request/httpMethod\".HTTPMethod"
+    },
+    {
+      "id": 215,
+      "kind": 16,
+      "name": "POST",
+      "url": "enums/_global_request_httpmethod_.httpmethod.html#post",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/request/httpMethod\".HTTPMethod"
+    },
+    {
+      "id": 216,
+      "kind": 16,
+      "name": "PUT",
+      "url": "enums/_global_request_httpmethod_.httpmethod.html#put",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/request/httpMethod\".HTTPMethod"
+    },
+    {
+      "id": 217,
+      "kind": 16,
+      "name": "PATCH",
+      "url": "enums/_global_request_httpmethod_.httpmethod.html#patch",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/request/httpMethod\".HTTPMethod"
+    },
+    {
+      "id": 218,
+      "kind": 16,
+      "name": "DELETE",
+      "url": "enums/_global_request_httpmethod_.httpmethod.html#delete",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"global/request/httpMethod\".HTTPMethod"
+    },
+    {
+      "id": 219,
+      "kind": 1,
+      "name": "\"global/request/request\"",
+      "url": "modules/_global_request_request_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 220,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_global_request_request_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/request/request\""
+    },
+    {
+      "id": 221,
+      "kind": 64,
+      "name": "makeQueryString",
+      "url": "modules/_global_request_request_.html#makequerystring",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-private tsd-is-not-exported",
+      "parent": "\"global/request/request\""
+    },
+    {
+      "id": 222,
+      "kind": 64,
+      "name": "makeURL",
+      "url": "modules/_global_request_request_.html#makeurl",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-private tsd-is-not-exported",
+      "parent": "\"global/request/request\""
+    },
+    {
+      "id": 223,
+      "kind": 64,
+      "name": "request",
+      "url": "modules/_global_request_request_.html#request",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-private tsd-is-not-exported",
+      "parent": "\"global/request/request\""
+    },
+    {
+      "id": 224,
+      "kind": 64,
+      "name": "get",
+      "url": "modules/_global_request_request_.html#get",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"global/request/request\""
+    },
+    {
+      "id": 225,
+      "kind": 1,
+      "name": "\"global/request/index\"",
+      "url": "modules/_global_request_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 226,
+      "kind": 1,
+      "name": "\"global/middleware/makeErrorResponderMiddleware\"",
+      "url": "modules/_global_middleware_makeerrorrespondermiddleware_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 227,
+      "kind": 64,
+      "name": "makeErrorResponderMiddleware",
+      "url": "modules/_global_middleware_makeerrorrespondermiddleware_.html#makeerrorrespondermiddleware",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/middleware/makeErrorResponderMiddleware\""
+    },
+    {
+      "id": 228,
+      "kind": 1,
+      "name": "\"global/middleware/makeLoggingMiddleware\"",
+      "url": "modules/_global_middleware_makeloggingmiddleware_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 229,
+      "kind": 32,
+      "name": "loggingNamespace",
+      "url": "modules/_global_middleware_makeloggingmiddleware_.html#loggingnamespace",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/middleware/makeLoggingMiddleware\""
+    },
+    {
+      "id": 230,
+      "kind": 64,
+      "name": "makeLoggingMiddleware",
+      "url": "modules/_global_middleware_makeloggingmiddleware_.html#makeloggingmiddleware",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/middleware/makeLoggingMiddleware\""
+    },
+    {
+      "id": 231,
+      "kind": 1,
+      "name": "\"global/middleware/makeTokenExtractorMiddleware\"",
+      "url": "modules/_global_middleware_maketokenextractormiddleware_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 232,
+      "kind": 64,
+      "name": "extractTokenFromAuthorizationHeader",
+      "url": "modules/_global_middleware_maketokenextractormiddleware_.html#extracttokenfromauthorizationheader",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-private tsd-is-not-exported",
+      "parent": "\"global/middleware/makeTokenExtractorMiddleware\""
+    },
+    {
+      "id": 233,
+      "kind": 64,
+      "name": "makeTokenExtractorMiddleware",
+      "url": "modules/_global_middleware_maketokenextractormiddleware_.html#maketokenextractormiddleware",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/middleware/makeTokenExtractorMiddleware\""
+    },
+    {
+      "id": 234,
+      "kind": 1,
+      "name": "\"global/middleware/applyMiddleware\"",
+      "url": "modules/_global_middleware_applymiddleware_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 235,
+      "kind": 64,
+      "name": "applyMiddleware",
+      "url": "modules/_global_middleware_applymiddleware_.html#applymiddleware",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/middleware/applyMiddleware\""
+    },
+    {
+      "id": 236,
+      "kind": 1,
+      "name": "\"global/middleware/index\"",
+      "url": "modules/_global_middleware_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 237,
+      "kind": 16777216,
+      "name": "applyMiddleware",
+      "url": "modules/_global_middleware_index_.html#applymiddleware",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/middleware/index\""
+    },
+    {
+      "id": 238,
+      "kind": 1,
+      "name": "\"global/inputValidation/args\"",
+      "url": "modules/_global_inputvalidation_args_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 239,
+      "kind": 64,
+      "name": "validateValueAgainstJoiSchema",
+      "url": "modules/_global_inputvalidation_args_.html#validatevalueagainstjoischema",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/inputValidation/args\""
+    },
+    {
+      "id": 240,
+      "kind": 64,
+      "name": "formatJoiError",
+      "url": "modules/_global_inputvalidation_args_.html#formatjoierror",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/inputValidation/args\""
+    },
+    {
+      "id": 241,
+      "kind": 64,
+      "name": "validateArgs",
+      "url": "modules/_global_inputvalidation_args_.html#validateargs",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/inputValidation/args\""
+    },
+    {
+      "id": 242,
+      "kind": 1,
+      "name": "\"global/inputValidation/index\"",
+      "url": "modules/_global_inputvalidation_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 243,
+      "kind": 16777216,
+      "name": "validateArgs",
+      "url": "modules/_global_inputvalidation_index_.html#validateargs",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/inputValidation/index\""
+    },
+    {
+      "id": 244,
+      "kind": 1,
+      "name": "\"global/installApolloServer\"",
+      "url": "modules/_global_installapolloserver_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 245,
+      "kind": 32,
+      "name": "ENABLE_GRAPHQL_PLAYGROUND",
+      "url": "modules/_global_installapolloserver_.html#enable_graphql_playground",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/installApolloServer\""
+    },
+    {
+      "id": 246,
+      "kind": 32,
+      "name": "ENABLE_GRAPHQL_INTROSPECTION",
+      "url": "modules/_global_installapolloserver_.html#enable_graphql_introspection",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/installApolloServer\""
+    },
+    {
+      "id": 247,
+      "kind": 32,
+      "name": "EXPOSE_ERROR_STACK_TRACES",
+      "url": "modules/_global_installapolloserver_.html#expose_error_stack_traces",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/installApolloServer\""
+    },
+    {
+      "id": 248,
+      "kind": 64,
+      "name": "bootstrapSchema",
+      "url": "modules/_global_installapolloserver_.html#bootstrapschema",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"global/installApolloServer\""
+    },
+    {
+      "id": 249,
+      "kind": 64,
+      "name": "installApolloServer",
+      "url": "modules/_global_installapolloserver_.html#installapolloserver",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/installApolloServer\""
+    },
+    {
+      "id": 250,
+      "kind": 1,
+      "name": "\"global/installDatabaseConnection\"",
+      "url": "modules/_global_installdatabaseconnection_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 251,
+      "kind": 64,
+      "name": "installDatabaseConnection",
+      "url": "modules/_global_installdatabaseconnection_.html#installdatabaseconnection",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"global/installDatabaseConnection\""
+    },
+    {
+      "id": 252,
+      "kind": 1,
+      "name": "\"global/index\"",
+      "url": "modules/_global_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 253,
+      "kind": 16777216,
+      "name": "Resolvers",
+      "url": "modules/_global_index_.html#resolvers",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 254,
+      "kind": 16777216,
+      "name": "createLogger",
+      "url": "modules/_global_index_.html#createlogger",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 255,
+      "kind": 16777216,
+      "name": "makeToken",
+      "url": "modules/_global_index_.html#maketoken",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 256,
+      "kind": 16777216,
+      "name": "assertAuthenticated",
+      "url": "modules/_global_index_.html#assertauthenticated",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 257,
+      "kind": 16777216,
+      "name": "assertAuthorized",
+      "url": "modules/_global_index_.html#assertauthorized",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 258,
+      "kind": 16777216,
+      "name": "IntegrationError",
+      "url": "modules/_global_index_.html#integrationerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 259,
+      "kind": 16777216,
+      "name": "transformGraphQLError",
+      "url": "modules/_global_index_.html#transformgraphqlerror",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 260,
+      "kind": 16777216,
+      "name": "request",
+      "url": "modules/_global_index_.html#request",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 261,
+      "kind": 16777216,
+      "name": "applyMiddleware",
+      "url": "modules/_global_index_.html#applymiddleware",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 262,
+      "kind": 16777216,
+      "name": "validateArgs",
+      "url": "modules/_global_index_.html#validateargs",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 263,
+      "kind": 16777216,
+      "name": "installApolloServer",
+      "url": "modules/_global_index_.html#installapolloserver",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 264,
+      "kind": 16777216,
+      "name": "installDatabaseConnection",
+      "url": "modules/_global_index_.html#installdatabaseconnection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 265,
+      "kind": 16777216,
+      "name": "getEnvironmentVariable",
+      "url": "modules/_global_index_.html#getenvironmentvariable",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"global/index\""
+    },
+    {
+      "id": 266,
+      "kind": 1,
+      "name": "\"app\"",
+      "url": "modules/_app_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 267,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_app_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"app\""
+    },
+    {
+      "id": 268,
+      "kind": 64,
+      "name": "createApp",
+      "url": "modules/_app_.html#createapp",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"app\""
+    },
+    {
+      "id": 269,
+      "kind": 1,
+      "name": "\"index\"",
+      "url": "modules/_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 270,
+      "kind": 32,
+      "name": "SERVER_PORT",
+      "url": "modules/_index_.html#server_port",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"index\""
+    },
+    {
+      "id": 271,
+      "kind": 32,
+      "name": "SERVER_HOSTNAME",
+      "url": "modules/_index_.html#server_hostname",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"index\""
+    },
+    {
+      "id": 272,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_index_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"index\""
+    },
+    {
+      "id": 273,
+      "kind": 1,
+      "name": "\"modules/user/user.data\"",
+      "url": "modules/_modules_user_user_data_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 274,
+      "kind": 32,
+      "name": "users",
+      "url": "modules/_modules_user_user_data_.html#users",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/user/user.data\""
+    },
+    {
+      "id": 275,
+      "kind": 1,
+      "name": "\"modules/user/user.service\"",
+      "url": "modules/_modules_user_user_service_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 276,
+      "kind": 64,
+      "name": "getUserById",
+      "url": "modules/_modules_user_user_service_.html#getuserbyid",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/user/user.service\""
+    },
+    {
+      "id": 277,
+      "kind": 64,
+      "name": "getUserByEmail",
+      "url": "modules/_modules_user_user_service_.html#getuserbyemail",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/user/user.service\""
+    },
+    {
+      "id": 278,
+      "kind": 1,
+      "name": "\"modules/auth/auth.service\"",
+      "url": "modules/_modules_auth_auth_service_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 279,
+      "kind": 64,
+      "name": "login",
+      "url": "modules/_modules_auth_auth_service_.html#login",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/auth/auth.service\""
+    },
+    {
+      "id": 280,
+      "kind": 1,
+      "name": "\"modules/auth/auth.resolvers\"",
+      "url": "modules/_modules_auth_auth_resolvers_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 281,
+      "kind": 2097152,
+      "name": "AuthResolvers",
+      "url": "modules/_modules_auth_auth_resolvers_.html#authresolvers",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-module",
+      "parent": "\"modules/auth/auth.resolvers\""
+    },
+    {
+      "id": 282,
+      "kind": 2097152,
+      "name": "Mutation",
+      "url": "modules/_modules_auth_auth_resolvers_.html#authresolvers.mutation",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      "parent": "\"modules/auth/auth.resolvers\".AuthResolvers"
+    },
+    {
+      "id": 283,
+      "kind": 64,
+      "name": "login",
+      "url": "modules/_modules_auth_auth_resolvers_.html#authresolvers.mutation.login",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/auth/auth.resolvers\".AuthResolvers.Mutation"
+    },
+    {
+      "id": 284,
+      "kind": 1,
+      "name": "\"modules/auth/auth.typeDefs\"",
+      "url": "modules/_modules_auth_auth_typedefs_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 285,
+      "kind": 32,
+      "name": "authTypeDefs",
+      "url": "modules/_modules_auth_auth_typedefs_.html#authtypedefs",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/auth/auth.typeDefs\""
+    },
+    {
+      "id": 286,
+      "kind": 1,
+      "name": "\"modules/author/author.resolvers\"",
+      "url": "modules/_modules_author_author_resolvers_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 287,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_modules_author_author_resolvers_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/author/author.resolvers\""
+    },
+    {
+      "id": 288,
+      "kind": 2097152,
+      "name": "authorResolvers",
+      "url": "modules/_modules_author_author_resolvers_.html#authorresolvers",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-module",
+      "parent": "\"modules/author/author.resolvers\""
+    },
+    {
+      "id": 289,
+      "kind": 2097152,
+      "name": "Book",
+      "url": "modules/_modules_author_author_resolvers_.html#authorresolvers.book",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      "parent": "\"modules/author/author.resolvers\".authorResolvers"
+    },
+    {
+      "id": 290,
+      "kind": 64,
+      "name": "authors",
+      "url": "modules/_modules_author_author_resolvers_.html#authorresolvers.book.authors",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/author/author.resolvers\".authorResolvers.Book"
+    },
+    {
+      "id": 291,
+      "kind": 2097152,
+      "name": "Query",
+      "url": "modules/_modules_author_author_resolvers_.html#authorresolvers.query",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      "parent": "\"modules/author/author.resolvers\".authorResolvers"
+    },
+    {
+      "id": 292,
+      "kind": 64,
+      "name": "authors",
+      "url": "modules/_modules_author_author_resolvers_.html#authorresolvers.query.authors-1",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/author/author.resolvers\".authorResolvers.Query"
+    },
+    {
+      "id": 293,
+      "kind": 1,
+      "name": "\"modules/author/author.typeDefs\"",
+      "url": "modules/_modules_author_author_typedefs_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 294,
+      "kind": 32,
+      "name": "authorTypeDefs",
+      "url": "modules/_modules_author_author_typedefs_.html#authortypedefs",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/author/author.typeDefs\""
+    },
+    {
+      "id": 295,
+      "kind": 1,
+      "name": "\"modules/book/book.resolvers\"",
+      "url": "modules/_modules_book_book_resolvers_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 296,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_modules_book_book_resolvers_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/book/book.resolvers\""
+    },
+    {
+      "id": 297,
+      "kind": 2097152,
+      "name": "bookResolvers",
+      "url": "modules/_modules_book_book_resolvers_.html#bookresolvers",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-module",
+      "parent": "\"modules/book/book.resolvers\""
+    },
+    {
+      "id": 298,
+      "kind": 2097152,
+      "name": "Query",
+      "url": "modules/_modules_book_book_resolvers_.html#bookresolvers.query",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      "parent": "\"modules/book/book.resolvers\".bookResolvers"
+    },
+    {
+      "id": 299,
+      "kind": 64,
+      "name": "books",
+      "url": "modules/_modules_book_book_resolvers_.html#bookresolvers.query.books-1",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/book/book.resolvers\".bookResolvers.Query"
+    },
+    {
+      "id": 300,
+      "kind": 64,
+      "name": "book",
+      "url": "modules/_modules_book_book_resolvers_.html#bookresolvers.query.book",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/book/book.resolvers\".bookResolvers.Query"
+    },
+    {
+      "id": 301,
+      "kind": 2097152,
+      "name": "Author",
+      "url": "modules/_modules_book_book_resolvers_.html#bookresolvers.author",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      "parent": "\"modules/book/book.resolvers\".bookResolvers"
+    },
+    {
+      "id": 302,
+      "kind": 64,
+      "name": "books",
+      "url": "modules/_modules_book_book_resolvers_.html#bookresolvers.author.books",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/book/book.resolvers\".bookResolvers.Author"
+    },
+    {
+      "id": 303,
+      "kind": 1,
+      "name": "\"modules/book/book.typeDefs\"",
+      "url": "modules/_modules_book_book_typedefs_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 304,
+      "kind": 32,
+      "name": "bookTypeDefs",
+      "url": "modules/_modules_book_book_typedefs_.html#booktypedefs",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/book/book.typeDefs\""
+    },
+    {
+      "id": 305,
+      "kind": 1,
+      "name": "\"modules/capsule/capsule.mappers\"",
+      "url": "modules/_modules_capsule_capsule_mappers_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 306,
+      "kind": 64,
+      "name": "mapSpaceXCapsuleToCapsule",
+      "url": "modules/_modules_capsule_capsule_mappers_.html#mapspacexcapsuletocapsule",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/capsule/capsule.mappers\""
+    },
+    {
+      "id": 307,
+      "kind": 1,
+      "name": "\"modules/capsule/capsule.spacex\"",
+      "url": "modules/_modules_capsule_capsule_spacex_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 308,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_modules_capsule_capsule_spacex_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/capsule/capsule.spacex\""
+    },
+    {
+      "id": 309,
+      "kind": 64,
+      "name": "getCapsules",
+      "url": "modules/_modules_capsule_capsule_spacex_.html#getcapsules",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/capsule/capsule.spacex\""
+    },
+    {
+      "id": 310,
+      "kind": 64,
+      "name": "getCapsuleById",
+      "url": "modules/_modules_capsule_capsule_spacex_.html#getcapsulebyid",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/capsule/capsule.spacex\""
+    },
+    {
+      "id": 311,
+      "kind": 1,
+      "name": "\"modules/capsule/capsule.service\"",
+      "url": "modules/_modules_capsule_capsule_service_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 312,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_modules_capsule_capsule_service_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/capsule/capsule.service\""
+    },
+    {
+      "id": 313,
+      "kind": 64,
+      "name": "getCapsules",
+      "url": "modules/_modules_capsule_capsule_service_.html#getcapsules",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/capsule/capsule.service\""
+    },
+    {
+      "id": 314,
+      "kind": 64,
+      "name": "getCapsuleById",
+      "url": "modules/_modules_capsule_capsule_service_.html#getcapsulebyid",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"modules/capsule/capsule.service\""
+    },
+    {
+      "id": 315,
+      "kind": 1,
+      "name": "\"modules/capsule/capsule.resolvers\"",
+      "url": "modules/_modules_capsule_capsule_resolvers_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 316,
+      "kind": 2097152,
+      "name": "capsuleResolvers",
+      "url": "modules/_modules_capsule_capsule_resolvers_.html#capsuleresolvers",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-module",
+      "parent": "\"modules/capsule/capsule.resolvers\""
+    },
+    {
+      "id": 317,
+      "kind": 2097152,
+      "name": "Query",
+      "url": "modules/_modules_capsule_capsule_resolvers_.html#capsuleresolvers.query",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      "parent": "\"modules/capsule/capsule.resolvers\".capsuleResolvers"
+    },
+    {
+      "id": 318,
+      "kind": 64,
+      "name": "capsules",
+      "url": "modules/_modules_capsule_capsule_resolvers_.html#capsuleresolvers.query.capsules",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/capsule/capsule.resolvers\".capsuleResolvers.Query"
+    },
+    {
+      "id": 319,
+      "kind": 64,
+      "name": "capsule",
+      "url": "modules/_modules_capsule_capsule_resolvers_.html#capsuleresolvers.query.capsule",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/capsule/capsule.resolvers\".capsuleResolvers.Query"
+    },
+    {
+      "id": 320,
+      "kind": 1,
+      "name": "\"modules/capsule/capsule.typeDefs\"",
+      "url": "modules/_modules_capsule_capsule_typedefs_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 321,
+      "kind": 32,
+      "name": "capsuleTypeDefs",
+      "url": "modules/_modules_capsule_capsule_typedefs_.html#capsuletypedefs",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/capsule/capsule.typeDefs\""
+    },
+    {
+      "id": 322,
+      "kind": 1,
+      "name": "\"modules/category/category.resolvers\"",
+      "url": "modules/_modules_category_category_resolvers_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 323,
+      "kind": 32,
+      "name": "logger",
+      "url": "modules/_modules_category_category_resolvers_.html#logger",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"modules/category/category.resolvers\""
+    },
+    {
+      "id": 324,
+      "kind": 2097152,
+      "name": "categoryResolvers",
+      "url": "modules/_modules_category_category_resolvers_.html#categoryresolvers",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-module",
+      "parent": "\"modules/category/category.resolvers\""
+    },
+    {
+      "id": 325,
+      "kind": 2097152,
+      "name": "Book",
+      "url": "modules/_modules_category_category_resolvers_.html#categoryresolvers.book",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-object-literal",
+      "parent": "\"modules/category/category.resolvers\".categoryResolvers"
+    },
+    {
+      "id": 326,
+      "kind": 64,
+      "name": "categories",
+      "url": "modules/_modules_category_category_resolvers_.html#categoryresolvers.book.categories",
+      "classes": "tsd-kind-function tsd-parent-kind-object-literal",
+      "parent": "\"modules/category/category.resolvers\".categoryResolvers.Book"
+    },
+    {
+      "id": 327,
+      "kind": 1,
+      "name": "\"modules/category/category.typeDefs\"",
+      "url": "modules/_modules_category_category_typedefs_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 328,
+      "kind": 32,
+      "name": "categoryTypeDefs",
+      "url": "modules/_modules_category_category_typedefs_.html#categorytypedefs",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/category/category.typeDefs\""
+    },
+    {
+      "id": 329,
+      "kind": 1,
+      "name": "\"modules/sort.typeDefs\"",
+      "url": "modules/_modules_sort_typedefs_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 330,
+      "kind": 32,
+      "name": "sortTypeDefs",
+      "url": "modules/_modules_sort_typedefs_.html#sorttypedefs",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/sort.typeDefs\""
+    },
+    {
+      "id": 331,
+      "kind": 1,
+      "name": "\"modules/user/user.resolvers\"",
+      "url": "modules/_modules_user_user_resolvers_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 332,
+      "kind": 1,
+      "name": "\"modules/user/user.typeDefs\"",
+      "url": "modules/_modules_user_user_typedefs_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 333,
+      "kind": 32,
+      "name": "userTypeDefs",
+      "url": "modules/_modules_user_user_typedefs_.html#usertypedefs",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"modules/user/user.typeDefs\""
+    }
+  ],
+  "index": {
+    "version": "2.3.9",
+    "fields": ["name", "parent"],
+    "fieldVectors": [
+      ["name/0", [0, 48.978]],
+      ["parent/0", []],
+      ["name/1", [1, 45.614]],
+      ["parent/1", [0, 4.472]],
+      ["name/2", [2, 41.094]],
+      ["parent/2", []],
+      ["name/3", [3, 48.978]],
+      ["parent/3", [2, 3.753]],
+      ["name/4", [4, 54.087]],
+      ["parent/4", [5, 2.219]],
+      ["name/5", [6, 35.628]],
+      ["parent/5", [5, 2.219]],
+      ["name/6", [7, 54.087]],
+      ["parent/6", [5, 2.219]],
+      ["name/7", [8, 54.087]],
+      ["parent/7", [5, 2.219]],
+      ["name/8", [9, 54.087]],
+      ["parent/8", [5, 2.219]],
+      ["name/9", [10, 54.087]],
+      ["parent/9", [5, 2.219]],
+      ["name/10", [11, 54.087]],
+      ["parent/10", [5, 2.219]],
+      ["name/11", [12, 54.087]],
+      ["parent/11", [5, 2.219]],
+      ["name/12", [13, 54.087]],
+      ["parent/12", [5, 2.219]],
+      ["name/13", [14, 54.087]],
+      ["parent/13", [5, 2.219]],
+      ["name/14", [15, 54.087]],
+      ["parent/14", [5, 2.219]],
+      ["name/15", [16, 54.087]],
+      ["parent/15", [5, 2.219]],
+      ["name/16", [17, 54.087]],
+      ["parent/16", [5, 2.219]],
+      ["name/17", [18, 54.087]],
+      ["parent/17", [5, 2.219]],
+      ["name/18", [19, 54.087]],
+      ["parent/18", [5, 2.219]],
+      ["name/19", [20, 54.087]],
+      ["parent/19", [5, 2.219]],
+      ["name/20", [21, 54.087]],
+      ["parent/20", [5, 2.219]],
+      ["name/21", [22, 54.087]],
+      ["parent/21", [5, 2.219]],
+      ["name/22", [23, 54.087]],
+      ["parent/22", [5, 2.219]],
+      ["name/23", [24, 54.087]],
+      ["parent/23", [5, 2.219]],
+      ["name/24", [25, 54.087]],
+      ["parent/24", [5, 2.219]],
+      ["name/25", [26, 54.087]],
+      ["parent/25", [5, 2.219]],
+      ["name/26", [27, 54.087]],
+      ["parent/26", [5, 2.219]],
+      ["name/27", [28, 54.087]],
+      ["parent/27", [5, 2.219]],
+      ["name/28", [29, 54.087]],
+      ["parent/28", [5, 2.219]],
+      ["name/29", [30, 54.087]],
+      ["parent/29", [5, 2.219]],
+      ["name/30", [31, 54.087]],
+      ["parent/30", [5, 2.219]],
+      ["name/31", [32, 48.978]],
+      ["parent/31", [5, 2.219]],
+      ["name/32", [33, 54.087]],
+      ["parent/32", [5, 2.219]],
+      ["name/33", [34, 54.087]],
+      ["parent/33", [2, 3.753]],
+      ["name/34", [35, 54.087]],
+      ["parent/34", [2, 3.753]],
+      ["name/35", [32, 48.978]],
+      ["parent/35", [2, 3.753]],
+      ["name/36", [36, 43.101]],
+      ["parent/36", []],
+      ["name/37", [37, 33.718]],
+      ["parent/37", [36, 3.936]],
+      ["name/38", [38, 54.087]],
+      ["parent/38", [36, 3.936]],
+      ["name/39", [39, 54.087]],
+      ["parent/39", [36, 3.936]],
+      ["name/40", [40, 43.101]],
+      ["parent/40", []],
+      ["name/41", [41, 45.614]],
+      ["parent/41", [40, 3.936]],
+      ["name/42", [42, 54.087]],
+      ["parent/42", [40, 3.936]],
+      ["name/43", [43, 54.087]],
+      ["parent/43", [40, 3.936]],
+      ["name/44", [44, 48.978]],
+      ["parent/44", []],
+      ["name/45", [45, 45.614]],
+      ["parent/45", [44, 4.472]],
+      ["name/46", [46, 41.094]],
+      ["parent/46", []],
+      ["name/47", [37, 33.718]],
+      ["parent/47", [46, 3.753]],
+      ["name/48", [47, 54.087]],
+      ["parent/48", [46, 3.753]],
+      ["name/49", [48, 54.087]],
+      ["parent/49", [46, 3.753]],
+      ["name/50", [49, 54.087]],
+      ["parent/50", [46, 3.753]],
+      ["name/51", [50, 43.101]],
+      ["parent/51", []],
+      ["name/52", [41, 45.614]],
+      ["parent/52", [50, 3.936]],
+      ["name/53", [51, 54.087]],
+      ["parent/53", [50, 3.936]],
+      ["name/54", [52, 54.087]],
+      ["parent/54", [50, 3.936]],
+      ["name/55", [53, 48.978]],
+      ["parent/55", []],
+      ["name/56", [54, 48.978]],
+      ["parent/56", [53, 4.472]],
+      ["name/57", [55, 45.614]],
+      ["parent/57", []],
+      ["name/58", [37, 33.718]],
+      ["parent/58", [55, 4.165]],
+      ["name/59", [56, 54.087]],
+      ["parent/59", [55, 4.165]],
+      ["name/60", [57, 43.101]],
+      ["parent/60", []],
+      ["name/61", [41, 45.614]],
+      ["parent/61", [57, 3.936]],
+      ["name/62", [58, 54.087]],
+      ["parent/62", [57, 3.936]],
+      ["name/63", [59, 54.087]],
+      ["parent/63", [57, 3.936]],
+      ["name/64", [60, 45.614]],
+      ["parent/64", []],
+      ["name/65", [61, 48.978]],
+      ["parent/65", [60, 4.165]],
+      ["name/66", [62, 54.087]],
+      ["parent/66", [60, 4.165]],
+      ["name/67", [63, 48.978]],
+      ["parent/67", []],
+      ["name/68", [64, 48.978]],
+      ["parent/68", [63, 4.472]],
+      ["name/69", [65, 41.094]],
+      ["parent/69", []],
+      ["name/70", [66, 54.087]],
+      ["parent/70", [65, 3.753]],
+      ["name/71", [67, 54.087]],
+      ["parent/71", [65, 3.753]],
+      ["name/72", [68, 54.087]],
+      ["parent/72", [65, 3.753]],
+      ["name/73", [69, 48.978]],
+      ["parent/73", [65, 3.753]],
+      ["name/74", [70, 45.614]],
+      ["parent/74", []],
+      ["name/75", [71, 48.978]],
+      ["parent/75", [70, 4.165]],
+      ["name/76", [71, 48.978]],
+      ["parent/76", [70, 4.165]],
+      ["name/77", [72, 54.087]],
+      ["parent/77", [73, 4.472]],
+      ["name/78", [74, 54.087]],
+      ["parent/78", [73, 4.472]],
+      ["name/79", [75, 34.628]],
+      ["parent/79", []],
+      ["name/80", [76, 54.087]],
+      ["parent/80", [75, 3.162]],
+      ["name/81", [77, 54.087]],
+      ["parent/81", [75, 3.162]],
+      ["name/82", [78, 54.087]],
+      ["parent/82", [75, 3.162]],
+      ["name/83", [79, 54.087]],
+      ["parent/83", [75, 3.162]],
+      ["name/84", [80, 54.087]],
+      ["parent/84", [75, 3.162]],
+      ["name/85", [81, 54.087]],
+      ["parent/85", [75, 3.162]],
+      ["name/86", [82, 54.087]],
+      ["parent/86", [75, 3.162]],
+      ["name/87", [83, 45.614]],
+      ["parent/87", [75, 3.162]],
+      ["name/88", [84, 48.978]],
+      ["parent/88", [75, 3.162]],
+      ["name/89", [85, 45.614]],
+      ["parent/89", []],
+      ["name/90", [86, 45.614]],
+      ["parent/90", [85, 4.165]],
+      ["name/91", [87, 45.614]],
+      ["parent/91", [85, 4.165]],
+      ["name/92", [88, 41.094]],
+      ["parent/92", []],
+      ["name/93", [86, 45.614]],
+      ["parent/93", [88, 3.753]],
+      ["name/94", [87, 45.614]],
+      ["parent/94", [88, 3.753]],
+      ["name/95", [83, 45.614]],
+      ["parent/95", [88, 3.753]],
+      ["name/96", [84, 48.978]],
+      ["parent/96", [88, 3.753]],
+      ["name/97", [89, 48.978]],
+      ["parent/97", []],
+      ["name/98", [90, 54.087]],
+      ["parent/98", [89, 4.472]],
+      ["name/99", [91, 54.087]],
+      ["parent/99", [92, 3.6]],
+      ["name/100", [93, 54.087]],
+      ["parent/100", [92, 3.6]],
+      ["name/101", [94, 54.087]],
+      ["parent/101", [92, 3.6]],
+      ["name/102", [95, 54.087]],
+      ["parent/102", [92, 3.6]],
+      ["name/103", [96, 54.087]],
+      ["parent/103", [92, 3.6]],
+      ["name/104", [97, 54.087]],
+      ["parent/104", [92, 3.6]],
+      ["name/105", [98, 48.978]],
+      ["parent/105", []],
+      ["name/106", [99, 54.087]],
+      ["parent/106", [98, 4.472]],
+      ["name/107", [100, 36.741]],
+      ["parent/107", [101, 3.253]],
+      ["name/108", [102, 36.741]],
+      ["parent/108", [101, 3.253]],
+      ["name/109", [103, 36.741]],
+      ["parent/109", [101, 3.253]],
+      ["name/110", [104, 36.741]],
+      ["parent/110", [101, 3.253]],
+      ["name/111", [105, 36.741]],
+      ["parent/111", [101, 3.253]],
+      ["name/112", [6, 35.628]],
+      ["parent/112", [101, 3.253]],
+      ["name/113", [106, 36.741]],
+      ["parent/113", [101, 3.253]],
+      ["name/114", [107, 36.741]],
+      ["parent/114", [101, 3.253]],
+      ["name/115", [108, 54.087]],
+      ["parent/115", [101, 3.253]],
+      ["name/116", [109, 48.978]],
+      ["parent/116", []],
+      ["name/117", [110, 45.614]],
+      ["parent/117", [109, 4.472]],
+      ["name/118", [105, 36.741]],
+      ["parent/118", [111, 3.355]],
+      ["name/119", [100, 36.741]],
+      ["parent/119", [111, 3.355]],
+      ["name/120", [102, 36.741]],
+      ["parent/120", [111, 3.355]],
+      ["name/121", [103, 36.741]],
+      ["parent/121", [111, 3.355]],
+      ["name/122", [104, 36.741]],
+      ["parent/122", [111, 3.355]],
+      ["name/123", [6, 35.628]],
+      ["parent/123", [111, 3.355]],
+      ["name/124", [106, 36.741]],
+      ["parent/124", [111, 3.355]],
+      ["name/125", [107, 36.741]],
+      ["parent/125", [111, 3.355]],
+      ["name/126", [112, 48.978]],
+      ["parent/126", []],
+      ["name/127", [113, 45.614]],
+      ["parent/127", [112, 4.472]],
+      ["name/128", [105, 36.741]],
+      ["parent/128", [114, 3.355]],
+      ["name/129", [100, 36.741]],
+      ["parent/129", [114, 3.355]],
+      ["name/130", [102, 36.741]],
+      ["parent/130", [114, 3.355]],
+      ["name/131", [103, 36.741]],
+      ["parent/131", [114, 3.355]],
+      ["name/132", [104, 36.741]],
+      ["parent/132", [114, 3.355]],
+      ["name/133", [6, 35.628]],
+      ["parent/133", [114, 3.355]],
+      ["name/134", [106, 36.741]],
+      ["parent/134", [114, 3.355]],
+      ["name/135", [107, 36.741]],
+      ["parent/135", [114, 3.355]],
+      ["name/136", [115, 48.978]],
+      ["parent/136", []],
+      ["name/137", [116, 45.614]],
+      ["parent/137", [115, 4.472]],
+      ["name/138", [117, 54.087]],
+      ["parent/138", [118, 3.253]],
+      ["name/139", [105, 36.741]],
+      ["parent/139", [118, 3.253]],
+      ["name/140", [100, 36.741]],
+      ["parent/140", [118, 3.253]],
+      ["name/141", [102, 36.741]],
+      ["parent/141", [118, 3.253]],
+      ["name/142", [103, 36.741]],
+      ["parent/142", [118, 3.253]],
+      ["name/143", [104, 36.741]],
+      ["parent/143", [118, 3.253]],
+      ["name/144", [6, 35.628]],
+      ["parent/144", [118, 3.253]],
+      ["name/145", [106, 36.741]],
+      ["parent/145", [118, 3.253]],
+      ["name/146", [107, 36.741]],
+      ["parent/146", [118, 3.253]],
+      ["name/147", [119, 48.978]],
+      ["parent/147", []],
+      ["name/148", [120, 43.101]],
+      ["parent/148", [119, 4.472]],
+      ["name/149", [105, 36.741]],
+      ["parent/149", [121, 3.355]],
+      ["name/150", [100, 36.741]],
+      ["parent/150", [121, 3.355]],
+      ["name/151", [102, 36.741]],
+      ["parent/151", [121, 3.355]],
+      ["name/152", [103, 36.741]],
+      ["parent/152", [121, 3.355]],
+      ["name/153", [104, 36.741]],
+      ["parent/153", [121, 3.355]],
+      ["name/154", [6, 35.628]],
+      ["parent/154", [121, 3.355]],
+      ["name/155", [106, 36.741]],
+      ["parent/155", [121, 3.355]],
+      ["name/156", [107, 36.741]],
+      ["parent/156", [121, 3.355]],
+      ["name/157", [122, 48.978]],
+      ["parent/157", []],
+      ["name/158", [123, 45.614]],
+      ["parent/158", [122, 4.472]],
+      ["name/159", [105, 36.741]],
+      ["parent/159", [124, 3.355]],
+      ["name/160", [100, 36.741]],
+      ["parent/160", [124, 3.355]],
+      ["name/161", [102, 36.741]],
+      ["parent/161", [124, 3.355]],
+      ["name/162", [103, 36.741]],
+      ["parent/162", [124, 3.355]],
+      ["name/163", [104, 36.741]],
+      ["parent/163", [124, 3.355]],
+      ["name/164", [6, 35.628]],
+      ["parent/164", [124, 3.355]],
+      ["name/165", [106, 36.741]],
+      ["parent/165", [124, 3.355]],
+      ["name/166", [107, 36.741]],
+      ["parent/166", [124, 3.355]],
+      ["name/167", [125, 48.978]],
+      ["parent/167", []],
+      ["name/168", [126, 45.614]],
+      ["parent/168", [125, 4.472]],
+      ["name/169", [105, 36.741]],
+      ["parent/169", [127, 3.355]],
+      ["name/170", [100, 36.741]],
+      ["parent/170", [127, 3.355]],
+      ["name/171", [102, 36.741]],
+      ["parent/171", [127, 3.355]],
+      ["name/172", [103, 36.741]],
+      ["parent/172", [127, 3.355]],
+      ["name/173", [104, 36.741]],
+      ["parent/173", [127, 3.355]],
+      ["name/174", [6, 35.628]],
+      ["parent/174", [127, 3.355]],
+      ["name/175", [106, 36.741]],
+      ["parent/175", [127, 3.355]],
+      ["name/176", [107, 36.741]],
+      ["parent/176", [127, 3.355]],
+      ["name/177", [128, 48.978]],
+      ["parent/177", []],
+      ["name/178", [129, 45.614]],
+      ["parent/178", [128, 4.472]],
+      ["name/179", [105, 36.741]],
+      ["parent/179", [130, 3.355]],
+      ["name/180", [100, 36.741]],
+      ["parent/180", [130, 3.355]],
+      ["name/181", [102, 36.741]],
+      ["parent/181", [130, 3.355]],
+      ["name/182", [103, 36.741]],
+      ["parent/182", [130, 3.355]],
+      ["name/183", [104, 36.741]],
+      ["parent/183", [130, 3.355]],
+      ["name/184", [6, 35.628]],
+      ["parent/184", [130, 3.355]],
+      ["name/185", [106, 36.741]],
+      ["parent/185", [130, 3.355]],
+      ["name/186", [107, 36.741]],
+      ["parent/186", [130, 3.355]],
+      ["name/187", [131, 36.741]],
+      ["parent/187", []],
+      ["name/188", [110, 45.614]],
+      ["parent/188", [131, 3.355]],
+      ["name/189", [113, 45.614]],
+      ["parent/189", [131, 3.355]],
+      ["name/190", [116, 45.614]],
+      ["parent/190", [131, 3.355]],
+      ["name/191", [120, 43.101]],
+      ["parent/191", [131, 3.355]],
+      ["name/192", [123, 45.614]],
+      ["parent/192", [131, 3.355]],
+      ["name/193", [126, 45.614]],
+      ["parent/193", [131, 3.355]],
+      ["name/194", [129, 45.614]],
+      ["parent/194", [131, 3.355]],
+      ["name/195", [132, 36.741]],
+      ["parent/195", []],
+      ["name/196", [133, 54.087]],
+      ["parent/196", [132, 3.355]],
+      ["name/197", [134, 54.087]],
+      ["parent/197", [132, 3.355]],
+      ["name/198", [135, 54.087]],
+      ["parent/198", [132, 3.355]],
+      ["name/199", [136, 54.087]],
+      ["parent/199", [132, 3.355]],
+      ["name/200", [137, 54.087]],
+      ["parent/200", [132, 3.355]],
+      ["name/201", [138, 54.087]],
+      ["parent/201", [132, 3.355]],
+      ["name/202", [139, 45.614]],
+      ["parent/202", [132, 3.355]],
+      ["name/203", [140, 35.628]],
+      ["parent/203", []],
+      ["name/204", [110, 45.614]],
+      ["parent/204", [140, 3.253]],
+      ["name/205", [113, 45.614]],
+      ["parent/205", [140, 3.253]],
+      ["name/206", [123, 45.614]],
+      ["parent/206", [140, 3.253]],
+      ["name/207", [120, 43.101]],
+      ["parent/207", [140, 3.253]],
+      ["name/208", [116, 45.614]],
+      ["parent/208", [140, 3.253]],
+      ["name/209", [126, 45.614]],
+      ["parent/209", [140, 3.253]],
+      ["name/210", [129, 45.614]],
+      ["parent/210", [140, 3.253]],
+      ["name/211", [139, 45.614]],
+      ["parent/211", [140, 3.253]],
+      ["name/212", [141, 48.978]],
+      ["parent/212", []],
+      ["name/213", [142, 54.087]],
+      ["parent/213", [141, 4.472]],
+      ["name/214", [143, 48.978]],
+      ["parent/214", [144, 3.753]],
+      ["name/215", [145, 54.087]],
+      ["parent/215", [144, 3.753]],
+      ["name/216", [146, 54.087]],
+      ["parent/216", [144, 3.753]],
+      ["name/217", [147, 54.087]],
+      ["parent/217", [144, 3.753]],
+      ["name/218", [148, 54.087]],
+      ["parent/218", [144, 3.753]],
+      ["name/219", [149, 39.423]],
+      ["parent/219", []],
+      ["name/220", [37, 33.718]],
+      ["parent/220", [149, 3.6]],
+      ["name/221", [150, 54.087]],
+      ["parent/221", [149, 3.6]],
+      ["name/222", [151, 54.087]],
+      ["parent/222", [149, 3.6]],
+      ["name/223", [152, 48.978]],
+      ["parent/223", [149, 3.6]],
+      ["name/224", [143, 48.978]],
+      ["parent/224", [149, 3.6]],
+      ["name/225", [153, 54.087]],
+      ["parent/225", []],
+      ["name/226", [154, 48.978]],
+      ["parent/226", []],
+      ["name/227", [155, 54.087]],
+      ["parent/227", [154, 4.472]],
+      ["name/228", [156, 45.614]],
+      ["parent/228", []],
+      ["name/229", [157, 54.087]],
+      ["parent/229", [156, 4.165]],
+      ["name/230", [158, 54.087]],
+      ["parent/230", [156, 4.165]],
+      ["name/231", [159, 45.614]],
+      ["parent/231", []],
+      ["name/232", [160, 54.087]],
+      ["parent/232", [159, 4.165]],
+      ["name/233", [161, 54.087]],
+      ["parent/233", [159, 4.165]],
+      ["name/234", [162, 48.978]],
+      ["parent/234", []],
+      ["name/235", [163, 45.614]],
+      ["parent/235", [162, 4.472]],
+      ["name/236", [164, 48.978]],
+      ["parent/236", []],
+      ["name/237", [163, 45.614]],
+      ["parent/237", [164, 4.472]],
+      ["name/238", [165, 43.101]],
+      ["parent/238", []],
+      ["name/239", [166, 54.087]],
+      ["parent/239", [165, 3.936]],
+      ["name/240", [167, 54.087]],
+      ["parent/240", [165, 3.936]],
+      ["name/241", [168, 45.614]],
+      ["parent/241", [165, 3.936]],
+      ["name/242", [169, 48.978]],
+      ["parent/242", []],
+      ["name/243", [168, 45.614]],
+      ["parent/243", [169, 4.472]],
+      ["name/244", [170, 39.423]],
+      ["parent/244", []],
+      ["name/245", [171, 54.087]],
+      ["parent/245", [170, 3.6]],
+      ["name/246", [172, 54.087]],
+      ["parent/246", [170, 3.6]],
+      ["name/247", [173, 54.087]],
+      ["parent/247", [170, 3.6]],
+      ["name/248", [174, 54.087]],
+      ["parent/248", [170, 3.6]],
+      ["name/249", [175, 48.978]],
+      ["parent/249", [170, 3.6]],
+      ["name/250", [176, 48.978]],
+      ["parent/250", []],
+      ["name/251", [177, 48.978]],
+      ["parent/251", [176, 4.472]],
+      ["name/252", [178, 31.4]],
+      ["parent/252", []],
+      ["name/253", [61, 48.978]],
+      ["parent/253", [178, 2.867]],
+      ["name/254", [69, 48.978]],
+      ["parent/254", [178, 2.867]],
+      ["name/255", [83, 45.614]],
+      ["parent/255", [178, 2.867]],
+      ["name/256", [86, 45.614]],
+      ["parent/256", [178, 2.867]],
+      ["name/257", [87, 45.614]],
+      ["parent/257", [178, 2.867]],
+      ["name/258", [120, 43.101]],
+      ["parent/258", [178, 2.867]],
+      ["name/259", [139, 45.614]],
+      ["parent/259", [178, 2.867]],
+      ["name/260", [152, 48.978]],
+      ["parent/260", [178, 2.867]],
+      ["name/261", [163, 45.614]],
+      ["parent/261", [178, 2.867]],
+      ["name/262", [168, 45.614]],
+      ["parent/262", [178, 2.867]],
+      ["name/263", [175, 48.978]],
+      ["parent/263", [178, 2.867]],
+      ["name/264", [177, 48.978]],
+      ["parent/264", [178, 2.867]],
+      ["name/265", [64, 48.978]],
+      ["parent/265", [178, 2.867]],
+      ["name/266", [179, 45.614]],
+      ["parent/266", []],
+      ["name/267", [37, 33.718]],
+      ["parent/267", [179, 4.165]],
+      ["name/268", [180, 54.087]],
+      ["parent/268", [179, 4.165]],
+      ["name/269", [181, 43.101]],
+      ["parent/269", []],
+      ["name/270", [182, 54.087]],
+      ["parent/270", [181, 3.936]],
+      ["name/271", [183, 54.087]],
+      ["parent/271", [181, 3.936]],
+      ["name/272", [37, 33.718]],
+      ["parent/272", [181, 3.936]],
+      ["name/273", [184, 48.978]],
+      ["parent/273", []],
+      ["name/274", [185, 54.087]],
+      ["parent/274", [184, 4.472]],
+      ["name/275", [186, 45.614]],
+      ["parent/275", []],
+      ["name/276", [187, 54.087]],
+      ["parent/276", [186, 4.165]],
+      ["name/277", [188, 54.087]],
+      ["parent/277", [186, 4.165]],
+      ["name/278", [189, 48.978]],
+      ["parent/278", []],
+      ["name/279", [190, 48.978]],
+      ["parent/279", [189, 4.472]],
+      ["name/280", [191, 48.978]],
+      ["parent/280", []],
+      ["name/281", [192, 54.087]],
+      ["parent/281", [191, 4.472]],
+      ["name/282", [193, 54.087]],
+      ["parent/282", [194, 4.939]],
+      ["name/283", [190, 48.978]],
+      ["parent/283", [195, 4.939]],
+      ["name/284", [196, 48.978]],
+      ["parent/284", []],
+      ["name/285", [197, 54.087]],
+      ["parent/285", [196, 4.472]],
+      ["name/286", [198, 45.614]],
+      ["parent/286", []],
+      ["name/287", [37, 33.718]],
+      ["parent/287", [198, 4.165]],
+      ["name/288", [199, 54.087]],
+      ["parent/288", [198, 4.165]],
+      ["name/289", [200, 45.614]],
+      ["parent/289", [201, 4.472]],
+      ["name/290", [1, 45.614]],
+      ["parent/290", [202, 4.939]],
+      ["name/291", [203, 45.614]],
+      ["parent/291", [201, 4.472]],
+      ["name/292", [1, 45.614]],
+      ["parent/292", [204, 4.939]],
+      ["name/293", [205, 48.978]],
+      ["parent/293", []],
+      ["name/294", [206, 54.087]],
+      ["parent/294", [205, 4.472]],
+      ["name/295", [207, 45.614]],
+      ["parent/295", []],
+      ["name/296", [37, 33.718]],
+      ["parent/296", [207, 4.165]],
+      ["name/297", [208, 54.087]],
+      ["parent/297", [207, 4.165]],
+      ["name/298", [203, 45.614]],
+      ["parent/298", [209, 4.472]],
+      ["name/299", [45, 45.614]],
+      ["parent/299", [210, 4.472]],
+      ["name/300", [200, 45.614]],
+      ["parent/300", [210, 4.472]],
+      ["name/301", [3, 48.978]],
+      ["parent/301", [209, 4.472]],
+      ["name/302", [45, 45.614]],
+      ["parent/302", [211, 4.939]],
+      ["name/303", [212, 48.978]],
+      ["parent/303", []],
+      ["name/304", [213, 54.087]],
+      ["parent/304", [212, 4.472]],
+      ["name/305", [214, 48.978]],
+      ["parent/305", []],
+      ["name/306", [215, 54.087]],
+      ["parent/306", [214, 4.472]],
+      ["name/307", [216, 43.101]],
+      ["parent/307", []],
+      ["name/308", [37, 33.718]],
+      ["parent/308", [216, 3.936]],
+      ["name/309", [217, 48.978]],
+      ["parent/309", [216, 3.936]],
+      ["name/310", [218, 48.978]],
+      ["parent/310", [216, 3.936]],
+      ["name/311", [219, 43.101]],
+      ["parent/311", []],
+      ["name/312", [37, 33.718]],
+      ["parent/312", [219, 3.936]],
+      ["name/313", [217, 48.978]],
+      ["parent/313", [219, 3.936]],
+      ["name/314", [218, 48.978]],
+      ["parent/314", [219, 3.936]],
+      ["name/315", [220, 48.978]],
+      ["parent/315", []],
+      ["name/316", [221, 54.087]],
+      ["parent/316", [220, 4.472]],
+      ["name/317", [203, 45.614]],
+      ["parent/317", [222, 4.939]],
+      ["name/318", [223, 54.087]],
+      ["parent/318", [224, 4.472]],
+      ["name/319", [225, 54.087]],
+      ["parent/319", [224, 4.472]],
+      ["name/320", [226, 48.978]],
+      ["parent/320", []],
+      ["name/321", [227, 54.087]],
+      ["parent/321", [226, 4.472]],
+      ["name/322", [228, 45.614]],
+      ["parent/322", []],
+      ["name/323", [37, 33.718]],
+      ["parent/323", [228, 4.165]],
+      ["name/324", [229, 54.087]],
+      ["parent/324", [228, 4.165]],
+      ["name/325", [200, 45.614]],
+      ["parent/325", [230, 4.939]],
+      ["name/326", [54, 48.978]],
+      ["parent/326", [231, 4.939]],
+      ["name/327", [232, 48.978]],
+      ["parent/327", []],
+      ["name/328", [233, 54.087]],
+      ["parent/328", [232, 4.472]],
+      ["name/329", [234, 48.978]],
+      ["parent/329", []],
+      ["name/330", [235, 54.087]],
+      ["parent/330", [234, 4.472]],
+      ["name/331", [236, 54.087]],
+      ["parent/331", []],
+      ["name/332", [237, 48.978]],
+      ["parent/332", []],
+      ["name/333", [238, 54.087]],
+      ["parent/333", [237, 4.472]]
+    ],
+    "invertedIndex": [
+      ["__v", { "_index": 15, "name": { "14": {} }, "parent": {} }],
+      ["accountant", { "_index": 74, "name": { "78": {} }, "parent": {} }],
+      ["addlistener", { "_index": 16, "name": { "15": {} }, "parent": {} }],
+      ["age", { "_index": 7, "name": { "6": {} }, "parent": {} }],
+      [
+        "app",
+        {
+          "_index": 179,
+          "name": { "266": {} },
+          "parent": { "267": {}, "268": {} }
+        }
+      ],
+      [
+        "applymiddleware",
+        {
+          "_index": 163,
+          "name": { "235": {}, "237": {}, "261": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "assertauthenticated",
+        {
+          "_index": 86,
+          "name": { "90": {}, "93": {}, "256": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "assertauthorized",
+        {
+          "_index": 87,
+          "name": { "91": {}, "94": {}, "257": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "auth_token_audience",
+        { "_index": 77, "name": { "81": {} }, "parent": {} }
+      ],
+      [
+        "auth_token_expiration_interval",
+        { "_index": 80, "name": { "84": {} }, "parent": {} }
+      ],
+      [
+        "auth_token_issuer",
+        { "_index": 76, "name": { "80": {} }, "parent": {} }
+      ],
+      [
+        "auth_token_secret",
+        { "_index": 79, "name": { "83": {} }, "parent": {} }
+      ],
+      [
+        "auth_token_subject",
+        { "_index": 78, "name": { "82": {} }, "parent": {} }
+      ],
+      [
+        "authentication_error",
+        { "_index": 93, "name": { "100": {} }, "parent": {} }
+      ],
+      [
+        "authenticationerror",
+        {
+          "_index": 110,
+          "name": { "117": {}, "188": {}, "204": {} },
+          "parent": {}
+        }
+      ],
+      ["author", { "_index": 3, "name": { "3": {}, "301": {} }, "parent": {} }],
+      [
+        "authorization_error",
+        { "_index": 94, "name": { "101": {} }, "parent": {} }
+      ],
+      [
+        "authorizationerror",
+        {
+          "_index": 113,
+          "name": { "127": {}, "189": {}, "205": {} },
+          "parent": {}
+        }
+      ],
+      ["authorloader", { "_index": 42, "name": { "42": {} }, "parent": {} }],
+      ["authormodel", { "_index": 35, "name": { "34": {} }, "parent": {} }],
+      [
+        "authorresolvers",
+        { "_index": 199, "name": { "288": {} }, "parent": {} }
+      ],
+      [
+        "authors",
+        { "_index": 1, "name": { "1": {}, "290": {}, "292": {} }, "parent": {} }
+      ],
+      ["authorschema", { "_index": 34, "name": { "33": {} }, "parent": {} }],
+      [
+        "authortypedefs",
+        { "_index": 206, "name": { "294": {} }, "parent": {} }
+      ],
+      ["authresolvers", { "_index": 192, "name": { "281": {} }, "parent": {} }],
+      ["authtypedefs", { "_index": 197, "name": { "285": {} }, "parent": {} }],
+      ["baseerror", { "_index": 99, "name": { "106": {} }, "parent": {} }],
+      [
+        "book",
+        {
+          "_index": 200,
+          "name": { "289": {}, "300": {}, "325": {} },
+          "parent": {}
+        }
+      ],
+      ["bookids", { "_index": 8, "name": { "7": {} }, "parent": {} }],
+      ["bookloader", { "_index": 51, "name": { "53": {} }, "parent": {} }],
+      ["bookresolvers", { "_index": 208, "name": { "297": {} }, "parent": {} }],
+      [
+        "books",
+        {
+          "_index": 45,
+          "name": { "45": {}, "299": {}, "302": {} },
+          "parent": {}
+        }
+      ],
+      ["booktypedefs", { "_index": 213, "name": { "304": {} }, "parent": {} }],
+      [
+        "bootstrapschema",
+        { "_index": 174, "name": { "248": {} }, "parent": {} }
+      ],
+      [
+        "businesserror",
+        {
+          "_index": 129,
+          "name": { "178": {}, "194": {}, "210": {} },
+          "parent": {}
+        }
+      ],
+      ["capsule", { "_index": 225, "name": { "319": {} }, "parent": {} }],
+      [
+        "capsuleresolvers",
+        { "_index": 221, "name": { "316": {} }, "parent": {} }
+      ],
+      ["capsules", { "_index": 223, "name": { "318": {} }, "parent": {} }],
+      [
+        "capsuletypedefs",
+        { "_index": 227, "name": { "321": {} }, "parent": {} }
+      ],
+      [
+        "categories",
+        { "_index": 54, "name": { "56": {}, "326": {} }, "parent": {} }
+      ],
+      ["categoryloader", { "_index": 58, "name": { "62": {} }, "parent": {} }],
+      [
+        "categoryresolvers",
+        { "_index": 229, "name": { "324": {} }, "parent": {} }
+      ],
+      [
+        "categorytypedefs",
+        { "_index": 233, "name": { "328": {} }, "parent": {} }
+      ],
+      [
+        "code",
+        {
+          "_index": 100,
+          "name": {
+            "107": {},
+            "119": {},
+            "129": {},
+            "140": {},
+            "150": {},
+            "160": {},
+            "170": {},
+            "180": {}
+          },
+          "parent": {}
+        }
+      ],
+      ["collection", { "_index": 31, "name": { "30": {} }, "parent": {} }],
+      [
+        "constructor",
+        {
+          "_index": 105,
+          "name": {
+            "111": {},
+            "118": {},
+            "128": {},
+            "139": {},
+            "149": {},
+            "159": {},
+            "169": {},
+            "179": {}
+          },
+          "parent": {}
+        }
+      ],
+      ["createapp", { "_index": 180, "name": { "268": {} }, "parent": {} }],
+      [
+        "createauthorloader",
+        { "_index": 43, "name": { "43": {} }, "parent": {} }
+      ],
+      [
+        "createlogger",
+        { "_index": 69, "name": { "73": {}, "254": {} }, "parent": {} }
+      ],
+      ["db", { "_index": 32, "name": { "31": {}, "35": {} }, "parent": {} }],
+      ["delete", { "_index": 148, "name": { "218": {} }, "parent": {} }],
+      ["deleteone", { "_index": 13, "name": { "12": {} }, "parent": {} }],
+      ["emit", { "_index": 26, "name": { "25": {} }, "parent": {} }],
+      [
+        "enable_graphql_introspection",
+        { "_index": 172, "name": { "246": {} }, "parent": {} }
+      ],
+      [
+        "enable_graphql_playground",
+        { "_index": 171, "name": { "245": {} }, "parent": {} }
+      ],
+      ["error", { "_index": 108, "name": { "115": {} }, "parent": {} }],
+      ["errorcode", { "_index": 90, "name": { "98": {} }, "parent": {} }],
+      ["eventnames", { "_index": 30, "name": { "29": {} }, "parent": {} }],
+      [
+        "expose_error_stack_traces",
+        { "_index": 173, "name": { "247": {} }, "parent": {} }
+      ],
+      [
+        "expose_unknown_errors",
+        { "_index": 133, "name": { "196": {} }, "parent": {} }
+      ],
+      ["extensions", { "_index": 134, "name": { "197": {} }, "parent": {} }],
+      [
+        "extracttoken",
+        { "_index": 84, "name": { "88": {}, "96": {} }, "parent": {} }
+      ],
+      [
+        "extracttokenfromauthorizationheader",
+        { "_index": 160, "name": { "232": {} }, "parent": {} }
+      ],
+      [
+        "formatjoierror",
+        { "_index": 167, "name": { "240": {} }, "parent": {} }
+      ],
+      [
+        "get",
+        { "_index": 143, "name": { "214": {}, "224": {} }, "parent": {} }
+      ],
+      ["getauthors", { "_index": 38, "name": { "38": {} }, "parent": {} }],
+      ["getauthorsbyids", { "_index": 39, "name": { "39": {} }, "parent": {} }],
+      ["getbookbyid", { "_index": 47, "name": { "48": {} }, "parent": {} }],
+      ["getbooks", { "_index": 48, "name": { "49": {} }, "parent": {} }],
+      ["getbooksbyids", { "_index": 49, "name": { "50": {} }, "parent": {} }],
+      [
+        "getcapsulebyid",
+        { "_index": 218, "name": { "310": {}, "314": {} }, "parent": {} }
+      ],
+      [
+        "getcapsules",
+        { "_index": 217, "name": { "309": {}, "313": {} }, "parent": {} }
+      ],
+      [
+        "getcategoriesbyids",
+        { "_index": 56, "name": { "59": {} }, "parent": {} }
+      ],
+      [
+        "getenvironmentvariable",
+        { "_index": 64, "name": { "68": {}, "265": {} }, "parent": {} }
+      ],
+      ["getmaxlisteners", { "_index": 23, "name": { "22": {} }, "parent": {} }],
+      [
+        "getuserbyemail",
+        { "_index": 188, "name": { "277": {} }, "parent": {} }
+      ],
+      ["getuserbyid", { "_index": 187, "name": { "276": {} }, "parent": {} }],
+      [
+        "global/auth/auth",
+        { "_index": 85, "name": { "89": {} }, "parent": { "90": {}, "91": {} } }
+      ],
+      [
+        "global/auth/index",
+        {
+          "_index": 88,
+          "name": { "92": {} },
+          "parent": { "93": {}, "94": {}, "95": {}, "96": {} }
+        }
+      ],
+      [
+        "global/auth/rolepermissions",
+        { "_index": 70, "name": { "74": {} }, "parent": { "75": {}, "76": {} } }
+      ],
+      [
+        "global/auth/rolepermissions\".rolepermissions",
+        { "_index": 73, "name": {}, "parent": { "77": {}, "78": {} } }
+      ],
+      [
+        "global/auth/token",
+        {
+          "_index": 75,
+          "name": { "79": {} },
+          "parent": {
+            "80": {},
+            "81": {},
+            "82": {},
+            "83": {},
+            "84": {},
+            "85": {},
+            "86": {},
+            "87": {},
+            "88": {}
+          }
+        }
+      ],
+      [
+        "global/createlogger",
+        {
+          "_index": 65,
+          "name": { "69": {} },
+          "parent": { "70": {}, "71": {}, "72": {}, "73": {} }
+        }
+      ],
+      [
+        "global/error/errorcode",
+        { "_index": 89, "name": { "97": {} }, "parent": { "98": {} } }
+      ],
+      [
+        "global/error/errorcode\".errorcode",
+        {
+          "_index": 92,
+          "name": {},
+          "parent": {
+            "99": {},
+            "100": {},
+            "101": {},
+            "102": {},
+            "103": {},
+            "104": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/authenticationerror",
+        { "_index": 109, "name": { "116": {} }, "parent": { "117": {} } }
+      ],
+      [
+        "global/error/errors/authenticationerror\".authenticationerror",
+        {
+          "_index": 111,
+          "name": {},
+          "parent": {
+            "118": {},
+            "119": {},
+            "120": {},
+            "121": {},
+            "122": {},
+            "123": {},
+            "124": {},
+            "125": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/authorizationerror",
+        { "_index": 112, "name": { "126": {} }, "parent": { "127": {} } }
+      ],
+      [
+        "global/error/errors/authorizationerror\".authorizationerror",
+        {
+          "_index": 114,
+          "name": {},
+          "parent": {
+            "128": {},
+            "129": {},
+            "130": {},
+            "131": {},
+            "132": {},
+            "133": {},
+            "134": {},
+            "135": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/baseerror",
+        { "_index": 98, "name": { "105": {} }, "parent": { "106": {} } }
+      ],
+      [
+        "global/error/errors/baseerror\".baseerror",
+        {
+          "_index": 101,
+          "name": {},
+          "parent": {
+            "107": {},
+            "108": {},
+            "109": {},
+            "110": {},
+            "111": {},
+            "112": {},
+            "113": {},
+            "114": {},
+            "115": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/businesserror",
+        { "_index": 128, "name": { "177": {} }, "parent": { "178": {} } }
+      ],
+      [
+        "global/error/errors/businesserror\".businesserror",
+        {
+          "_index": 130,
+          "name": {},
+          "parent": {
+            "179": {},
+            "180": {},
+            "181": {},
+            "182": {},
+            "183": {},
+            "184": {},
+            "185": {},
+            "186": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/index",
+        {
+          "_index": 131,
+          "name": { "187": {} },
+          "parent": {
+            "188": {},
+            "189": {},
+            "190": {},
+            "191": {},
+            "192": {},
+            "193": {},
+            "194": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/inputvalidationerror",
+        { "_index": 115, "name": { "136": {} }, "parent": { "137": {} } }
+      ],
+      [
+        "global/error/errors/inputvalidationerror\".inputvalidationerror",
+        {
+          "_index": 118,
+          "name": {},
+          "parent": {
+            "138": {},
+            "139": {},
+            "140": {},
+            "141": {},
+            "142": {},
+            "143": {},
+            "144": {},
+            "145": {},
+            "146": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/integrationerror",
+        { "_index": 119, "name": { "147": {} }, "parent": { "148": {} } }
+      ],
+      [
+        "global/error/errors/integrationerror\".integrationerror",
+        {
+          "_index": 121,
+          "name": {},
+          "parent": {
+            "149": {},
+            "150": {},
+            "151": {},
+            "152": {},
+            "153": {},
+            "154": {},
+            "155": {},
+            "156": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/notfounderror",
+        { "_index": 122, "name": { "157": {} }, "parent": { "158": {} } }
+      ],
+      [
+        "global/error/errors/notfounderror\".notfounderror",
+        {
+          "_index": 124,
+          "name": {},
+          "parent": {
+            "159": {},
+            "160": {},
+            "161": {},
+            "162": {},
+            "163": {},
+            "164": {},
+            "165": {},
+            "166": {}
+          }
+        }
+      ],
+      [
+        "global/error/errors/requesterror",
+        { "_index": 125, "name": { "167": {} }, "parent": { "168": {} } }
+      ],
+      [
+        "global/error/errors/requesterror\".requesterror",
+        {
+          "_index": 127,
+          "name": {},
+          "parent": {
+            "169": {},
+            "170": {},
+            "171": {},
+            "172": {},
+            "173": {},
+            "174": {},
+            "175": {},
+            "176": {}
+          }
+        }
+      ],
+      [
+        "global/error/index",
+        {
+          "_index": 140,
+          "name": { "203": {} },
+          "parent": {
+            "204": {},
+            "205": {},
+            "206": {},
+            "207": {},
+            "208": {},
+            "209": {},
+            "210": {},
+            "211": {}
+          }
+        }
+      ],
+      [
+        "global/error/transformgraphqlerror",
+        {
+          "_index": 132,
+          "name": { "195": {} },
+          "parent": {
+            "196": {},
+            "197": {},
+            "198": {},
+            "199": {},
+            "200": {},
+            "201": {},
+            "202": {}
+          }
+        }
+      ],
+      [
+        "global/getenvironmentvariable",
+        { "_index": 63, "name": { "67": {} }, "parent": { "68": {} } }
+      ],
+      [
+        "global/index",
+        {
+          "_index": 178,
+          "name": { "252": {} },
+          "parent": {
+            "253": {},
+            "254": {},
+            "255": {},
+            "256": {},
+            "257": {},
+            "258": {},
+            "259": {},
+            "260": {},
+            "261": {},
+            "262": {},
+            "263": {},
+            "264": {},
+            "265": {}
+          }
+        }
+      ],
+      [
+        "global/inputvalidation/args",
+        {
+          "_index": 165,
+          "name": { "238": {} },
+          "parent": { "239": {}, "240": {}, "241": {} }
+        }
+      ],
+      [
+        "global/inputvalidation/index",
+        { "_index": 169, "name": { "242": {} }, "parent": { "243": {} } }
+      ],
+      [
+        "global/installapolloserver",
+        {
+          "_index": 170,
+          "name": { "244": {} },
+          "parent": { "245": {}, "246": {}, "247": {}, "248": {}, "249": {} }
+        }
+      ],
+      [
+        "global/installdatabaseconnection",
+        { "_index": 176, "name": { "250": {} }, "parent": { "251": {} } }
+      ],
+      [
+        "global/middleware/applymiddleware",
+        { "_index": 162, "name": { "234": {} }, "parent": { "235": {} } }
+      ],
+      [
+        "global/middleware/index",
+        { "_index": 164, "name": { "236": {} }, "parent": { "237": {} } }
+      ],
+      [
+        "global/middleware/makeerrorrespondermiddleware",
+        { "_index": 154, "name": { "226": {} }, "parent": { "227": {} } }
+      ],
+      [
+        "global/middleware/makeloggingmiddleware",
+        {
+          "_index": 156,
+          "name": { "228": {} },
+          "parent": { "229": {}, "230": {} }
+        }
+      ],
+      [
+        "global/middleware/maketokenextractormiddleware",
+        {
+          "_index": 159,
+          "name": { "231": {} },
+          "parent": { "232": {}, "233": {} }
+        }
+      ],
+      [
+        "global/request/httpmethod",
+        { "_index": 141, "name": { "212": {} }, "parent": { "213": {} } }
+      ],
+      [
+        "global/request/httpmethod\".httpmethod",
+        {
+          "_index": 144,
+          "name": {},
+          "parent": { "214": {}, "215": {}, "216": {}, "217": {}, "218": {} }
+        }
+      ],
+      [
+        "global/request/index",
+        { "_index": 153, "name": { "225": {} }, "parent": {} }
+      ],
+      [
+        "global/request/request",
+        {
+          "_index": 149,
+          "name": { "219": {} },
+          "parent": { "220": {}, "221": {}, "222": {}, "223": {}, "224": {} }
+        }
+      ],
+      [
+        "global/types/index",
+        { "_index": 60, "name": { "64": {} }, "parent": { "65": {}, "66": {} } }
+      ],
+      ["httpmethod", { "_index": 142, "name": { "213": {} }, "parent": {} }],
+      ["id", { "_index": 4, "name": { "4": {} }, "parent": {} }],
+      ["increment", { "_index": 9, "name": { "8": {} }, "parent": {} }],
+      [
+        "index",
+        {
+          "_index": 181,
+          "name": { "269": {} },
+          "parent": { "270": {}, "271": {}, "272": {} }
+        }
+      ],
+      [
+        "input_validation_error",
+        { "_index": 95, "name": { "102": {} }, "parent": {} }
+      ],
+      [
+        "inputvalidationerror",
+        {
+          "_index": 116,
+          "name": { "137": {}, "190": {}, "208": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "installapolloserver",
+        { "_index": 175, "name": { "249": {}, "263": {} }, "parent": {} }
+      ],
+      [
+        "installdatabaseconnection",
+        { "_index": 177, "name": { "251": {}, "264": {} }, "parent": {} }
+      ],
+      [
+        "integration_error",
+        { "_index": 96, "name": { "103": {} }, "parent": {} }
+      ],
+      [
+        "integrationerror",
+        {
+          "_index": 120,
+          "name": { "148": {}, "191": {}, "207": {}, "258": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "internal_server_error",
+        { "_index": 91, "name": { "99": {} }, "parent": {} }
+      ],
+      ["isdeleted", { "_index": 11, "name": { "10": {} }, "parent": {} }],
+      [
+        "knowngraphqlerror",
+        { "_index": 135, "name": { "198": {} }, "parent": {} }
+      ],
+      ["listenercount", { "_index": 27, "name": { "26": {} }, "parent": {} }],
+      ["listeners", { "_index": 24, "name": { "23": {} }, "parent": {} }],
+      [
+        "loaderfn",
+        { "_index": 41, "name": { "41": {}, "52": {}, "61": {} }, "parent": {} }
+      ],
+      [
+        "logger",
+        {
+          "_index": 37,
+          "name": {
+            "37": {},
+            "47": {},
+            "58": {},
+            "220": {},
+            "267": {},
+            "272": {},
+            "287": {},
+            "296": {},
+            "308": {},
+            "312": {},
+            "323": {}
+          },
+          "parent": {}
+        }
+      ],
+      ["logging_level", { "_index": 66, "name": { "70": {} }, "parent": {} }],
+      [
+        "loggingnamespace",
+        { "_index": 157, "name": { "229": {} }, "parent": {} }
+      ],
+      [
+        "login",
+        { "_index": 190, "name": { "279": {}, "283": {} }, "parent": {} }
+      ],
+      ["makebookloader", { "_index": 52, "name": { "54": {} }, "parent": {} }],
+      [
+        "makecategoryloader",
+        { "_index": 59, "name": { "63": {} }, "parent": {} }
+      ],
+      [
+        "makeconsoleformat",
+        { "_index": 67, "name": { "71": {} }, "parent": {} }
+      ],
+      [
+        "makeerrorrespondermiddleware",
+        { "_index": 155, "name": { "227": {} }, "parent": {} }
+      ],
+      [
+        "makeextensions",
+        { "_index": 136, "name": { "199": {} }, "parent": {} }
+      ],
+      ["makefileformat", { "_index": 68, "name": { "72": {} }, "parent": {} }],
+      [
+        "makeknowngraphqlformattederror",
+        { "_index": 137, "name": { "200": {} }, "parent": {} }
+      ],
+      [
+        "makeloggingmiddleware",
+        { "_index": 158, "name": { "230": {} }, "parent": {} }
+      ],
+      [
+        "makequerystring",
+        { "_index": 150, "name": { "221": {} }, "parent": {} }
+      ],
+      [
+        "maketoken",
+        {
+          "_index": 83,
+          "name": { "87": {}, "95": {}, "255": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "maketokenextractormiddleware",
+        { "_index": 161, "name": { "233": {} }, "parent": {} }
+      ],
+      [
+        "makeunknowngraphqlformattederror",
+        { "_index": 138, "name": { "201": {} }, "parent": {} }
+      ],
+      ["makeurl", { "_index": 151, "name": { "222": {} }, "parent": {} }],
+      [
+        "mapspacexcapsuletocapsule",
+        { "_index": 215, "name": { "306": {} }, "parent": {} }
+      ],
+      [
+        "message",
+        {
+          "_index": 106,
+          "name": {
+            "113": {},
+            "124": {},
+            "134": {},
+            "145": {},
+            "155": {},
+            "165": {},
+            "175": {},
+            "185": {}
+          },
+          "parent": {}
+        }
+      ],
+      ["model", { "_index": 10, "name": { "9": {} }, "parent": {} }],
+      [
+        "modules/auth/auth.resolvers",
+        { "_index": 191, "name": { "280": {} }, "parent": { "281": {} } }
+      ],
+      [
+        "modules/auth/auth.resolvers\".authresolvers",
+        { "_index": 194, "name": {}, "parent": { "282": {} } }
+      ],
+      [
+        "modules/auth/auth.resolvers\".authresolvers.mutation",
+        { "_index": 195, "name": {}, "parent": { "283": {} } }
+      ],
+      [
+        "modules/auth/auth.service",
+        { "_index": 189, "name": { "278": {} }, "parent": { "279": {} } }
+      ],
+      [
+        "modules/auth/auth.typedefs",
+        { "_index": 196, "name": { "284": {} }, "parent": { "285": {} } }
+      ],
+      [
+        "modules/author/author.data",
+        { "_index": 0, "name": { "0": {} }, "parent": { "1": {} } }
+      ],
+      [
+        "modules/author/author.loader",
+        {
+          "_index": 40,
+          "name": { "40": {} },
+          "parent": { "41": {}, "42": {}, "43": {} }
+        }
+      ],
+      [
+        "modules/author/author.model",
+        {
+          "_index": 2,
+          "name": { "2": {} },
+          "parent": { "3": {}, "33": {}, "34": {}, "35": {} }
+        }
+      ],
+      [
+        "modules/author/author.model\".author",
+        {
+          "_index": 5,
+          "name": {},
+          "parent": {
+            "4": {},
+            "5": {},
+            "6": {},
+            "7": {},
+            "8": {},
+            "9": {},
+            "10": {},
+            "11": {},
+            "12": {},
+            "13": {},
+            "14": {},
+            "15": {},
+            "16": {},
+            "17": {},
+            "18": {},
+            "19": {},
+            "20": {},
+            "21": {},
+            "22": {},
+            "23": {},
+            "24": {},
+            "25": {},
+            "26": {},
+            "27": {},
+            "28": {},
+            "29": {},
+            "30": {},
+            "31": {},
+            "32": {}
+          }
+        }
+      ],
+      [
+        "modules/author/author.resolvers",
+        {
+          "_index": 198,
+          "name": { "286": {} },
+          "parent": { "287": {}, "288": {} }
+        }
+      ],
+      [
+        "modules/author/author.resolvers\".authorresolvers",
+        { "_index": 201, "name": {}, "parent": { "289": {}, "291": {} } }
+      ],
+      [
+        "modules/author/author.resolvers\".authorresolvers.book",
+        { "_index": 202, "name": {}, "parent": { "290": {} } }
+      ],
+      [
+        "modules/author/author.resolvers\".authorresolvers.query",
+        { "_index": 204, "name": {}, "parent": { "292": {} } }
+      ],
+      [
+        "modules/author/author.service",
+        {
+          "_index": 36,
+          "name": { "36": {} },
+          "parent": { "37": {}, "38": {}, "39": {} }
+        }
+      ],
+      [
+        "modules/author/author.typedefs",
+        { "_index": 205, "name": { "293": {} }, "parent": { "294": {} } }
+      ],
+      [
+        "modules/book/book.data",
+        { "_index": 44, "name": { "44": {} }, "parent": { "45": {} } }
+      ],
+      [
+        "modules/book/book.loader",
+        {
+          "_index": 50,
+          "name": { "51": {} },
+          "parent": { "52": {}, "53": {}, "54": {} }
+        }
+      ],
+      [
+        "modules/book/book.resolvers",
+        {
+          "_index": 207,
+          "name": { "295": {} },
+          "parent": { "296": {}, "297": {} }
+        }
+      ],
+      [
+        "modules/book/book.resolvers\".bookresolvers",
+        { "_index": 209, "name": {}, "parent": { "298": {}, "301": {} } }
+      ],
+      [
+        "modules/book/book.resolvers\".bookresolvers.author",
+        { "_index": 211, "name": {}, "parent": { "302": {} } }
+      ],
+      [
+        "modules/book/book.resolvers\".bookresolvers.query",
+        { "_index": 210, "name": {}, "parent": { "299": {}, "300": {} } }
+      ],
+      [
+        "modules/book/book.service",
+        {
+          "_index": 46,
+          "name": { "46": {} },
+          "parent": { "47": {}, "48": {}, "49": {}, "50": {} }
+        }
+      ],
+      [
+        "modules/book/book.typedefs",
+        { "_index": 212, "name": { "303": {} }, "parent": { "304": {} } }
+      ],
+      [
+        "modules/capsule/capsule.mappers",
+        { "_index": 214, "name": { "305": {} }, "parent": { "306": {} } }
+      ],
+      [
+        "modules/capsule/capsule.resolvers",
+        { "_index": 220, "name": { "315": {} }, "parent": { "316": {} } }
+      ],
+      [
+        "modules/capsule/capsule.resolvers\".capsuleresolvers",
+        { "_index": 222, "name": {}, "parent": { "317": {} } }
+      ],
+      [
+        "modules/capsule/capsule.resolvers\".capsuleresolvers.query",
+        { "_index": 224, "name": {}, "parent": { "318": {}, "319": {} } }
+      ],
+      [
+        "modules/capsule/capsule.service",
+        {
+          "_index": 219,
+          "name": { "311": {} },
+          "parent": { "312": {}, "313": {}, "314": {} }
+        }
+      ],
+      [
+        "modules/capsule/capsule.spacex",
+        {
+          "_index": 216,
+          "name": { "307": {} },
+          "parent": { "308": {}, "309": {}, "310": {} }
+        }
+      ],
+      [
+        "modules/capsule/capsule.typedefs",
+        { "_index": 226, "name": { "320": {} }, "parent": { "321": {} } }
+      ],
+      [
+        "modules/category/category.data",
+        { "_index": 53, "name": { "55": {} }, "parent": { "56": {} } }
+      ],
+      [
+        "modules/category/category.loader",
+        {
+          "_index": 57,
+          "name": { "60": {} },
+          "parent": { "61": {}, "62": {}, "63": {} }
+        }
+      ],
+      [
+        "modules/category/category.resolvers",
+        {
+          "_index": 228,
+          "name": { "322": {} },
+          "parent": { "323": {}, "324": {} }
+        }
+      ],
+      [
+        "modules/category/category.resolvers\".categoryresolvers",
+        { "_index": 230, "name": {}, "parent": { "325": {} } }
+      ],
+      [
+        "modules/category/category.resolvers\".categoryresolvers.book",
+        { "_index": 231, "name": {}, "parent": { "326": {} } }
+      ],
+      [
+        "modules/category/category.service",
+        { "_index": 55, "name": { "57": {} }, "parent": { "58": {}, "59": {} } }
+      ],
+      [
+        "modules/category/category.typedefs",
+        { "_index": 232, "name": { "327": {} }, "parent": { "328": {} } }
+      ],
+      [
+        "modules/sort.typedefs",
+        { "_index": 234, "name": { "329": {} }, "parent": { "330": {} } }
+      ],
+      [
+        "modules/user/user.data",
+        { "_index": 184, "name": { "273": {} }, "parent": { "274": {} } }
+      ],
+      [
+        "modules/user/user.resolvers",
+        { "_index": 236, "name": { "331": {} }, "parent": {} }
+      ],
+      [
+        "modules/user/user.service",
+        {
+          "_index": 186,
+          "name": { "275": {} },
+          "parent": { "276": {}, "277": {} }
+        }
+      ],
+      [
+        "modules/user/user.typedefs",
+        { "_index": 237, "name": { "332": {} }, "parent": { "333": {} } }
+      ],
+      ["mutation", { "_index": 193, "name": { "282": {} }, "parent": {} }],
+      [
+        "name",
+        {
+          "_index": 6,
+          "name": {
+            "5": {},
+            "112": {},
+            "123": {},
+            "133": {},
+            "144": {},
+            "154": {},
+            "164": {},
+            "174": {},
+            "184": {}
+          },
+          "parent": {}
+        }
+      ],
+      [
+        "notfounderror",
+        {
+          "_index": 123,
+          "name": { "158": {}, "192": {}, "206": {} },
+          "parent": {}
+        }
+      ],
+      ["off", { "_index": 20, "name": { "19": {} }, "parent": {} }],
+      ["on", { "_index": 17, "name": { "16": {} }, "parent": {} }],
+      ["once", { "_index": 18, "name": { "17": {} }, "parent": {} }],
+      ["patch", { "_index": 147, "name": { "217": {} }, "parent": {} }],
+      ["post", { "_index": 145, "name": { "215": {} }, "parent": {} }],
+      ["prependlistener", { "_index": 28, "name": { "27": {} }, "parent": {} }],
+      [
+        "prependoncelistener",
+        { "_index": 29, "name": { "28": {} }, "parent": {} }
+      ],
+      ["put", { "_index": 146, "name": { "216": {} }, "parent": {} }],
+      [
+        "query",
+        {
+          "_index": 203,
+          "name": { "291": {}, "298": {}, "317": {} },
+          "parent": {}
+        }
+      ],
+      ["rawlisteners", { "_index": 25, "name": { "24": {} }, "parent": {} }],
+      ["remove", { "_index": 12, "name": { "11": {} }, "parent": {} }],
+      [
+        "removealllisteners",
+        { "_index": 21, "name": { "20": {} }, "parent": {} }
+      ],
+      ["removelistener", { "_index": 19, "name": { "18": {} }, "parent": {} }],
+      [
+        "request",
+        { "_index": 152, "name": { "223": {}, "260": {} }, "parent": {} }
+      ],
+      ["request_failed", { "_index": 97, "name": { "104": {} }, "parent": {} }],
+      [
+        "requesterror",
+        {
+          "_index": 126,
+          "name": { "168": {}, "193": {}, "209": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "resolvers",
+        { "_index": 61, "name": { "65": {}, "253": {} }, "parent": {} }
+      ],
+      [
+        "rolepermissions",
+        { "_index": 71, "name": { "75": {}, "76": {} }, "parent": {} }
+      ],
+      ["save", { "_index": 14, "name": { "13": {} }, "parent": {} }],
+      ["schema", { "_index": 33, "name": { "32": {} }, "parent": {} }],
+      [
+        "server_hostname",
+        { "_index": 183, "name": { "271": {} }, "parent": {} }
+      ],
+      ["server_port", { "_index": 182, "name": { "270": {} }, "parent": {} }],
+      ["setmaxlisteners", { "_index": 22, "name": { "21": {} }, "parent": {} }],
+      ["signtoken", { "_index": 82, "name": { "86": {} }, "parent": {} }],
+      ["sorttypedefs", { "_index": 235, "name": { "330": {} }, "parent": {} }],
+      [
+        "stack",
+        {
+          "_index": 107,
+          "name": {
+            "114": {},
+            "125": {},
+            "135": {},
+            "146": {},
+            "156": {},
+            "166": {},
+            "176": {},
+            "186": {}
+          },
+          "parent": {}
+        }
+      ],
+      [
+        "status",
+        {
+          "_index": 102,
+          "name": {
+            "108": {},
+            "120": {},
+            "130": {},
+            "141": {},
+            "151": {},
+            "161": {},
+            "171": {},
+            "181": {}
+          },
+          "parent": {}
+        }
+      ],
+      [
+        "timestamp",
+        {
+          "_index": 103,
+          "name": {
+            "109": {},
+            "121": {},
+            "131": {},
+            "142": {},
+            "152": {},
+            "162": {},
+            "172": {},
+            "182": {}
+          },
+          "parent": {}
+        }
+      ],
+      ["tokenpayload", { "_index": 62, "name": { "66": {} }, "parent": {} }],
+      [
+        "transformgraphqlerror",
+        {
+          "_index": 139,
+          "name": { "202": {}, "211": {}, "259": {} },
+          "parent": {}
+        }
+      ],
+      ["user", { "_index": 72, "name": { "77": {} }, "parent": {} }],
+      ["users", { "_index": 185, "name": { "274": {} }, "parent": {} }],
+      ["usertypedefs", { "_index": 238, "name": { "333": {} }, "parent": {} }],
+      [
+        "validateargs",
+        {
+          "_index": 168,
+          "name": { "241": {}, "243": {}, "262": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "validatevalueagainstjoischema",
+        { "_index": 166, "name": { "239": {} }, "parent": {} }
+      ],
+      [
+        "validationerrors",
+        { "_index": 117, "name": { "138": {} }, "parent": {} }
+      ],
+      ["verifytoken", { "_index": 81, "name": { "85": {} }, "parent": {} }],
+      [
+        "wrappederror",
+        {
+          "_index": 104,
+          "name": {
+            "110": {},
+            "122": {},
+            "132": {},
+            "143": {},
+            "153": {},
+            "163": {},
+            "173": {},
+            "183": {}
+          },
+          "parent": {}
+        }
+      ]
+    ],
+    "pipeline": []
+  }
+}
