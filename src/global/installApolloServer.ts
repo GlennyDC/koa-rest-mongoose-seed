@@ -28,7 +28,7 @@ const bootstrapSchema = (): GraphQLSchema => {
   `;
 
   const typeDefs = loadFiles<string>(
-    join(__dirname, '../modules/**/*.typeDefs.ts'),
+    join(__dirname, '../modules/**/*.typeDefs.*'),
   );
 
   const resolvers = loadFiles<IResolvers>(

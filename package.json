@@ -13,7 +13,7 @@
     "prebuild": "rimraf dist/* && yarn run generate:gql-types",
     "build": "tsc -p tsconfig.json",
     "start": "cross-env NODE_ENV=production node -r source-map-support/register dist/index.js",
-    "dev": "nodemon --config nodemon.json",
+    "dev": "tsc-watch --noClear --onSuccess node ./dist/index.js",
     "generate:gql-types": "graphql-codegen --config codegen.yml",
     "watch:gql-types": "graphql-codegen --config codegen.yml --watch 'src/modules/**/*.typeDefs.ts'",
     "test": "echo \"Error: no tests yet\" && exit 1",
@@ -59,10 +59,9 @@
     "eslint-plugin-promise": "^4.2.1",
     "husky": ">=4",
     "lint-staged": ">=10",
-    "nodemon": "^2.0.4",
     "prettier": "2.0.5",
     "rimraf": "^3.0.2",
-    "ts-node": "^8.10.2",
+    "tsc-watch": "^4.2.9",
     "typescript": "^3.9.5"
   }
 }
