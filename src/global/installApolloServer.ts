@@ -5,16 +5,16 @@ import { GraphQLSchema } from 'graphql';
 import type Koa from 'koa';
 import { join } from 'path';
 
-import { getConfig } from './config';
 import { transformGraphQLError } from './error';
+import { getEnvironmentVariable } from './getEnvironmentVariable';
 
-const ENABLE_GRAPHQL_PLAYGROUND = getConfig<boolean>(
+const ENABLE_GRAPHQL_PLAYGROUND = getEnvironmentVariable<boolean>(
   'ENABLE_GRAPHQL_PLAYGROUND',
 );
-const ENABLE_GRAPHQL_INTROSPECTION = getConfig<boolean>(
+const ENABLE_GRAPHQL_INTROSPECTION = getEnvironmentVariable<boolean>(
   'ENABLE_GRAPHQL_INTROSPECTION',
 );
-const EXPOSE_ERROR_STACK_TRACES = getConfig<boolean>(
+const EXPOSE_ERROR_STACK_TRACES = getEnvironmentVariable<boolean>(
   'EXPOSE_ERROR_STACK_TRACES',
 );
 

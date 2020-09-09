@@ -2,9 +2,9 @@ import { getNamespace } from 'cls-hooked';
 import { Format, TransformableInfo } from 'logform';
 import winston from 'winston';
 
-import { getConfig } from '../config';
+import { getEnvironmentVariable } from '../getEnvironmentVariable';
 
-const LOGGING_LEVEL = getConfig<string>('LOGGING_LEVEL');
+const LOGGING_LEVEL = getEnvironmentVariable<string>('LOGGING_LEVEL');
 
 /**
  * Make the format for console logs.

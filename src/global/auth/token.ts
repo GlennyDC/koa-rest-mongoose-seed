@@ -1,13 +1,15 @@
 import { sign, verify } from 'jsonwebtoken';
 
-import { getConfig } from '../config';
+import { getEnvironmentVariable } from '../getEnvironmentVariable';
 import type { TokenPayload } from '../types';
 
-const AUTH_TOKEN_ISSUER = getConfig<string>('AUTH_TOKEN_ISSUER');
-const AUTH_TOKEN_AUDIENCE = getConfig<string>('AUTH_TOKEN_AUDIENCE');
-const AUTH_TOKEN_SUBJECT = getConfig<string>('AUTH_TOKEN_SUBJECT');
-const AUTH_TOKEN_SECRET = getConfig<string>('AUTH_TOKEN_SECRET');
-const AUTH_TOKEN_EXPIRATION_INTERVAL = getConfig<number>(
+const AUTH_TOKEN_ISSUER = getEnvironmentVariable<string>('AUTH_TOKEN_ISSUER');
+const AUTH_TOKEN_AUDIENCE = getEnvironmentVariable<string>(
+  'AUTH_TOKEN_AUDIENCE',
+);
+const AUTH_TOKEN_SUBJECT = getEnvironmentVariable<string>('AUTH_TOKEN_SUBJECT');
+const AUTH_TOKEN_SECRET = getEnvironmentVariable<string>('AUTH_TOKEN_SECRET');
+const AUTH_TOKEN_EXPIRATION_INTERVAL = getEnvironmentVariable<number>(
   'AUTH_TOKEN_EXPIRATION_INTERVAL',
 );
 

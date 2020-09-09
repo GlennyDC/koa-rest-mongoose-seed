@@ -1,10 +1,10 @@
 import http from 'http';
 
 import { createApp } from './app';
-import { createLogger, getConfig } from './global';
+import { createLogger, getEnvironmentVariable } from './global';
 
-const SERVER_PORT = getConfig<number>('SERVER_PORT');
-const SERVER_HOSTNAME = getConfig<string>('SERVER_HOSTNAME');
+const SERVER_PORT = getEnvironmentVariable<number>('SERVER_PORT');
+const SERVER_HOSTNAME = getEnvironmentVariable<string>('SERVER_HOSTNAME');
 
 const logger = createLogger('server');
 

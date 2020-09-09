@@ -7,4 +7,4 @@ export { applyMiddleware } from './middleware';
 export { validateArgs } from './inputValidation';
 export { installApolloServer } from './installApolloServer';
 export { installDatabaseConnection } from './installDatabaseConnection';
-export { getConfig } from './config';
+export { getEnvironmentVariable } from './getEnvironmentVariable';
