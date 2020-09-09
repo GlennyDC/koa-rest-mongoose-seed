@@ -26,7 +26,7 @@
     "apollo-server-koa": "^2.15.0",
     "cls-hooked": "^4.2.2",
     "dataloader": "^2.0.0",
-    "graphql": "^14",
+    "graphql": "^15",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.0",
     "koa-helmet": "^5.2.0",
