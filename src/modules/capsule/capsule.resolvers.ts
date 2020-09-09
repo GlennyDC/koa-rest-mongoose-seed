@@ -7,12 +7,12 @@ import * as capsuleService from './capsule.service';
 const capsuleResolvers: Resolvers = {
   Query: {
     capsules: async (_, args): Promise<Capsule[]> => {
-      const schema = Joi.object({
-        limit: Joi.number().optional(),
-        offset: Joi.number().max(3).optional(),
-      });
+      // const schema = Joi.object({
+      //   limit: Joi.number().optional(),
+      //   offset: Joi.number().max(3).optional(),
+      // });
 
-      await validateArgs(args, schema);
+      // await validateArgs(args, schema);
 
       return capsuleService.getCapsules(
         args.limit,
