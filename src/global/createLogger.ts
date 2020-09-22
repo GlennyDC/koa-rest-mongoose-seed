@@ -53,6 +53,9 @@ const makeFileFormat = (): Format => {
 /**
  * Create a logger.
  *
+ * Default npm logging levels are used and are prioritized from highest
+ * to lowest: error, warn, info, http, verbose, debug, silly.
+ *
  * @param {string} moduleName - The name of the module which will use the logger
  *
  * @returns {winston.Logger} A Winston logger

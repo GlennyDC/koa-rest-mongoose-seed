@@ -1,16 +1,39 @@
-import { Resolvers, createLogger } from '../../global';
+import Joi from '@hapi/joi';
+
+import { Resolvers, createLogger, validateArgs } from '../../global';
+import { Auth } from './user';
 import * as userService from './user.service';
 
-const logger = createLogger('author-resolver');
+const logger = createLogger('user-resolvers');
 
 const UserResolvers: Resolvers = {
   Mutation: {
-    register: async (root, args, ctx) => {
+    register: async (_, args): Promise<Auth> => {
+      logger.verbose(`Register user with email address [${args.emailAddress}]`);
+
+      const schema = Joi.object({
+        emailAddress: Joi.string().email(),
+        password: Joi.string().min(6),
+      });
+
+      await validateArgs(args, schema);
+
       const { emailAddress, password } = args;
+
       return userService.register(emailAddress, password);
     },
-    login: async (root, args, ctx) => {
+    login: async (_, args): Promise<Auth> => {
+      logger.verbose(`Login user with email address [${args.emailAddress}]`);
+
+      const schema = Joi.object({
+        emailAddress: Joi.string().email(),
+        password: Joi.string().min(6),
+      });
+
+      await validateArgs(args, schema);
+
       const { emailAddress, password } = args;
+
       return userService.login(emailAddress, password);
     },
   },

@@ -4,7 +4,7 @@ import {
   NotFoundError,
   ErrorCode,
 } from '../../global';
-import { User, UserAuth } from './user';
+import { User, Auth } from './user';
 import { UserModel } from './user.model';
 
 const logger = createLogger('user-service');
@@ -28,8 +28,8 @@ const getUserByEmailAddress = async (emailAddress: string): Promise<User> => {
 export const register = async (
   emailAddress: string,
   password: string,
-): Promise<UserAuth> => {
-  logger.verbose(`Register user with email address [${emailAddress}]`);
+): Promise<Auth> => {
+  logger.info(`Register user with email address [${emailAddress}]`);
 
   const user = new UserModel({ emailAddress, password });
 
@@ -50,7 +50,7 @@ export const register = async (
 export const login = async (
   emailAddress: string,
   password: string,
-): Promise<UserAuth> => {
+): Promise<Auth> => {
   const user = await getUserByEmailAddress(emailAddress);
 
   if (user.password !== password) {
