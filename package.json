@@ -23,7 +23,7 @@
   "dependencies": {
     "@graphql-toolkit/file-loading": "^0.10.7",
     "@hapi/joi": "^17.1.1",
-    "apollo-server-koa": "^2.17.0",
+    "apollo-server-koa": "^2.18.2",
     "bcrypt": "^5.0.0",
     "cls-hooked": "^4.2.2",
     "dataloader": "^2.0.0",
