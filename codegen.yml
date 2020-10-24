@@ -14,6 +14,4 @@ generates:
       maybeValue: T | undefined
       contextType: ./context#Context
       mappers:
-        Book: ../../modules/book/book#Book as IBook
-        Author: ../../modules/author/author#Author as IAuthor
-        Category: ../../modules/category/category#Category as ICategory
+        Organisation: ../../modules/organisation/organisation#Organisation as IOrganisation

@@ -24,7 +24,7 @@ export const updateUserById = async (
 ): Promise<User> => {
   logger.info(`Update user [${id}]`);
 
-  const updatedUser = await UserModel.findByIdAndUpdate(id, user);
+  const updatedUser = await UserModel.findByIdAndUpdate(id, user).exec();
 
   if (!updatedUser) {
     logger.info(`User [${id}] not found`);
@@ -40,9 +40,7 @@ export const register = async (
 ): Promise<Auth> => {
   logger.info(`Register user with email address [${emailAddress}]`);
 
-  const user = new UserModel({ emailAddress, password });
-
-  const savedUser = await user.save();
+  const user = await new UserModel({ emailAddress, password }).save();
 
   const jwt = await makeToken({
     user: {
@@ -51,7 +49,7 @@ export const register = async (
     },
   });
 
-  return { user: savedUser, accessToken: jwt };
+  return { user, accessToken: jwt };
 };
 
 export const login = async (
@@ -60,7 +58,7 @@ export const login = async (
 ): Promise<Auth> => {
   logger.info(`Login user with email address [${emailAddress}]`);
 
-  const user = await UserModel.findOne({ emailAddress });
+  const user = await UserModel.findOne({ emailAddress }).exec();
 
   if (!user) {
     logger.info(`User [${emailAddress}] not found`);
@@ -83,10 +81,12 @@ export const login = async (
 
   if (user.password !== password) {
     logger.info(`User with [${emailAddress}] did not match passwords`);
-    await user.updateOne({
-      $inc: { badLoginAttempts: 1 },
-      lastBadLoginAttempt: Date.now(),
-    });
+    await user
+      .updateOne({
+        $inc: { badLoginAttempts: 1 },
+        lastBadLoginAttempt: Date.now(),
+      })
+      .exec();
     throw new NotFoundError(
       `User [${emailAddress}] not found`,
       ErrorCode.USER_NOT_FOUND,
