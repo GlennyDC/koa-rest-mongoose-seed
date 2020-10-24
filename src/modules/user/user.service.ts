@@ -6,7 +6,7 @@ import {
   BusinessError,
   getEnvironmentVariable,
 } from '../../global';
-import { Auth } from './user';
+import { Auth, User, UpdateUserInput } from './user';
 import { UserModel } from './user.model';
 
 const LOGIN_MAX_ATTEMPTS_COUNT = getEnvironmentVariable<number>(
@@ -17,6 +17,22 @@ const LOGIN_ATTEMPTS_LOCK_TIME = getEnvironmentVariable<number>(
 );
 
 const logger = createLogger('user-service');
+
+export const updateUserById = async (
+  id: string,
+  user: UpdateUserInput,
+): Promise<User> => {
+  logger.info(`Update user [${id}]`);
+
+  const updatedUser = await UserModel.findByIdAndUpdate(id, user);
+
+  if (!updatedUser) {
+    logger.info(`User [${id}] not found`);
+    throw new NotFoundError(`User [${id}] not found`, ErrorCode.USER_NOT_FOUND);
+  }
+
+  return updatedUser;
+};
 
 export const register = async (
   emailAddress: string,
@@ -35,8 +51,6 @@ export const register = async (
     },
   });
 
-  // eslint-disable-next-line
-  // @ts-ignore
   return { user: savedUser, accessToken: jwt };
 };
 
@@ -86,7 +100,5 @@ export const login = async (
     },
   });
 
-  // eslint-disable-next-line
-  // @ts-ignore
   return { user, accessToken: jwt };
 };

@@ -9,3 +9,8 @@ export interface User {
   password: string;
   roles: string[];
 }
+
+export interface UpdateUserInput {
+  emailAddress?: string;
+  password?: string;
+}

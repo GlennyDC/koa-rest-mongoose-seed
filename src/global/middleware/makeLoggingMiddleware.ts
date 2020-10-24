@@ -1,6 +1,7 @@
 import { createNamespace } from 'cls-hooked';
 import type Koa from 'koa';
-import { nanoid } from 'nanoid';
+
+import { generateSemiUniqueId } from '../generateSemiUniqueId';
 
 const loggingNamespace = createNamespace('logging');
 
@@ -20,7 +21,7 @@ const makeLoggingMiddleware = (): Koa.Middleware => {
   return async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
     await new Promise(
       loggingNamespace.bind((resolve, reject) => {
-        loggingNamespace.set('requestId', nanoid(10));
+        loggingNamespace.set('requestId', generateSemiUniqueId());
         loggingNamespace.bindEmitter(ctx.req);
         loggingNamespace.bindEmitter(ctx.res);
 

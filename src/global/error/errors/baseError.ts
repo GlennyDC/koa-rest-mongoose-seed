@@ -1,3 +1,4 @@
+import { generateSemiUniqueId } from '../../generateSemiUniqueId';
 import { ErrorCode } from '../errorCode';
 
 /**
@@ -9,13 +10,14 @@ abstract class BaseError extends Error {
   readonly code: ErrorCode;
   readonly status: number;
   readonly timestamp: string;
+  readonly errorId: string;
   readonly wrappedError?: Error;
 
   /**
    * @param {string} message - Description of the error intended for developers
    * @param {ErrorCode} code - Short human-readable, globally unique code of the error that enables the client to perform corrective actions
    * @param {number} status - HTTP status code
-   * @param {Error} wrappedError - Any error that cause this error
+   * @param {Error} wrappedError - Any error that caused this error
    */
   constructor(
     message: string,
@@ -27,15 +29,11 @@ abstract class BaseError extends Error {
     this.code = code;
     this.status = status;
     this.timestamp = new Date().toISOString();
+    this.errorId = generateSemiUniqueId();
     this.wrappedError = wrappedError;
 
-    /**
-     * Maintain proper stack trace for where our error was thrown
-     * (only available on V8)
-     */
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, this.constructor);
-    }
+    // Maintain proper stack trace for where our error was thrown
+    Error.captureStackTrace(this, this.constructor);
 
     /**
      * Make the name property of the error non-enumerable, which means that

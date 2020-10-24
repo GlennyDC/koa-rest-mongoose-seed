@@ -97,7 +97,8 @@ export enum Sort {
 export type Mutation = {
   __typename?: 'Mutation';
   register: Auth;
-  login?: Maybe<Auth>;
+  login: Auth;
+  updateUser: User;
 };
 
 
@@ -112,6 +113,18 @@ export type MutationLoginArgs = {
   password: Scalars['String'];
 };
 
+
+export type MutationUpdateUserArgs = {
+  id: Scalars['ID'];
+  user: UpdateUserInput;
+};
+
+export type Auth = {
+  __typename?: 'Auth';
+  accessToken: Scalars['String'];
+  user: User;
+};
+
 export type User = {
   __typename?: 'User';
   id: Scalars['ID'];
@@ -119,10 +132,9 @@ export type User = {
   roles: Array<Scalars['String']>;
 };
 
-export type Auth = {
-  __typename?: 'Auth';
-  accessToken: Scalars['String'];
-  user: User;
+export type UpdateUserInput = {
+  emailAddress?: Maybe<Scalars['String']>;
+  password?: Maybe<Scalars['String']>;
 };
 
 
@@ -214,8 +226,9 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Sort: Sort;
   Mutation: ResolverTypeWrapper<{}>;
-  User: ResolverTypeWrapper<User>;
   Auth: ResolverTypeWrapper<Auth>;
+  User: ResolverTypeWrapper<User>;
+  UpdateUserInput: UpdateUserInput;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -230,8 +243,9 @@ export type ResolversParentTypes = {
   Category: ICategory;
   Boolean: Scalars['Boolean'];
   Mutation: {};
-  User: User;
   Auth: Auth;
+  User: User;
+  UpdateUserInput: UpdateUserInput;
 };
 
 export type BookResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = {
@@ -277,19 +291,20 @@ export type CategoryResolvers<ContextType = Context, ParentType extends Resolver
 
 export type MutationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   register?: Resolver<ResolversTypes['Auth'], ParentType, ContextType, RequireFields<MutationRegisterArgs, 'emailAddress' | 'password'>>;
-  login?: Resolver<Maybe<ResolversTypes['Auth']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'emailAddress' | 'password'>>;
+  login?: Resolver<ResolversTypes['Auth'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'emailAddress' | 'password'>>;
+  updateUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationUpdateUserArgs, 'id' | 'user'>>;
+};
+
+export type AuthResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Auth'] = ResolversParentTypes['Auth']> = {
+  accessToken?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
 export type UserResolvers<ContextType = Context, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   emailAddress?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   roles?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
-};
-
-export type AuthResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Auth'] = ResolversParentTypes['Auth']> = {
-  accessToken?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
@@ -300,8 +315,8 @@ export type Resolvers<ContextType = Context> = {
   Capsule?: CapsuleResolvers<ContextType>;
   Category?: CategoryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
-  User?: UserResolvers<ContextType>;
   Auth?: AuthResolvers<ContextType>;
+  User?: UserResolvers<ContextType>;
 };
 
 
