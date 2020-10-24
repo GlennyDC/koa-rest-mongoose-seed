@@ -6,6 +6,7 @@ export {
   transformGraphQLError,
   NotFoundError,
   ErrorCode,
+  BusinessError,
 } from './error';
 export { request } from './request';
 export { applyMiddleware } from './middleware';

@@ -5,6 +5,8 @@ interface UserDocument extends mongoose.Document {
   password: string;
   roles: string[];
   createdAt: Date;
+  badLoginAttempts: number;
+  lastBadLoginAttempt: Date;
 }
 
 const userSchema = new mongoose.Schema({
@@ -12,6 +14,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   roles: [{ type: String, required: true }],
   createdAt: { type: Date, default: Date.now },
+  badLoginAttempts: { type: Number, required: true, default: 0 },
+  lastBadLoginAttempt: { type: Date, default: null },
 });
 
 export const UserModel = mongoose.model<UserDocument>('User', userSchema);
