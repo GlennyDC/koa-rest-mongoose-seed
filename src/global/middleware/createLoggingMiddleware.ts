@@ -17,7 +17,7 @@ const loggingNamespace = createNamespace('logging');
  *
  * @see {@link https://nodejs.org/api/async_hooks.html|Node Async Hooks}
  */
-const makeLoggingMiddleware = (): Koa.Middleware => {
+export const createLoggingMiddleware = (): Koa.Middleware => {
   return async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
     await new Promise(
       loggingNamespace.bind((resolve, reject) => {
@@ -30,5 +30,3 @@ const makeLoggingMiddleware = (): Koa.Middleware => {
     );
   };
 };
-
-export { makeLoggingMiddleware };

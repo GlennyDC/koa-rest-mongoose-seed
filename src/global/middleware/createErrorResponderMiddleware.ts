@@ -1,14 +1,14 @@
 import type Koa from 'koa';
 
 /**
- * Make a Koa error responder middleware in case an error occurs.
+ * Create a Koa error responder middleware in case an error occurs.
  * Emit the error to the app error event listener for centralized error logging.
  *
  * Note: We treat 404 errors like any other error.
  *
  * @returns {Koa.Middleware} The Koa middleware responsible for error responding
  */
-const makeErrorResponderMiddleware = (): Koa.Middleware => {
+export const createErrorResponderMiddleware = (): Koa.Middleware => {
   return async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
     try {
       await next();
@@ -26,5 +26,3 @@ const makeErrorResponderMiddleware = (): Koa.Middleware => {
     }
   };
 };
-
-export { makeErrorResponderMiddleware };

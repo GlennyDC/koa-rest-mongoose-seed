@@ -18,6 +18,6 @@ export const installDatabaseConnection = async (): Promise<void> => {
     // the update and not the original document before the update.
     mongoose.set('returnOriginal', false);
   } catch (err) {
-    console.log(err);
+    console.log(err); // TODO
   }
 };

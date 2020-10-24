@@ -5,5 +5,6 @@ export const getEnvironmentVariable = <T>(
   if (!environmentVariable) {
     throw new Error('Environment variable is not set');
   }
+  // TODO cast
   return (environmentVariable as unknown) as T;
 };

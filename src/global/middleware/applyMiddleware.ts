@@ -1,15 +1,15 @@
 import type Koa from 'koa';
 import helmet from 'koa-helmet';
 
-import { makeErrorResponderMiddleware } from './makeErrorResponderMiddleware';
-import { makeLoggingMiddleware } from './makeLoggingMiddleware';
-import { makeTokenExtractorMiddleware } from './makeTokenExtractorMiddleware';
+import { createErrorResponderMiddleware } from './createErrorResponderMiddleware';
+import { createLoggingMiddleware } from './createLoggingMiddleware';
+import { createTokenExtractorMiddleware } from './createTokenExtractorMiddleware';
+import { createTokenValidatorMiddleware } from './createTokenValidatorMiddleware';
 
-const applyMiddleware = (app: Koa): void => {
+export const applyMiddleware = (app: Koa): void => {
   app.use(helmet());
-  app.use(makeErrorResponderMiddleware());
-  app.use(makeLoggingMiddleware());
-  app.use(makeTokenExtractorMiddleware());
+  app.use(createErrorResponderMiddleware());
+  app.use(createLoggingMiddleware());
+  app.use(createTokenExtractorMiddleware());
+  app.use(createTokenValidatorMiddleware());
 };
-
-export { applyMiddleware };

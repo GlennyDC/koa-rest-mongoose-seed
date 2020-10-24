@@ -1,6 +1,11 @@
 import Joi from 'joi';
 
-import { Resolvers, createLogger, validateArgs } from '../../global';
+import {
+  Resolvers,
+  createLogger,
+  validateArgs,
+  assertAuthenticated,
+} from '../../global';
 import { Organisation } from './organisation';
 import * as organisationService from './organisation.service';
 
@@ -8,10 +13,10 @@ const logger = createLogger('organisation-resolvers');
 
 const organisationResolvers: Resolvers = {
   Query: {
-    organisation: async (_, { id }): Promise<Organisation> => {
+    organisation: async (_, { id }, { koaCtx }): Promise<Organisation> => {
       logger.silly(`Get organisation [${id}]`);
 
-      // TODO: Add auth
+      assertAuthenticated(koaCtx);
 
       return organisationService.getOrganisationById(id);
     },

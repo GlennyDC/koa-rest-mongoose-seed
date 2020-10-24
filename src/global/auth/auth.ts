@@ -1,7 +1,15 @@
+import {
+  JsonWebTokenError,
+  TokenExpiredError as TokenExpiredErrorLib,
+} from 'jsonwebtoken';
 import type Koa from 'koa';
 
+import {
+  AuthenticationError,
+  InvalidTokenError,
+  TokenExpiredError,
+} from '../error';
 import { rolePermissions } from './rolePermissions';
-import { makeToken, extractToken } from './token';
 
 /**
  * Assert if the viewer is successfully authenticated
@@ -10,12 +18,23 @@ import { makeToken, extractToken } from './token';
  *
  * @param {Koa.Context} ctx - Koa context
  */
-const assertAuthenticated = async (ctx: Koa.Context): Promise<void> => {
-  // if (!ctx.state.token) throw new AuthenticationError('Not authenticated');
-  // if (!ctx.state.user) {
-  //   const user = await extractToken(ctx.state.token);
-  //   ctx.state.user = user;
-  // }
+export const assertAuthenticated = (ctx: Koa.Context): void => {
+  if (!ctx.state.token) throw new AuthenticationError();
+  if (!ctx.state.user) {
+    // TODO: logging
+
+    const tokenErr = ctx.state.tokenErr;
+
+    if (tokenErr instanceof TokenExpiredErrorLib) {
+      throw new TokenExpiredError();
+    }
+
+    if (tokenErr instanceof JsonWebTokenError) {
+      throw new InvalidTokenError();
+    }
+
+    console.log('This can never occur'); // TODO
+  }
 };
 
 /**
@@ -28,7 +47,7 @@ const assertAuthenticated = async (ctx: Koa.Context): Promise<void> => {
  * @param {Koa.Context} ctx - Koa context
  * @param {string[]} requiredPermissions - The required permissions
  */
-const assertAuthorized = async (
+export const assertAuthorized = async (
   ctx: Koa.Context,
   requiredPermissions: string[],
 ): Promise<void> => {
@@ -46,5 +65,3 @@ const assertAuthorized = async (
   //   }
   // }
 };
-
-export { assertAuthenticated, assertAuthorized };

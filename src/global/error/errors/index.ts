@@ -5,3 +5,5 @@ export { IntegrationError } from './integrationError';
 export { NotFoundError } from './notFoundError';
 export { RequestError } from './requestError';
 export { BusinessError } from './businessError';
+export { InvalidTokenError } from './invalidTokenError';
+export { TokenExpiredError } from './tokenExpiredError';

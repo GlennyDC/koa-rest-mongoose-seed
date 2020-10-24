@@ -34,22 +34,27 @@ const bootstrapSchema = (): GraphQLSchema => {
   const resolvers = loadFiles<IResolvers>(
     join(__dirname, '../modules/**/*.resolvers.*'),
   );
+
   const schema = makeExecutableSchema({
     typeDefs: [queryTypeDef, mutationTypeDef, ...typeDefs],
     resolvers,
   });
+
   return schema;
 };
 
 const installApolloServer = (app: Koa): void => {
   const schema = bootstrapSchema();
+
   const apolloServer = new ApolloServer({
     schema,
+    context: ({ ctx }) => ({ koaCtx: ctx }),
     debug: EXPOSE_ERROR_STACK_TRACES,
     playground: ENABLE_GRAPHQL_PLAYGROUND,
     introspection: ENABLE_GRAPHQL_INTROSPECTION,
     formatError: transformGraphQLError,
   });
+
   apolloServer.applyMiddleware({ app });
 };
 

@@ -13,6 +13,8 @@ const AUTH_TOKEN_EXPIRATION_INTERVAL = getEnvironmentVariable<number>(
   'AUTH_TOKEN_EXPIRATION_INTERVAL',
 );
 
+// TODO make use of utils.promisify
+
 /**
  * Verify a JWT.
  *
@@ -69,7 +71,7 @@ const signToken = (payload: TokenPayload): Promise<string> => {
  *
  * @returns {Promise<string>} A promise to the JWT
  */
-const makeToken = async (payload: TokenPayload): Promise<string> => {
+export const makeToken = async (payload: TokenPayload): Promise<string> => {
   return signToken(payload);
 };
 
@@ -82,8 +84,6 @@ const makeToken = async (payload: TokenPayload): Promise<string> => {
  *
  * @returns {TokenPayload} The decoded payload of the JWT
  */
-const extractToken = async (token: string): Promise<TokenPayload> => {
+export const extractToken = async (token: string): Promise<TokenPayload> => {
   return verifyToken(token);
 };
-
-export { makeToken, extractToken };
