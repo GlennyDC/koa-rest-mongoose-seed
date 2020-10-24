@@ -39,6 +39,8 @@ const UserResolvers: Resolvers = {
     updateUser: async (_, args): Promise<User> => {
       logger.silly(`Update user [${args.id}]`);
 
+      // TODO: get id from JWT
+
       const schema = Joi.object({
         id: Joi.string(),
         user: Joi.object({
