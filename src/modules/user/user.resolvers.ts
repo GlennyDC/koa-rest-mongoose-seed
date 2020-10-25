@@ -11,15 +11,38 @@ import { login, register, updateUserById, getUserById } from './user.service';
 
 const logger = createLogger('user-resolvers');
 
+const handler = (schema: any, f: any, options?: any): any => {
+  const resolverFunction = async (
+    root: any,
+    args: any,
+    ctx: any,
+    info: any,
+  ): Promise<any> => {
+    if (options.requireAuthentication) {
+      assertAuthenticated(ctx.koaCtx);
+    }
+
+    await validateArgs(args, schema || Joi.object({}));
+
+    return f(root, args, ctx, info);
+  };
+
+  return resolverFunction;
+};
+
 const UserResolvers: Resolvers = {
   Query: {
-    viewer: async (root, args, { koaCtx, userId }): Promise<User> => {
-      logger.silly(`Get viewer [${userId}]`);
+    // eslint-disable-next-line
+    // @ts-ignore
+    viewer: handler(
+      null,
+      async (root: any, args: any, ctx: any) => {
+        logger.silly(`Get viewer [${ctx.userId}]`);
 
-      assertAuthenticated(koaCtx);
-
-      return getUserById(userId);
-    },
+        return getUserById(ctx.userId);
+      },
+      { requireAuthentication: true },
+    ),
   },
   Mutation: {
     register: async (_, args): Promise<Auth> => {
