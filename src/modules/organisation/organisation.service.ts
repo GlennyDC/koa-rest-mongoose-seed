@@ -36,12 +36,18 @@ export const getOrganisations = async (
   return organisations;
 };
 
-export const createOrganisation = async (
+export const createOrganisationForUser = async (
+  userId: string,
   organisation: CreateOrganisationInput,
 ): Promise<Organisation> => {
-  logger.info(`Create organisation [${organisation.name}]`);
+  logger.info(
+    `Create organisation [${organisation.name}] for user [${userId}]`,
+  );
 
-  const createdOrganisation = await new OrganisationModel(organisation).save();
+  const createdOrganisation = await new OrganisationModel({
+    ownerId: userId,
+    ...organisation,
+  }).save();
 
   return createdOrganisation;
 };

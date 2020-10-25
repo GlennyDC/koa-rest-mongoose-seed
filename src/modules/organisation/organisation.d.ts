@@ -1,5 +1,6 @@
 export interface Organisation {
   id: string;
+  ownerId: string;
   name: string;
 }
 

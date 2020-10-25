@@ -47,20 +47,20 @@ const formatJoiError = (
  *
  * @async
  *
- * @param {Record<string, any>} args - The arguments to be validated
+ * @param {T} args - The arguments to be validated
  * @param {Joi.Schema} schema - The Joi schema to be validated against
  *
  * @throws {InputValidationError} - Throws if the value is not valid
  *
- * @returns {Record<string, any>} - A Promise that resolves into the validated value when the value is valid
+ * @returns {T} - A Promise that resolves into the validated value when the value is valid
  */
-export const validateArgs = async (
-  args: Record<string, any>,
+export const validateArgs = async <T>(
+  args: T,
   schema: Joi.Schema,
-): Promise<Record<string, any>> => {
+): Promise<T> => {
   try {
     // TODO: Add silly logging
-    return await validateValueAgainstJoiSchema(args, schema);
+    return (await validateValueAgainstJoiSchema(args, schema)) as T;
   } catch (err) {
     const validationErrors = formatJoiError(err);
     throw new InputValidationError(validationErrors);

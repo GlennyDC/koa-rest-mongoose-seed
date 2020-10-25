@@ -16,9 +16,7 @@ const UserResolvers: Resolvers = {
         password: Joi.string().min(6),
       });
 
-      await validateArgs(args, schema);
-
-      const { emailAddress, password } = args;
+      const { emailAddress, password } = await validateArgs(args, schema);
 
       return userService.register(emailAddress, password);
     },
@@ -30,9 +28,7 @@ const UserResolvers: Resolvers = {
         password: Joi.string().min(6),
       });
 
-      await validateArgs(args, schema);
-
-      const { emailAddress, password } = args;
+      const { emailAddress, password } = await validateArgs(args, schema);
 
       return userService.login(emailAddress, password);
     },
@@ -49,9 +45,7 @@ const UserResolvers: Resolvers = {
         }).or('emailAddress', 'password'),
       });
 
-      await validateArgs(args, schema);
-
-      const { id, user } = args;
+      const { id, user } = await validateArgs(args, schema);
 
       return userService.updateUserById(id, user);
     },

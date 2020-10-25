@@ -7,6 +7,7 @@ import { join } from 'path';
 
 import { transformGraphQLError } from './error';
 import { getEnvironmentVariable } from './getEnvironmentVariable';
+import { Context } from './types/context';
 
 const ENABLE_GRAPHQL_PLAYGROUND = getEnvironmentVariable<boolean>(
   'ENABLE_GRAPHQL_PLAYGROUND',
@@ -48,7 +49,10 @@ export const installApolloServer = (app: Koa): void => {
 
   const apolloServer = new ApolloServer({
     schema,
-    context: ({ ctx }) => ({ koaCtx: ctx }),
+    context: ({ ctx }): Context => {
+      const userId = ctx.state.user?.id;
+      return { koaCtx: ctx, userId };
+    },
     debug: EXPOSE_ERROR_STACK_TRACES,
     playground: ENABLE_GRAPHQL_PLAYGROUND,
     introspection: ENABLE_GRAPHQL_INTROSPECTION,

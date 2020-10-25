@@ -5,19 +5,25 @@ import {
   createLogger,
   validateArgs,
   assertAuthenticated,
-  assertAuthorized,
 } from '../../global';
 import { Organisation } from './organisation';
+import * as organisationAuth from './organisation.auth';
 import * as organisationService from './organisation.service';
 
 const logger = createLogger('organisation-resolvers');
 
 const organisationResolvers: Resolvers = {
   Query: {
-    organisation: async (_, { id }, { koaCtx }): Promise<Organisation> => {
+    organisation: async (
+      _,
+      { id },
+      { koaCtx, userId },
+    ): Promise<Organisation> => {
       logger.silly(`Get organisation [${id}]`);
 
       assertAuthenticated(koaCtx);
+
+      await organisationAuth.assertOwnerOfOrganization(id, userId);
 
       return organisationService.getOrganisationById(id);
     },
@@ -31,16 +37,20 @@ const organisationResolvers: Resolvers = {
         limit: Joi.number().integer().positive().max(100),
       });
 
-      await validateArgs(args, schema);
-
-      const { offset, limit } = args;
+      const { offset, limit } = await validateArgs(args, schema);
 
       return organisationService.getOrganisations(offset, limit);
     },
   },
   Mutation: {
-    createOrganisation: async (_, args): Promise<Organisation> => {
+    createOrganisation: async (
+      _,
+      args,
+      { koaCtx, userId },
+    ): Promise<Organisation> => {
       logger.silly(`Create organisation [${args.organisation.name}]`);
+
+      assertAuthenticated(koaCtx);
 
       const schema = Joi.object({
         organisation: Joi.object({
@@ -48,11 +58,12 @@ const organisationResolvers: Resolvers = {
         }),
       });
 
-      await validateArgs(args, schema);
+      const { organisation } = await validateArgs(args, schema);
 
-      const { organisation } = args;
-
-      return organisationService.createOrganisation(organisation);
+      return organisationService.createOrganisationForUser(
+        userId,
+        organisation,
+      );
     },
   },
 };
