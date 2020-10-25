@@ -1,13 +1,11 @@
 import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
 import type Koa from 'koa';
 
-import { AuthenticationError, ErrorCode } from '../error';
+import { AuthenticationError, AuthorizationError, ErrorCode } from '../error';
 import { rolePermissions } from './rolePermissions';
 
 /**
  * Assert if the viewer is successfully authenticated
- *
- * If the Koa context does not have a user set, try to set the user.
  *
  * @param {Koa.Context} ctx - Koa context
  */
@@ -26,14 +24,14 @@ export const assertAuthenticated = (ctx: Koa.Context): void => {
     if (authTokenErr instanceof TokenExpiredError) {
       throw new AuthenticationError(
         'Authentication token expired',
-        ErrorCode.TOKEN_EXPIRED,
+        ErrorCode.AUTH_TOKEN_EXPIRED,
       );
     }
 
     if (authTokenErr instanceof JsonWebTokenError) {
       throw new AuthenticationError(
         'Authentication token invalid',
-        ErrorCode.INVALID_TOKEN,
+        ErrorCode.AUTH_TOKEN_INVALID,
       );
     }
 
@@ -44,28 +42,27 @@ export const assertAuthenticated = (ctx: Koa.Context): void => {
 /**
  * Assert if the viewer is authorized
  *
- * Preconditions:
- *   - The user is successfully authenticated.
- *   - The assertAuthenticated function has been invoked.
- *
  * @param {Koa.Context} ctx - Koa context
  * @param {string[]} requiredPermissions - The required permissions
  */
-export const assertAuthorized = async (
+export const assertAuthorized = (
   ctx: Koa.Context,
   requiredPermissions: string[],
-): Promise<void> => {
-  // if (!ctx.state.user) throw new AuthenticationError('Not authenticated');
-  // if (ctx.state.user) {
-  //   const userRoles: string[] = ctx.state.user.userRoles;
-  //   const userPermissions = [
-  //     ...new Set(userRoles.map((role) => rolePermissions[role]).flat()),
-  //   ];
-  //   const hasAllRequiredPermissions = requiredPermissions.every((permission) =>
-  //     userPermissions.includes(permission),
-  //   );
-  //   if (!hasAllRequiredPermissions) {
-  //     throw new AuthenticationError('Not authenticated');
-  //   }
-  // }
+): void => {
+  // User must be successfully authenticated
+  assertAuthenticated(ctx);
+
+  const userRoles: string[] = ctx.state.user.roles;
+
+  const userPermissions = [
+    ...new Set(userRoles.map((role) => rolePermissions[role]).flat()),
+  ];
+
+  const hasAllRequiredPermissions = requiredPermissions.every((permission) =>
+    userPermissions.includes(permission),
+  );
+
+  if (!hasAllRequiredPermissions) {
+    throw new AuthorizationError();
+  }
 };

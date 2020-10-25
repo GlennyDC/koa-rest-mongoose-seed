@@ -5,6 +5,7 @@ import {
   createLogger,
   validateArgs,
   assertAuthenticated,
+  assertAuthorized,
 } from '../../global';
 import { Organisation } from './organisation';
 import * as organisationService from './organisation.service';
