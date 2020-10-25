@@ -2,7 +2,7 @@ import { createLogger, NotFoundError, ErrorCode } from '../../global';
 import { CreateLocationInput, Location } from './location';
 import { LocationModel } from './location.model';
 
-const logger = createLogger('organisation-service');
+const logger = createLogger('location-service');
 
 export const getLocationById = async (id: string): Promise<Location> => {
   logger.info(`Get location [${id}]`);
