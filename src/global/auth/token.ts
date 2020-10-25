@@ -71,7 +71,9 @@ const signToken = (payload: TokenPayload): Promise<string> => {
  *
  * @returns {Promise<string>} A promise to the JWT
  */
-export const makeToken = async (payload: TokenPayload): Promise<string> => {
+export const createAuthToken = async (
+  payload: TokenPayload,
+): Promise<string> => {
   return signToken(payload);
 };
 
@@ -80,10 +82,11 @@ export const makeToken = async (payload: TokenPayload): Promise<string> => {
  *
  * If the JWT is successfully verified, return the decoded payload.
  *
- * @param {string} token - The JWT to be verified and decoded
- *
+ * @param {string} authToken - The JWT to be verified and decoded
  * @returns {TokenPayload} The decoded payload of the JWT
  */
-export const extractToken = async (token: string): Promise<TokenPayload> => {
-  return verifyToken(token);
+export const extractAuthToken = async (
+  authToken: string,
+): Promise<TokenPayload> => {
+  return verifyToken(authToken);
 };

@@ -1,2 +1,2 @@
 export { assertAuthenticated, assertAuthorized } from './auth';
-export { makeToken, extractToken } from './token';
+export { createAuthToken, extractAuthToken } from './token';

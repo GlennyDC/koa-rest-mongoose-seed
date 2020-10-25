@@ -1,5 +1,5 @@
 import {
-  makeToken,
+  createAuthToken,
   createLogger,
   NotFoundError,
   ErrorCode,
@@ -42,7 +42,7 @@ export const register = async (
 
   const user = await new UserModel({ emailAddress, password }).save();
 
-  const jwt = await makeToken({
+  const jwt = await createAuthToken({
     user: {
       id: user.id,
       roles: user.roles,
@@ -93,7 +93,7 @@ export const login = async (
     );
   }
 
-  const jwt = await makeToken({
+  const jwt = await createAuthToken({
     user: {
       id: user.id,
       roles: user.roles,

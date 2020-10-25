@@ -12,7 +12,7 @@ import { rolePermissions } from './rolePermissions';
  * @param {Koa.Context} ctx - Koa context
  */
 export const assertAuthenticated = (ctx: Koa.Context): void => {
-  if (!ctx.state.token)
+  if (!ctx.state.authToken)
     throw new AuthenticationError(
       'Must authenticate to access this resource',
       ErrorCode.AUTHENTICATION_ERROR,
@@ -21,14 +21,20 @@ export const assertAuthenticated = (ctx: Koa.Context): void => {
   if (!ctx.state.user) {
     // TODO: logging
 
-    const tokenErr = ctx.state.tokenErr;
+    const authTokenErr = ctx.state.authTokenErr;
 
-    if (tokenErr instanceof TokenExpiredError) {
-      throw new AuthenticationError('Token expired', ErrorCode.TOKEN_EXPIRED);
+    if (authTokenErr instanceof TokenExpiredError) {
+      throw new AuthenticationError(
+        'Authentication token expired',
+        ErrorCode.TOKEN_EXPIRED,
+      );
     }
 
-    if (tokenErr instanceof JsonWebTokenError) {
-      throw new AuthenticationError('Invalid token', ErrorCode.INVALID_TOKEN);
+    if (authTokenErr instanceof JsonWebTokenError) {
+      throw new AuthenticationError(
+        'Authentication token invalid',
+        ErrorCode.INVALID_TOKEN,
+      );
     }
 
     console.log('#####MAKE SURE THIS NEVER OCCURS#######'); // TODO
