@@ -6,7 +6,7 @@ import { ErrorCode } from '../errorCode';
  *
  * Note: every property (including the message) on this class is public and **will** be send to the client.
  */
-abstract class BaseError extends Error {
+export abstract class BaseError extends Error {
   readonly code: ErrorCode;
   readonly status: number;
   readonly timestamp: string;
@@ -44,5 +44,3 @@ abstract class BaseError extends Error {
     Object.defineProperty(this, 'name', { value: this.constructor.name });
   }
 }
-
-export { BaseError };

@@ -43,7 +43,7 @@ const bootstrapSchema = (): GraphQLSchema => {
   return schema;
 };
 
-const installApolloServer = (app: Koa): void => {
+export const installApolloServer = (app: Koa): void => {
   const schema = bootstrapSchema();
 
   const apolloServer = new ApolloServer({
@@ -57,5 +57,3 @@ const installApolloServer = (app: Koa): void => {
 
   apolloServer.applyMiddleware({ app });
 };
-
-export { installApolloServer };

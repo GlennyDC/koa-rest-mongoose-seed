@@ -60,7 +60,7 @@ const makeFileFormat = (): Format => {
  *
  * @returns {winston.Logger} A Winston logger
  */
-const createLogger = (moduleName: string): winston.Logger =>
+export const createLogger = (moduleName: string): winston.Logger =>
   winston.createLogger({
     level: LOGGING_LEVEL,
     transports: [
@@ -70,5 +70,3 @@ const createLogger = (moduleName: string): winston.Logger =>
     ],
     defaultMeta: { moduleName },
   });
-
-export { createLogger };

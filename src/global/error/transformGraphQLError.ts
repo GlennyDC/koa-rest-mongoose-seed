@@ -60,7 +60,7 @@ const makeUnKnownGraphQLFormattedError = (
  *
  * @see {@link https://github.com/graphql/graphql-spec/blob/master/spec/Section%207%20--%20Response.md#errors|GraphQL error response spec}
  */
-const transformGraphQLError = (
+export const transformGraphQLError = (
   error: GraphQLError,
 ): GraphQLFormattedError<Extensions> => {
   const { originalError } = error;
@@ -70,5 +70,3 @@ const transformGraphQLError = (
     return makeUnKnownGraphQLFormattedError(error);
   }
 };
-
-export { transformGraphQLError };

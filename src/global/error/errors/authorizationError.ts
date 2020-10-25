@@ -7,7 +7,7 @@ import { BaseError } from './baseError';
  *
  * @see {@link https://tools.ietf.org/html/rfc7231#section-6.5.3|403 Forbidden}
  */
-class AuthorizationError extends BaseError {
+export class AuthorizationError extends BaseError {
   constructor() {
     super(
       'Not authorized to access this resource',
@@ -16,5 +16,3 @@ class AuthorizationError extends BaseError {
     );
   }
 }
-
-export { AuthorizationError };

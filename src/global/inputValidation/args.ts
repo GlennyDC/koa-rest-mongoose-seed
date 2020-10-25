@@ -54,7 +54,7 @@ const formatJoiError = (
  *
  * @returns {Record<string, any>} - A Promise that resolves into the validated value when the value is valid
  */
-const validateArgs = async (
+export const validateArgs = async (
   args: Record<string, any>,
   schema: Joi.Schema,
 ): Promise<Record<string, any>> => {
@@ -66,5 +66,3 @@ const validateArgs = async (
     throw new InputValidationError(validationErrors);
   }
 };
-
-export { validateArgs };

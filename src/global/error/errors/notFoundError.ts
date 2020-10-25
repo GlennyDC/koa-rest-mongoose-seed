@@ -6,10 +6,8 @@ import { BaseError } from './baseError';
  *
  * @see {@link https://tools.ietf.org/html/rfc7231#section-6.5.4|404 Not found}
  */
-class NotFoundError extends BaseError {
+export class NotFoundError extends BaseError {
   constructor(message: string, code: ErrorCode) {
     super(message, code, 404);
   }
 }
-
-export { NotFoundError };

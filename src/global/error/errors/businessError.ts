@@ -9,10 +9,8 @@ import { BaseError } from './baseError';
  *
  * @see {@link https://tools.ietf.org/html/rfc7231#section-6.5.8|409 Conflict}
  */
-class BusinessError extends BaseError {
+export class BusinessError extends BaseError {
   constructor(message: string, code: ErrorCode, wrappedError?: Error) {
     super(message, code, 409, wrappedError);
   }
 }
-
-export { BusinessError };

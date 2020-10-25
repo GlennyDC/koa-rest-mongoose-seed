@@ -84,7 +84,7 @@ const request = async <T>(
   return (await response.json()) as T;
 };
 
-const get = async <T>(
+export const get = async <T>(
   baseURL: string,
   path: string,
   queryParams?: ParsedUrlQueryInput,
@@ -92,5 +92,3 @@ const get = async <T>(
 ): Promise<T> => {
   return request<T>(baseURL, path, HTTPMethod.GET, queryParams, headers);
 };
-
-export { get };

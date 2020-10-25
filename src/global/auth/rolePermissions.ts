@@ -2,7 +2,7 @@ interface RolePermissions {
   [key: string]: string[];
 }
 
-const rolePermissions: RolePermissions = {
+export const rolePermissions: RolePermissions = {
   user: [
     'read:organization',
     'create:organization',
@@ -16,5 +16,3 @@ const rolePermissions: RolePermissions = {
     'delete:location',
   ],
 };
-
-export { rolePermissions };

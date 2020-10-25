@@ -7,14 +7,8 @@ import { BaseError } from './baseError';
  *
  * @see {@link https://tools.ietf.org/html/rfc7235#section-3.1|401 Unauthorized}
  */
-class AuthenticationError extends BaseError {
-  constructor() {
-    super(
-      'Must authenticate to access this resource',
-      ErrorCode.AUTHENTICATION_ERROR,
-      401,
-    );
+export class AuthenticationError extends BaseError {
+  constructor(message: string, code: ErrorCode) {
+    super(message, code, 401);
   }
 }
-
-export { AuthenticationError };

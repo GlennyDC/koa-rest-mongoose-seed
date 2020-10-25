@@ -9,7 +9,7 @@ import {
 
 const logger = createLogger('app');
 
-const createApp = async (): Promise<Koa> => {
+export const createApp = async (): Promise<Koa> => {
   logger.info('Starting creation of app...');
 
   const app = new Koa();
@@ -49,5 +49,3 @@ const createApp = async (): Promise<Koa> => {
 
   return app;
 };
-
-export { createApp };

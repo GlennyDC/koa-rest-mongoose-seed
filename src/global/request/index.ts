@@ -1,3 +1,1 @@
-import * as request from './request';
-
-export { request };
+export * as request from './request';

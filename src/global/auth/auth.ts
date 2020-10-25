@@ -1,14 +1,7 @@
-import {
-  JsonWebTokenError,
-  TokenExpiredError as TokenExpiredErrorLib,
-} from 'jsonwebtoken';
+import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
 import type Koa from 'koa';
 
-import {
-  AuthenticationError,
-  InvalidTokenError,
-  TokenExpiredError,
-} from '../error';
+import { AuthenticationError, ErrorCode } from '../error';
 import { rolePermissions } from './rolePermissions';
 
 /**
@@ -19,21 +12,26 @@ import { rolePermissions } from './rolePermissions';
  * @param {Koa.Context} ctx - Koa context
  */
 export const assertAuthenticated = (ctx: Koa.Context): void => {
-  if (!ctx.state.token) throw new AuthenticationError();
+  if (!ctx.state.token)
+    throw new AuthenticationError(
+      'Must authenticate to access this resource',
+      ErrorCode.AUTHENTICATION_ERROR,
+    );
+
   if (!ctx.state.user) {
     // TODO: logging
 
     const tokenErr = ctx.state.tokenErr;
 
-    if (tokenErr instanceof TokenExpiredErrorLib) {
-      throw new TokenExpiredError();
+    if (tokenErr instanceof TokenExpiredError) {
+      throw new AuthenticationError('Token expired', ErrorCode.TOKEN_EXPIRED);
     }
 
     if (tokenErr instanceof JsonWebTokenError) {
-      throw new InvalidTokenError();
+      throw new AuthenticationError('Invalid token', ErrorCode.INVALID_TOKEN);
     }
 
-    console.log('This can never occur'); // TODO
+    console.log('#####MAKE SURE THIS NEVER OCCURS#######'); // TODO
   }
 };
 

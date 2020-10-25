@@ -3,7 +3,7 @@ import type { SpaceXCapsule } from './capsule';
 
 const logger = createLogger('SpaceX - capsule');
 
-const getCapsules = async (
+export const getCapsules = async (
   limit: number,
   offset: number,
   order: string,
@@ -27,7 +27,7 @@ const getCapsules = async (
   }
 };
 
-const getCapsuleById = async (id: string): Promise<SpaceXCapsule> => {
+export const getCapsuleById = async (id: string): Promise<SpaceXCapsule> => {
   logger.verbose(`Get capsule [${id}]`);
   try {
     const capsule = await request.get<SpaceXCapsule>(
@@ -40,5 +40,3 @@ const getCapsuleById = async (id: string): Promise<SpaceXCapsule> => {
     throw new IntegrationError(err);
   }
 };
-
-export { getCapsules, getCapsuleById };
