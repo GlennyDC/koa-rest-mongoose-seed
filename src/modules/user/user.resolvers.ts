@@ -1,12 +1,26 @@
 import Joi from 'joi';
 
-import { Resolvers, createLogger, validateArgs } from '../../global';
+import {
+  Resolvers,
+  createLogger,
+  validateArgs,
+  assertAuthenticated,
+} from '../../global';
 import { Auth, User } from './user';
-import * as userService from './user.service';
+import { login, register, updateUserById, getUserById } from './user.service';
 
 const logger = createLogger('user-resolvers');
 
 const UserResolvers: Resolvers = {
+  Query: {
+    viewer: async (root, args, { koaCtx, userId }): Promise<User> => {
+      logger.silly(`Get viewer [${userId}]`);
+
+      assertAuthenticated(koaCtx);
+
+      return getUserById(userId);
+    },
+  },
   Mutation: {
     register: async (_, args): Promise<Auth> => {
       logger.silly(`Register user with email address [${args.emailAddress}]`);
@@ -19,7 +33,7 @@ const UserResolvers: Resolvers = {
         }),
       );
 
-      return userService.register(emailAddress, password);
+      return register(emailAddress, password);
     },
     login: async (_, args): Promise<Auth> => {
       logger.silly(`Login user with email address [${args.emailAddress}]`);
@@ -32,25 +46,24 @@ const UserResolvers: Resolvers = {
         }),
       );
 
-      return userService.login(emailAddress, password);
+      return login(emailAddress, password);
     },
-    updateUser: async (_, args): Promise<User> => {
-      logger.silly(`Update user [${args.id}]`);
+    updateViewer: async (_, args, { koaCtx, userId }): Promise<User> => {
+      logger.silly(`Update user [${userId}]`);
 
-      // TODO: get id from JWT
+      assertAuthenticated(koaCtx);
 
-      const { id, user } = await validateArgs(
+      const { user } = await validateArgs(
         args,
         Joi.object({
-          id: Joi.string(),
           user: Joi.object({
             emailAddress: Joi.string().email().optional(),
-            password: Joi.string().email().optional(),
+            password: Joi.string().optional(),
           }).or('emailAddress', 'password'),
         }),
       );
 
-      return userService.updateUserById(id, user);
+      return updateUserById(userId, user);
     },
   },
 };

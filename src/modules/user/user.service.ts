@@ -18,6 +18,19 @@ const LOGIN_ATTEMPTS_LOCK_TIME = getEnvironmentVariable<number>(
 
 const logger = createLogger('user-service');
 
+export const getUserById = async (id: string): Promise<User> => {
+  logger.info(`Get user [${id}]`);
+
+  const user = await UserModel.findById(id).exec();
+
+  if (!user) {
+    logger.info(`User [${id}] not found`);
+    throw new NotFoundError(`User [${id}] not found`, ErrorCode.USER_NOT_FOUND);
+  }
+
+  return user;
+};
+
 export const updateUserById = async (
   id: string,
   user: UpdateUserInput,

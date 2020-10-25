@@ -23,6 +23,7 @@ export type Query = {
   capsules: Array<Capsule>;
   organisation: Organisation;
   organisations: Array<Organisation>;
+  viewer: User;
 };
 
 
@@ -84,7 +85,7 @@ export type Mutation = {
   createOrganisation: Organisation;
   login: Auth;
   register: Auth;
-  updateUser: User;
+  updateViewer: User;
 };
 
 
@@ -111,8 +112,7 @@ export type MutationRegisterArgs = {
 };
 
 
-export type MutationUpdateUserArgs = {
-  id: Scalars['ID'];
+export type MutationUpdateViewerArgs = {
   user: UpdateUserInput;
 };
 
@@ -271,6 +271,7 @@ export type QueryResolvers<ContextType = Context, ParentType extends ResolversPa
   capsules?: Resolver<Array<ResolversTypes['Capsule']>, ParentType, ContextType, RequireFields<QueryCapsulesArgs, 'limit' | 'offset' | 'order' | 'sort'>>;
   organisation?: Resolver<ResolversTypes['Organisation'], ParentType, ContextType, RequireFields<QueryOrganisationArgs, 'id'>>;
   organisations?: Resolver<Array<ResolversTypes['Organisation']>, ParentType, ContextType, RequireFields<QueryOrganisationsArgs, 'offset' | 'limit'>>;
+  viewer?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
 };
 
 export type CapsuleResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Capsule'] = ResolversParentTypes['Capsule']> = {
@@ -296,7 +297,7 @@ export type MutationResolvers<ContextType = Context, ParentType extends Resolver
   createOrganisation?: Resolver<ResolversTypes['Organisation'], ParentType, ContextType, RequireFields<MutationCreateOrganisationArgs, 'organisation'>>;
   login?: Resolver<ResolversTypes['Auth'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'emailAddress' | 'password'>>;
   register?: Resolver<ResolversTypes['Auth'], ParentType, ContextType, RequireFields<MutationRegisterArgs, 'emailAddress' | 'password'>>;
-  updateUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationUpdateUserArgs, 'id' | 'user'>>;
+  updateViewer?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationUpdateViewerArgs, 'user'>>;
 };
 
 export type LocationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Location'] = ResolversParentTypes['Location']> = {
