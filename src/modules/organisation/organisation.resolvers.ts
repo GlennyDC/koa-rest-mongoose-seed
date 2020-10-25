@@ -6,8 +6,8 @@ import {
   validateArgs,
   assertAuthenticated,
 } from '../../global';
+import { assertOwnerOfOrganisation } from '../organisation.auth';
 import { Organisation } from './organisation';
-import { assertOwnerOfOrganization } from './organisation.auth';
 import {
   getOrganisationById,
   getOrganisationsOfUser,
@@ -34,7 +34,7 @@ const organisationResolvers: Resolvers = {
         }),
       );
 
-      await assertOwnerOfOrganization(id, userId);
+      await assertOwnerOfOrganisation(id, userId);
 
       return getOrganisationById(id);
     },

@@ -59,12 +59,38 @@ export type Capsule = {
   reuseCount: Scalars['Int'];
 };
 
+export type Organisation = {
+  __typename?: 'Organisation';
+  id: Scalars['ID'];
+  location: Location;
+  locations: Array<Location>;
+  name: Scalars['String'];
+};
+
+
+export type OrganisationLocationArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type OrganisationLocationsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
+  createLocation: Location;
   createOrganisation: Organisation;
   login: Auth;
   register: Auth;
   updateUser: User;
+};
+
+
+export type MutationCreateLocationArgs = {
+  organisationId: Scalars['ID'];
+  location: CreateLocationInput;
 };
 
 
@@ -90,9 +116,13 @@ export type MutationUpdateUserArgs = {
   user: UpdateUserInput;
 };
 
-export type Organisation = {
-  __typename?: 'Organisation';
+export type Location = {
+  __typename?: 'Location';
   id: Scalars['ID'];
+  name: Scalars['String'];
+};
+
+export type CreateLocationInput = {
   name: Scalars['String'];
 };
 
@@ -206,8 +236,10 @@ export type ResolversTypes = {
   Int: ResolverTypeWrapper<Scalars['Int']>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Capsule: ResolverTypeWrapper<Capsule>;
-  Mutation: ResolverTypeWrapper<{}>;
   Organisation: ResolverTypeWrapper<IOrganisation>;
+  Mutation: ResolverTypeWrapper<{}>;
+  Location: ResolverTypeWrapper<Location>;
+  CreateLocationInput: CreateLocationInput;
   CreateOrganisationInput: CreateOrganisationInput;
   Sort: Sort;
   Auth: ResolverTypeWrapper<Auth>;
@@ -223,8 +255,10 @@ export type ResolversParentTypes = {
   Int: Scalars['Int'];
   String: Scalars['String'];
   Capsule: Capsule;
-  Mutation: {};
   Organisation: IOrganisation;
+  Mutation: {};
+  Location: Location;
+  CreateLocationInput: CreateLocationInput;
   CreateOrganisationInput: CreateOrganisationInput;
   Auth: Auth;
   User: User;
@@ -249,14 +283,23 @@ export type CapsuleResolvers<ContextType = Context, ParentType extends Resolvers
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
+export type OrganisationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Organisation'] = ResolversParentTypes['Organisation']> = {
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  location?: Resolver<ResolversTypes['Location'], ParentType, ContextType, RequireFields<OrganisationLocationArgs, 'id'>>;
+  locations?: Resolver<Array<ResolversTypes['Location']>, ParentType, ContextType, RequireFields<OrganisationLocationsArgs, 'offset' | 'limit'>>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType>;
+};
+
 export type MutationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  createLocation?: Resolver<ResolversTypes['Location'], ParentType, ContextType, RequireFields<MutationCreateLocationArgs, 'organisationId' | 'location'>>;
   createOrganisation?: Resolver<ResolversTypes['Organisation'], ParentType, ContextType, RequireFields<MutationCreateOrganisationArgs, 'organisation'>>;
   login?: Resolver<ResolversTypes['Auth'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'emailAddress' | 'password'>>;
   register?: Resolver<ResolversTypes['Auth'], ParentType, ContextType, RequireFields<MutationRegisterArgs, 'emailAddress' | 'password'>>;
   updateUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationUpdateUserArgs, 'id' | 'user'>>;
 };
 
-export type OrganisationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Organisation'] = ResolversParentTypes['Organisation']> = {
+export type LocationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Location'] = ResolversParentTypes['Location']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
@@ -278,8 +321,9 @@ export type UserResolvers<ContextType = Context, ParentType extends ResolversPar
 export type Resolvers<ContextType = Context> = {
   Query?: QueryResolvers<ContextType>;
   Capsule?: CapsuleResolvers<ContextType>;
-  Mutation?: MutationResolvers<ContextType>;
   Organisation?: OrganisationResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
+  Location?: LocationResolvers<ContextType>;
   Auth?: AuthResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
 };

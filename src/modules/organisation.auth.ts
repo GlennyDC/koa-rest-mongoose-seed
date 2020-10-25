@@ -1,9 +1,9 @@
-import { createLogger, NotFoundError, ErrorCode } from '../../global';
-import { OrganisationModel } from './organisation.model';
+import { createLogger, NotFoundError, ErrorCode } from '../global';
+import { OrganisationModel } from './organisation/organisation.model';
 
 const logger = createLogger('organisation-auth');
 
-export const assertOwnerOfOrganization = async (
+export const assertOwnerOfOrganisation = async (
   organisationId: string,
   userId: string,
 ): Promise<void> => {
