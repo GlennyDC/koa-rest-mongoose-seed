@@ -1,6 +1,7 @@
 import type Koa from 'koa';
 
 import type { LocationLoader } from '../../modules/location/location.loader';
+import type { OrganisationLoader } from '../../modules/organisation/organisation.loader';
 
 export type Context = {
   koaCtx: Koa.Context;
@@ -11,5 +12,6 @@ export type Context = {
   // non-null assertion operator but this would clutter all the authenticated
   // resolvers.
   userId: string;
+  organisationLoader: OrganisationLoader;
   locationLoader: LocationLoader;
 };

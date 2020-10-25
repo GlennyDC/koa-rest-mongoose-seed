@@ -15,3 +15,4 @@ generates:
       contextType: ./context#Context
       mappers:
         Organisation: ../../modules/organisation/organisation#Organisation as IOrganisation
+        Location: ../../modules/location/location#Location as ILocation

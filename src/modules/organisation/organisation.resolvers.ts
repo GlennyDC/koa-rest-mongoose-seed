@@ -82,6 +82,17 @@ const organisationResolvers: Resolvers = {
       return createOrganisationForUser(userId, organisation);
     },
   },
+  Location: {
+    organisation: async (
+      location,
+      _,
+      { organisationLoader },
+    ): Promise<Organisation> => {
+      logger.silly(`Get organisation [${location.organisationId}]`);
+
+      return organisationLoader.load(location.organisationId.toString());
+    },
+  },
 };
 
 export default organisationResolvers;

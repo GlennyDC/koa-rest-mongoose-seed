@@ -6,6 +6,7 @@ import type Koa from 'koa';
 import { join } from 'path';
 
 import { createLocationLoader } from '../modules/location/location.loader';
+import { createOrganisationLoader } from '../modules/organisation/organisation.loader';
 import { transformGraphQLError } from './error';
 import { getEnvironmentVariable } from './getEnvironmentVariable';
 import { Context } from './types/context';
@@ -17,11 +18,13 @@ export const createContext = ({
 }): Context => {
   const userId = koaCtx.state.user?.id;
   const locationLoader = createLocationLoader();
+  const organisationLoader = createOrganisationLoader();
 
   return {
     koaCtx,
     userId,
     locationLoader,
+    organisationLoader,
   };
 };
 

@@ -19,10 +19,8 @@ const logger = createLogger('location-resolvers');
 
 const locationResolvers: Resolvers = {
   Organisation: {
-    location: async (_, args, { koaCtx, userId }): Promise<Location> => {
+    location: async (_, args, { userId }): Promise<Location> => {
       logger.silly(`Get location [${args.id}]`);
-
-      assertAuthenticated(koaCtx);
 
       const { id } = await validateArgs(
         args,

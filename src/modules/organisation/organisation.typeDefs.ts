@@ -10,6 +10,10 @@ const organisationTypeDefs = gql`
     createOrganisation(organisation: CreateOrganisationInput!): Organisation!
   }
 
+  extend type Location {
+    organisation: Organisation!
+  }
+
   type Organisation {
     id: ID!
     name: String!

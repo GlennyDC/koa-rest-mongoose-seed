@@ -22,6 +22,18 @@ export const getOrganisationById = async (
   return organisation;
 };
 
+export const getOrganisationsByIds = async (
+  ids: string[],
+): Promise<Organisation[]> => {
+  logger.info(`Get organisations [${ids}]`);
+
+  const organisations = await OrganisationModel.find({
+    _id: { $in: ids },
+  }).exec();
+
+  return organisations;
+};
+
 export const getOrganisationsOfUser = async (
   userId: string,
   offset: number,
