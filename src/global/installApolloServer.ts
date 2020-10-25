@@ -5,9 +5,25 @@ import { GraphQLSchema } from 'graphql';
 import type Koa from 'koa';
 import { join } from 'path';
 
+import { createLocationLoader } from '../modules/location/location.loader';
 import { transformGraphQLError } from './error';
 import { getEnvironmentVariable } from './getEnvironmentVariable';
 import { Context } from './types/context';
+
+export const createContext = ({
+  ctx: koaCtx,
+}: {
+  ctx: Koa.Context;
+}): Context => {
+  const userId = koaCtx.state.user?.id;
+  const locationLoader = createLocationLoader();
+
+  return {
+    koaCtx,
+    userId,
+    locationLoader,
+  };
+};
 
 const ENABLE_GRAPHQL_PLAYGROUND = getEnvironmentVariable<boolean>(
   'ENABLE_GRAPHQL_PLAYGROUND',
@@ -49,10 +65,7 @@ export const installApolloServer = (app: Koa): void => {
 
   const apolloServer = new ApolloServer({
     schema,
-    context: ({ ctx }): Context => {
-      const userId = ctx.state.user?.id;
-      return { koaCtx: ctx, userId };
-    },
+    context: createContext,
     debug: EXPOSE_ERROR_STACK_TRACES,
     playground: ENABLE_GRAPHQL_PLAYGROUND,
     introspection: ENABLE_GRAPHQL_INTROSPECTION,

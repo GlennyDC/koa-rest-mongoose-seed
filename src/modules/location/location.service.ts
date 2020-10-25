@@ -20,6 +20,14 @@ export const getLocationById = async (id: string): Promise<Location> => {
   return location;
 };
 
+export const getLocationsByIds = async (ids: string[]): Promise<Location[]> => {
+  logger.info(`Get locations [${ids}]`);
+
+  const locations = await LocationModel.find({ id: { $in: ids } }).exec();
+
+  return locations;
+};
+
 export const getLocationsOfOrganisation = async (
   organisationId: string,
   offset: number,

@@ -1,5 +1,7 @@
 import type Koa from 'koa';
 
+import type { LocationLoader } from '../../modules/location/location.loader';
+
 export type Context = {
   koaCtx: Koa.Context;
   // Although userId can be undefined if no auth token is
@@ -9,4 +11,5 @@ export type Context = {
   // non-null assertion operator but this would clutter all the authenticated
   // resolvers.
   userId: string;
+  locationLoader: LocationLoader;
 };
