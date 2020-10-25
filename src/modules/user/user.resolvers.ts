@@ -11,7 +11,15 @@ import { login, register, updateUserById, getUserById } from './user.service';
 
 const logger = createLogger('user-resolvers');
 
-const handler = (schema: any, f: any, options?: any): any => {
+const defaultResolverFunctionOptions = {
+  requireAuthentication: true,
+};
+
+const handler = <T>(
+  schema: Joi.Schema | null,
+  f: any,
+  options = defaultResolverFunctionOptions,
+): T => {
   const resolverFunction = async (
     root: any,
     args: any,
@@ -27,22 +35,16 @@ const handler = (schema: any, f: any, options?: any): any => {
     return f(root, args, ctx, info);
   };
 
-  return resolverFunction;
+  return (resolverFunction as unknown) as T;
 };
 
 const UserResolvers: Resolvers = {
   Query: {
-    // eslint-disable-next-line
-    // @ts-ignore
-    viewer: handler(
-      null,
-      async (root: any, args: any, ctx: any) => {
-        logger.silly(`Get viewer [${ctx.userId}]`);
+    viewer: handler(null, async (root: any, args: any, ctx: any) => {
+      logger.silly(`Get viewer [${ctx.userId}]`);
 
-        return getUserById(ctx.userId);
-      },
-      { requireAuthentication: true },
-    ),
+      return getUserById(ctx.userId);
+    }),
   },
   Mutation: {
     register: async (_, args): Promise<Auth> => {
