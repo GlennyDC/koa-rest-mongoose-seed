@@ -22,13 +22,18 @@ export const getOrganisationById = async (
   return organisation;
 };
 
-export const getOrganisations = async (
+export const getOrganisationsOfUser = async (
+  userId: string,
   offset: number,
   limit: number,
 ): Promise<Organisation[]> => {
-  logger.info(`Get organisations with offset [${offset}] and limit [${limit}]`);
+  logger.info(
+    `Get organisations of user [${userId}] with offset [${offset}] and limit [${limit}]`,
+  );
 
-  const organisations = await OrganisationModel.find()
+  const organisations = await OrganisationModel.find({
+    ownerId: userId,
+  })
     .skip(offset)
     .limit(limit)
     .exec();
