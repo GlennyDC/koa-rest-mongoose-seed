@@ -6,6 +6,7 @@ import {
   validateArgs,
   assertAuthenticated,
 } from '../../global';
+import { QueryResolvers } from '../../global/types/schema';
 import { Auth, User } from './user';
 import { login, register, updateUserById, getUserById } from './user.service';
 
@@ -17,7 +18,7 @@ const defaultResolverFunctionOptions = {
 
 const handler = <T>(
   schema: Joi.Schema | null,
-  f: any,
+  f: T,
   options = defaultResolverFunctionOptions,
 ): T => {
   const resolverFunction = async (
@@ -32,6 +33,8 @@ const handler = <T>(
 
     await validateArgs(args, schema || Joi.object({}));
 
+    // eslint-disable-next-line
+    // @ts-ignore
     return f(root, args, ctx, info);
   };
 
@@ -40,7 +43,7 @@ const handler = <T>(
 
 const UserResolvers: Resolvers = {
   Query: {
-    viewer: handler(null, async (root: any, args: any, ctx: any) => {
+    viewer: handler(null, async (root, args, ctx) => {
       logger.silly(`Get viewer [${ctx.userId}]`);
 
       return getUserById(ctx.userId);
