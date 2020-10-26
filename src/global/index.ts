@@ -14,3 +14,4 @@ export { validateArgs } from './inputValidation';
 export { installApolloServer } from './installApolloServer';
 export { installDatabaseConnection } from './installDatabaseConnection';
 export { getEnvironmentVariable } from './getEnvironmentVariable';
+export { handler } from './handler';
