@@ -17,6 +17,12 @@ export const installDatabaseConnection = async (): Promise<void> => {
     // sure that the returned value will be the modified document after
     // the update and not the original document before the update.
     mongoose.set('returnOriginal', false);
+
+    // This should work but it doesn't
+    // https://github.com/Automattic/mongoose/issues/6912
+    // eslint-disable-next-line
+    // @ts-ignore
+    // mongoose.ObjectId.get((v) => v.toString());
   } catch (err) {
     console.log(err); // TODO
   }

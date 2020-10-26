@@ -90,7 +90,7 @@ const organisationResolvers: Resolvers = {
     ): Promise<Organisation> => {
       logger.silly(`Get organisation [${location.organisationId}]`);
 
-      return organisationLoader.load(location.organisationId.toString());
+      return organisationLoader.load(location.organisationId);
     },
   },
 };

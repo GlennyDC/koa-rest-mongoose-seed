@@ -8,7 +8,11 @@ interface OrganisationDocument extends mongoose.Document {
 
 const organisationSchema = new mongoose.Schema(
   {
-    ownerId: { type: mongoose.Schema.Types.ObjectId, required: true },
+    ownerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      get: (v: mongoose.Schema.Types.ObjectId): string => v.toString(),
+      required: true,
+    },
     name: { type: String, required: true },
   },
   { timestamps: true },

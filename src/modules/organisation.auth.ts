@@ -21,7 +21,7 @@ export const assertOwnerOfOrganisation = async (
     );
   }
 
-  if (organisation.ownerId.toString() !== userId) {
+  if (organisation.ownerId !== userId) {
     logger.warn(
       `User [${userId}] is not the owner of organisation [${organisationId}]`,
     );
