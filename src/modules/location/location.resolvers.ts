@@ -1,14 +1,6 @@
-import Joi from 'joi';
-
-import {
-  Resolvers,
-  createLogger,
-  validateArgs,
-  assertAuthenticated,
-} from '../../global';
+import { Resolvers, createLogger, handler } from '../../global';
 import { assertOwnerOfLocation } from '../location.auth';
 import { assertOwnerOfOrganisation } from '../organisation.auth';
-import { Location } from './location';
 import {
   createLocationForOrganisation,
   getLocationsOfOrganisation,
@@ -19,58 +11,53 @@ const logger = createLogger('location-resolvers');
 
 const locationResolvers: Resolvers = {
   Organisation: {
-    location: async (_, args, { userId }): Promise<Location> => {
-      logger.silly(`Get location [${args.id}]`);
-
-      const { id } = await validateArgs(
-        args,
+    location: handler(
+      (Joi) =>
         Joi.object({
           id: Joi.string(),
         }),
-      );
+      async (_, { id }, { userId }) => {
+        logger.silly(`Get location [${id}]`);
 
-      await assertOwnerOfLocation(id, userId);
+        await assertOwnerOfLocation(id, userId);
 
-      return getLocationById(id);
-    },
-    locations: async (organisation, args): Promise<Location[]> => {
-      logger.silly(
-        `Get locations of organisation [${organisation.id}] with offset [${args.offset}] and limit [${args.limit}]`,
-      );
-
-      const { offset, limit } = await validateArgs(
-        args,
+        return getLocationById(id);
+      },
+    ),
+    locations: handler(
+      (Joi) =>
         Joi.object({
           offset: Joi.number().integer().min(0),
           limit: Joi.number().integer().positive().max(100),
         }),
-      );
+      async (organisation, { offset, limit }) => {
+        logger.silly(
+          `Get locations of organisation [${organisation.id}] with offset [${offset}] and limit [${limit}]`,
+        );
 
-      return getLocationsOfOrganisation(organisation.id, offset, limit);
-    },
+        return getLocationsOfOrganisation(organisation.id, offset, limit);
+      },
+    ),
   },
   Mutation: {
-    createLocation: async (_, args, { koaCtx, userId }): Promise<Location> => {
-      logger.silly(
-        `Create location [${args.location.name}] for organisation [${args.organisationId}]`,
-      );
-
-      assertAuthenticated(koaCtx);
-
-      const { organisationId, location } = await validateArgs(
-        args,
+    createLocation: handler(
+      (Joi) =>
         Joi.object({
           organisationId: Joi.string(),
           location: Joi.object({
             name: Joi.string(),
           }),
         }),
-      );
+      async (_, { organisationId, location }, { userId }) => {
+        logger.silly(
+          `Create location [${location.name}] for organisation [${organisationId}]`,
+        );
 
-      await assertOwnerOfOrganisation(organisationId, userId);
+        await assertOwnerOfOrganisation(organisationId, userId);
 
-      return createLocationForOrganisation(organisationId, location);
-    },
+        return createLocationForOrganisation(organisationId, location);
+      },
+    ),
   },
 };
 

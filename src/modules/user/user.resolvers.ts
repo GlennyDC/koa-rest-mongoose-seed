@@ -1,5 +1,3 @@
-import Joi from 'joi';
-
 import { Resolvers, createLogger, handler } from '../../global';
 import { login, register, updateUserById, getUserById } from './user.service';
 
@@ -15,10 +13,11 @@ const UserResolvers: Resolvers = {
   },
   Mutation: {
     register: handler(
-      Joi.object({
-        emailAddress: Joi.string().email(),
-        password: Joi.string().min(6),
-      }),
+      (Joi) =>
+        Joi.object({
+          emailAddress: Joi.string().email(),
+          password: Joi.string().min(6),
+        }),
       async (root, { emailAddress, password }) => {
         logger.silly(`Register user with email address [${emailAddress}]`);
         return register(emailAddress, password);
@@ -26,10 +25,11 @@ const UserResolvers: Resolvers = {
       { requireAuthentication: false },
     ),
     login: handler(
-      Joi.object({
-        emailAddress: Joi.string().email(),
-        password: Joi.string().min(6),
-      }),
+      (Joi) =>
+        Joi.object({
+          emailAddress: Joi.string().email(),
+          password: Joi.string().min(6),
+        }),
       async (root, { emailAddress, password }) => {
         logger.silly(`Login user with email address [${emailAddress}]`);
         return login(emailAddress, password);
@@ -37,12 +37,13 @@ const UserResolvers: Resolvers = {
       { requireAuthentication: false },
     ),
     updateViewer: handler(
-      Joi.object({
-        user: Joi.object({
-          emailAddress: Joi.string().email().optional(),
-          password: Joi.string().optional(),
-        }).or('emailAddress', 'password'),
-      }),
+      (Joi) =>
+        Joi.object({
+          user: Joi.object({
+            emailAddress: Joi.string().email().optional(),
+            password: Joi.string().optional(),
+          }).or('emailAddress', 'password'),
+        }),
       async (root, { user }, { userId }) => {
         logger.silly(`Update user [${userId}]`);
         return updateUserById(userId, user);
