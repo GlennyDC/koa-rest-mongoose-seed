@@ -32,7 +32,7 @@
     "koa": "^2.13.0",
     "koa-helmet": "^6.0.0",
     "mongoose": "^5.10.3",
-    "nanoid": "^3.1.15",
+    "nanoid": "^3.1.16",
     "node-fetch": "^2.6.1",
     "source-map-support": "^0.5.19",
     "winston": "^3.3.3"
