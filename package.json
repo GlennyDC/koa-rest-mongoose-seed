@@ -27,7 +27,7 @@
     "cls-hooked": "^4.2.2",
     "dataloader": "^2.0.0",
     "graphql": "^15",
-    "joi": "^17.2.1",
+    "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.0",
     "koa-helmet": "^5.2.0",
