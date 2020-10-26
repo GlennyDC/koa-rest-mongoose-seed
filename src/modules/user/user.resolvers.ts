@@ -20,6 +20,7 @@ const UserResolvers: Resolvers = {
         }),
       async (root, { emailAddress, password }) => {
         logger.silly(`Register user with email address [${emailAddress}]`);
+
         return register(emailAddress, password);
       },
       { requireAuthentication: false },
@@ -32,6 +33,7 @@ const UserResolvers: Resolvers = {
         }),
       async (root, { emailAddress, password }) => {
         logger.silly(`Login user with email address [${emailAddress}]`);
+
         return login(emailAddress, password);
       },
       { requireAuthentication: false },
@@ -46,6 +48,7 @@ const UserResolvers: Resolvers = {
         }),
       async (root, { user }, { userId }) => {
         logger.silly(`Update user [${userId}]`);
+
         return updateUserById(userId, user);
       },
     ),

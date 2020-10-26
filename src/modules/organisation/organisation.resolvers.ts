@@ -13,7 +13,7 @@ const organisationResolvers: Resolvers = {
     organisation: handler(
       (Joi) =>
         Joi.object({
-          id: Joi.string(),
+          id: Joi.string().objectId(),
         }),
       async (_, { id }, { userId }) => {
         logger.silly(`Get organisation [${id}]`);

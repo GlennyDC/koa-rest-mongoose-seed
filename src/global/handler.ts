@@ -1,6 +1,7 @@
 import Joi from 'joi';
 
 import { assertAuthenticated } from './auth';
+import { customJoi, ObjectIdJoi } from './customJoiValidator';
 import { validateArgs } from './inputValidation';
 
 type ResolverFunction = (
@@ -15,7 +16,7 @@ type Options = {
   requiredPermissions?: string[];
 };
 
-type SchemaMaker = ((Joi: Joi.Root) => Joi.Schema) | null;
+type SchemaMaker = ((Joi: ObjectIdJoi) => Joi.Schema) | null;
 
 export const handler = <T>(
   schemaMaker: SchemaMaker,
@@ -28,12 +29,15 @@ export const handler = <T>(
   const options = { ...defaultOptions, ...providedOptions };
 
   const resolverFunction: ResolverFunction = async (root, args, ctx, info) => {
-    console.log(options);
     if (options.requireAuthentication) {
       assertAuthenticated(ctx.koaCtx);
     }
 
-    const schema = schemaMaker ? schemaMaker(Joi) : Joi.object({});
+    // eslint-disable-next-line
+    // @ts-ignore
+    console.log(customJoi.objectId);
+
+    const schema = schemaMaker ? schemaMaker(customJoi) : customJoi.object({});
 
     const convertedValues = await validateArgs(args, schema);
 
