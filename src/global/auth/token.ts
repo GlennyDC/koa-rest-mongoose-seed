@@ -16,8 +16,6 @@ const AUTH_TOKEN_EXPIRATION_INTERVAL = getEnvironmentVariable<number>(
 /**
  * Verify a JWT.
  *
- * @private
- *
  * @param {string} token - The JWT to be verified
  *
  * @returns {Promise<object>} A promise to the decoded JWT
@@ -41,8 +39,6 @@ const verifyToken = (token: string): Promise<TokenPayload> => {
 
 /**
  * Sign a JWT.
- *
- * @private
  *
  * @param {TokenPayload} payload - The payload to be included in the JWT
  *

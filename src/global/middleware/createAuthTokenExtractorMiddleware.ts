@@ -9,8 +9,6 @@ import { extractAuthToken } from '../auth';
  *   - The JWT is stored in the authorization header.
  *   - The authorization scheme is Bearer.
  *
- * @private
- *
  * @param {Koa.Context} ctx - Koa context
  *
  * @returns {string|undefined} The JWT or undefined if no JWT was provided

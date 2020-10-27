@@ -16,7 +16,7 @@ export const getCapsules = async (
     const capsules = await request.get<SpaceXCapsule[]>(
       'https://api.spacexdata.com/v3/',
       'capsules',
-      { limit, offset, order, sort },
+      { queryParams: { limit, offset, order, sort } },
     );
     return capsules;
   } catch (err) {
