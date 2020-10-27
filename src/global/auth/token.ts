@@ -33,7 +33,9 @@ const verifyToken = (token: string): Promise<TokenPayload> => {
   };
   return new Promise((resolve, reject) => {
     verify(token, secret, options, (err, decodedToken) => {
-      if (err) return reject(err);
+      if (err) {
+        return reject(err);
+      }
       return resolve((decodedToken as unknown) as TokenPayload);
     });
   });
@@ -58,7 +60,9 @@ const signToken = (payload: TokenPayload): Promise<string> => {
   };
   return new Promise((resolve, reject) => {
     sign(payload, secret, options, (err, token) => {
-      if (err) return reject(err);
+      if (err) {
+        return reject(err);
+      }
       return resolve(token);
     });
   });

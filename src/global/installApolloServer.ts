@@ -4,6 +4,7 @@ import type { IResolvers } from 'apollo-server-koa';
 import { GraphQLSchema } from 'graphql';
 import type Koa from 'koa';
 import { join } from 'path';
+import type { Logger } from 'winston';
 
 import { createLocationLoader } from '../modules/location/location.loader';
 import { createOrganisationLoader } from '../modules/organisation/organisation.loader';
@@ -63,17 +64,22 @@ const bootstrapSchema = (): GraphQLSchema => {
   return schema;
 };
 
-export const installApolloServer = (app: Koa): void => {
-  const schema = bootstrapSchema();
+export const installApolloServer = (app: Koa, logger: Logger): void => {
+  logger.info('Install Apollo server');
 
-  const apolloServer = new ApolloServer({
-    schema,
-    context: createContext,
-    debug: EXPOSE_ERROR_STACK_TRACES,
-    playground: ENABLE_GRAPHQL_PLAYGROUND,
-    introspection: ENABLE_GRAPHQL_INTROSPECTION,
-    formatError: transformGraphQLError,
-  });
-
-  apolloServer.applyMiddleware({ app });
+  try {
+    const schema = bootstrapSchema();
+    const apolloServer = new ApolloServer({
+      schema,
+      context: createContext,
+      debug: EXPOSE_ERROR_STACK_TRACES,
+      playground: ENABLE_GRAPHQL_PLAYGROUND,
+      introspection: ENABLE_GRAPHQL_INTROSPECTION,
+      formatError: transformGraphQLError,
+    });
+    apolloServer.applyMiddleware({ app });
+  } catch (err) {
+    logger.error('Could not install Apollo server:', err);
+    throw err;
+  }
 };

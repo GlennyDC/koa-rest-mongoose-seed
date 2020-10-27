@@ -14,29 +14,11 @@ export const createApp = async (): Promise<Koa> => {
 
   const app = new Koa();
 
-  logger.info('Applying middleware...');
-  try {
-    applyMiddleware(app);
-  } catch (err) {
-    logger.error('Could not apply middleware:', err);
-    throw err;
-  }
+  applyMiddleware(app, logger);
 
-  logger.info('Installing Apollo server...');
-  try {
-    installApolloServer(app);
-  } catch (err) {
-    logger.error('Could not install Apollo server:', err);
-    throw err;
-  }
+  installApolloServer(app, logger);
 
-  logger.info('Installing database connection...');
-  try {
-    await installDatabaseConnection();
-  } catch (err) {
-    logger.error('Could not install database connection:', err);
-    throw err;
-  }
+  await installDatabaseConnection(logger);
 
   // Log any handled Koa error
   // (will probably never occur except for 404 Not found)

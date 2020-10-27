@@ -1,6 +1,12 @@
 export { Resolvers } from './types';
 export { createLogger } from './createLogger';
-export { createAuthToken, assertAuthenticated, assertAuthorized } from './auth';
+export {
+  createAuthToken,
+  assertAuthenticated,
+  assertAuthorized,
+  hashString,
+  compareStringToHash,
+} from './auth';
 export {
   IntegrationError,
   transformGraphQLError,

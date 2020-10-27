@@ -23,7 +23,7 @@
   "dependencies": {
     "@graphql-toolkit/file-loading": "^0.10.7",
     "apollo-server-koa": "^2.18.2",
-    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "cls-hooked": "^4.2.2",
     "dataloader": "^2.0.0",
     "graphql": "^15",
@@ -42,7 +42,7 @@
     "@graphql-codegen/cli": "1.15.4",
     "@graphql-codegen/typescript": "1.15.4",
     "@graphql-codegen/typescript-resolvers": "1.17.10",
-    "@types/bcrypt": "^3.0.0",
+    "@types/bcryptjs": "^2.4.2",
     "@types/cls-hooked": "^4.3.1",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/koa": "^2.11.4",

@@ -5,6 +5,8 @@ import {
   ErrorCode,
   BusinessError,
   getEnvironmentVariable,
+  hashString,
+  compareStringToHash,
 } from '../../global';
 import { Auth, User, UpdateUserInput } from './user';
 import { UserModel } from './user.model';
@@ -53,7 +55,9 @@ export const register = async (
 ): Promise<Auth> => {
   logger.info(`Register user with email address [${emailAddress}]`);
 
-  const user = await new UserModel({ emailAddress, password }).save();
+  const passwordHash = await hashString(password);
+
+  const user = await new UserModel({ emailAddress, passwordHash }).save();
 
   const jwt = await createAuthToken({
     user: {
@@ -92,7 +96,12 @@ export const login = async (
     );
   }
 
-  if (user.password !== password) {
+  const passwordIsCorrect = await compareStringToHash(
+    password,
+    user.passwordHash,
+  );
+
+  if (!passwordIsCorrect) {
     logger.info(`User with [${emailAddress}] did not match passwords`);
     await user
       .updateOne({

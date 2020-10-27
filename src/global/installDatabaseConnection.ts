@@ -1,10 +1,16 @@
 import mongoose from 'mongoose';
+import type { Logger } from 'winston';
 
 /**
  * Make sure that Mongoose doesn't use deprecated
  * MongoDb Node.js driver functions.
+ *
+ * @param logger
  */
-export const installDatabaseConnection = async (): Promise<void> => {
+export const installDatabaseConnection = async (
+  logger: Logger,
+): Promise<void> => {
+  logger.info('Installing database connection');
   try {
     await mongoose.connect('mongodb://db:27017', {
       useNewUrlParser: true,
@@ -24,6 +30,7 @@ export const installDatabaseConnection = async (): Promise<void> => {
     // @ts-ignore
     // mongoose.ObjectId.get((v) => v.toString());
   } catch (err) {
-    console.log(err); // TODO
+    logger.error('Could not install database connection:', err);
+    throw err;
   }
 };
