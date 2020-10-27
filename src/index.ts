@@ -16,7 +16,7 @@ const logger = createLogger('server');
       .createServer(app.callback())
       .listen(SERVER_PORT, SERVER_HOSTNAME, () => {
         logger.info(
-          `Server ready at ${SERVER_HOSTNAME}:${SERVER_PORT} in ${process.env.NODE_ENV} mode`,
+          `Server listening at ${SERVER_HOSTNAME}:${SERVER_PORT} in ${process.env.NODE_ENV} mode`,
         );
       });
 

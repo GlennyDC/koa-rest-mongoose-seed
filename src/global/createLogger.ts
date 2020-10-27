@@ -7,11 +7,11 @@ import { getEnvironmentVariable } from './getEnvironmentVariable';
 const LOGGING_LEVEL = getEnvironmentVariable<string>('LOGGING_LEVEL');
 
 /**
- * Make the format for console logs.
+ * Create the format for console logs.
  *
  * @returns {Format} The Winston Console transport format
  */
-const makeConsoleFormat = (): Format =>
+const createConsoleFormat = (): Format =>
   winston.format.combine(
     winston.format.colorize({ message: true }),
     winston.format.timestamp(),
@@ -65,7 +65,7 @@ export const createLogger = (moduleName: string): winston.Logger =>
     level: LOGGING_LEVEL,
     transports: [
       new winston.transports.Console({
-        format: makeConsoleFormat(),
+        format: createConsoleFormat(),
       }),
     ],
     defaultMeta: { moduleName },

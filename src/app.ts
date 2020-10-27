@@ -10,7 +10,7 @@ import {
 const logger = createLogger('app');
 
 export const createApp = async (): Promise<Koa> => {
-  logger.info('Starting creation of app...');
+  logger.info('Starting creation of app');
 
   const app = new Koa();
 

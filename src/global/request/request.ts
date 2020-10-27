@@ -8,7 +8,7 @@ import { HTTPMethod } from './httpMethod';
 const logger = createLogger('request');
 
 /**
- * Make a query string for a URL.
+ * Build a query string for a URL.
  *
  * @private
  *
@@ -18,14 +18,14 @@ const logger = createLogger('request');
  *
  * @returns {string} The URL query string
  */
-const makeQueryString = (
+const buildQueryString = (
   queryParams: ParsedUrlQueryInput,
   separator = '&',
   keyValueDelimiter = '=',
 ): string => stringify(queryParams, separator, keyValueDelimiter);
 
 /**
- * Make a URL.
+ * Build a URL.
  *
  * Note: This function does not insert a slash between the baseURL and path.
  *
@@ -37,7 +37,7 @@ const makeQueryString = (
  *
  * @returns {string} The URL
  */
-const makeURL = (
+const buildURL = (
   baseURL: string,
   path: string,
   queryParams?: ParsedUrlQueryInput,
@@ -47,7 +47,7 @@ const makeURL = (
     logger.silly(`Made request URL [${URL}]`);
     return URL;
   }
-  const URL = baseURL + path + '?' + makeQueryString(queryParams);
+  const URL = baseURL + path + '?' + buildQueryString(queryParams);
   logger.silly(`Made request URL [${URL}]`);
   return URL;
 };
@@ -69,7 +69,7 @@ const request = async <T>(
   queryParams?: ParsedUrlQueryInput,
   headers?: Headers,
 ): Promise<T> => {
-  const URL = makeURL(baseURL, path, queryParams);
+  const URL = buildURL(baseURL, path, queryParams);
   const response = await fetch(URL, { method, headers });
 
   if (!response.ok) {

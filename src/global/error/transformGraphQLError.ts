@@ -11,7 +11,7 @@ const EXPOSE_UNKNOWN_ERRORS = getEnvironmentVariable<boolean>(
 type Extensions = Record<string, any> & { code: string };
 type KnownGraphQLError = GraphQLError & { originalError: BaseError };
 
-const makeExtensions = (
+const buildExtensions = (
   code: ErrorCode,
   extensions: Record<string, any> = {},
 ): Extensions => {
@@ -21,7 +21,7 @@ const makeExtensions = (
   };
 };
 
-const makeKnownGraphQLFormattedError = (
+const createKnownGraphQLFormattedError = (
   error: KnownGraphQLError,
 ): GraphQLFormattedError<Extensions> => {
   const { message, locations, path, originalError, extensions } = error;
@@ -29,11 +29,11 @@ const makeKnownGraphQLFormattedError = (
     message,
     locations,
     path,
-    extensions: makeExtensions(originalError.code, extensions),
+    extensions: buildExtensions(originalError.code, extensions),
   };
 };
 
-const makeUnKnownGraphQLFormattedError = (
+const createUnKnownGraphQLFormattedError = (
   error: GraphQLError,
 ): GraphQLFormattedError<Extensions> => {
   const { message, path, locations, extensions } = error;
@@ -41,7 +41,7 @@ const makeUnKnownGraphQLFormattedError = (
     message: EXPOSE_UNKNOWN_ERRORS ? message : 'Internal server error',
     locations,
     path,
-    extensions: makeExtensions(
+    extensions: buildExtensions(
       ErrorCode.INTERNAL_SERVER_ERROR,
       EXPOSE_UNKNOWN_ERRORS ? extensions : {},
     ),
@@ -65,8 +65,8 @@ export const transformGraphQLError = (
 ): GraphQLFormattedError<Extensions> => {
   const { originalError } = error;
   if (originalError instanceof BaseError) {
-    return makeKnownGraphQLFormattedError(error as KnownGraphQLError);
+    return createKnownGraphQLFormattedError(error as KnownGraphQLError);
   } else {
-    return makeUnKnownGraphQLFormattedError(error);
+    return createUnKnownGraphQLFormattedError(error);
   }
 };
