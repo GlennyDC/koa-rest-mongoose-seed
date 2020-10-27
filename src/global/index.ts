@@ -7,13 +7,7 @@ export {
   hashString,
   compareStringToHash,
 } from './auth';
-export {
-  IntegrationError,
-  transformGraphQLError,
-  NotFoundError,
-  ErrorCode,
-  BusinessError,
-} from './error';
+export * from './error';
 export { request } from './request';
 export { applyMiddleware } from './middleware';
 export { validateArgs } from './inputValidation';

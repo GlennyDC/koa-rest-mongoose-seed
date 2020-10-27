@@ -7,6 +7,7 @@ import {
   getEnvironmentVariable,
   hashString,
   compareStringToHash,
+  GeneralError,
 } from '../../global';
 import { Auth, User, UpdateUserInput } from './user';
 import { UserModel } from './user.model';
@@ -79,9 +80,10 @@ export const login = async (
 
   if (!user) {
     logger.info(`User [${emailAddress}] not found`);
-    throw new NotFoundError(
-      `User [${emailAddress}] not found`,
-      ErrorCode.USER_NOT_FOUND,
+    throw new GeneralError(
+      `Wrong email or password`,
+      ErrorCode.INVALID_LOGIN_CREDENTIALS,
+      403,
     );
   }
 
@@ -109,9 +111,10 @@ export const login = async (
         lastBadLoginAttempt: Date.now(),
       })
       .exec();
-    throw new NotFoundError(
-      `User [${emailAddress}] not found`,
-      ErrorCode.USER_NOT_FOUND,
+    throw new GeneralError(
+      `Wrong email or password`,
+      ErrorCode.INVALID_LOGIN_CREDENTIALS,
+      403,
     );
   }
 

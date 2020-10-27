@@ -5,3 +5,4 @@ export { IntegrationError } from './integrationError';
 export { NotFoundError } from './notFoundError';
 export { RequestError } from './requestError';
 export { BusinessError } from './businessError';
+export { GeneralError } from './generalError';
