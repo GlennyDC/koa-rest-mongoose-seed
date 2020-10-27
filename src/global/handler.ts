@@ -1,8 +1,7 @@
 import Joi from 'joi';
 
 import { assertAuthenticated } from './auth';
-import { customJoi, CustomJoi } from './customJoi';
-import { validateArgs } from './inputValidation';
+import { validateArgs, customJoi, CustomJoi } from './inputValidation';
 
 type ResolverFunction = (
   root: any,
