@@ -1,6 +1,5 @@
 import Joi from 'joi';
 
-import { customJoi } from '../customJoiValidator';
 import { InputValidationError } from '../error';
 
 /**

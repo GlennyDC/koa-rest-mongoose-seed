@@ -14,7 +14,7 @@ const locationResolvers: Resolvers = {
     location: handler(
       (Joi) =>
         Joi.object({
-          id: Joi.string(),
+          id: Joi.string().objectId(),
         }),
       async (_, { id }, { userId }) => {
         logger.silly(`Get location [${id}]`);
@@ -43,7 +43,7 @@ const locationResolvers: Resolvers = {
     createLocation: handler(
       (Joi) =>
         Joi.object({
-          organisationId: Joi.string(),
+          organisationId: Joi.string().objectId(),
           location: Joi.object({
             name: Joi.string(),
           }),

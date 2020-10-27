@@ -16,7 +16,7 @@ const UserResolvers: Resolvers = {
       (Joi) =>
         Joi.object({
           emailAddress: Joi.string().email(),
-          password: Joi.string().min(6),
+          password: Joi.string(),
         }),
       async (root, { emailAddress, password }) => {
         logger.silly(`Register user with email address [${emailAddress}]`);
@@ -29,7 +29,7 @@ const UserResolvers: Resolvers = {
       (Joi) =>
         Joi.object({
           emailAddress: Joi.string().email(),
-          password: Joi.string().min(6),
+          password: Joi.string(),
         }),
       async (root, { emailAddress, password }) => {
         logger.silly(`Login user with email address [${emailAddress}]`);

@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 import { assertAuthenticated } from './auth';
-import { customJoi, ObjectIdJoi } from './customJoiValidator';
+import { customJoi, CustomJoi } from './customJoi';
 import { validateArgs } from './inputValidation';
 
 type ResolverFunction = (
@@ -16,7 +16,7 @@ type Options = {
   requiredPermissions?: string[];
 };
 
-type SchemaMaker = ((Joi: ObjectIdJoi) => Joi.Schema) | null;
+type SchemaMaker = ((Joi: CustomJoi) => Joi.Schema) | null;
 
 export const handler = <T>(
   schemaMaker: SchemaMaker,
@@ -32,10 +32,6 @@ export const handler = <T>(
     if (options.requireAuthentication) {
       assertAuthenticated(ctx.koaCtx);
     }
-
-    // eslint-disable-next-line
-    // @ts-ignore
-    console.log(customJoi.objectId);
 
     const schema = schemaMaker ? schemaMaker(customJoi) : customJoi.object({});
 
