@@ -1,24 +1,17 @@
 import Koa from 'koa';
 
-import {
-  createLogger,
-  applyMiddleware,
-  installApolloServer,
-  installDatabaseConnection,
-} from './global';
-
-const logger = createLogger('app');
+import { createLogger, applyMiddleware, installApolloServer } from './global';
 
 export const createApp = async (): Promise<Koa> => {
-  logger.info('Starting creation of app');
+  const logger = createLogger('app');
+
+  logger.info('Start creation of app');
 
   const app = new Koa();
 
   applyMiddleware(app, logger);
 
   installApolloServer(app, logger);
-
-  await installDatabaseConnection(logger);
 
   // Log any handled Koa error
   // (will probably never occur except for 404 Not found)
