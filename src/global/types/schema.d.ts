@@ -6,9 +6,8 @@ import { Organisation as IOrganisation } from '../../modules/organisation/organi
 import { Location as ILocation } from '../../modules/location/location';
 import { Context } from './context';
 export type Maybe<T> = T | undefined;
-export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] };
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type RequireFields<T, K extends keyof T> = { [X in Exclude<keyof T, K>]?: T[X] } & { [P in K]-?: NonNullable<T[P]> };
-
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;

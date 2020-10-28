@@ -1,14 +1,14 @@
 import { Resolvers, createLogger, handler } from '../../global';
-import { login, register, updateUserById, getUserById } from './user.service';
+import * as userService from './user.service';
 
 const logger = createLogger('user-resolvers');
 
 const UserResolvers: Resolvers = {
   Query: {
-    viewer: handler(null, async (root, args, ctx) => {
-      logger.silly(`Get viewer [${ctx.userId}]`);
+    viewer: handler(null, async (root, args, { userId }) => {
+      logger.silly(`Get viewer [${userId}]`);
 
-      return getUserById(ctx.userId);
+      return userService.getUserById(userId);
     }),
   },
   Mutation: {
@@ -21,7 +21,7 @@ const UserResolvers: Resolvers = {
       async (root, { emailAddress, password }) => {
         logger.silly(`Register user with email address [${emailAddress}]`);
 
-        return register(emailAddress, password);
+        return userService.registerUser(emailAddress, password);
       },
       { requireAuthentication: false },
     ),
@@ -34,7 +34,7 @@ const UserResolvers: Resolvers = {
       async (root, { emailAddress, password }) => {
         logger.silly(`Login user with email address [${emailAddress}]`);
 
-        return login(emailAddress, password);
+        return userService.loginUser(emailAddress, password);
       },
       { requireAuthentication: false },
     ),
@@ -47,9 +47,9 @@ const UserResolvers: Resolvers = {
           }).or('emailAddress', 'password'),
         }),
       async (root, { user }, { userId }) => {
-        logger.silly(`Update user [${userId}]`);
+        logger.silly(`Update viewer [${userId}]`);
 
-        return updateUserById(userId, user);
+        return userService.updateUserById(userId, user);
       },
     ),
   },

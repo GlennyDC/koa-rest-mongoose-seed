@@ -3,7 +3,6 @@ import {
   createLogger,
   NotFoundError,
   ErrorCode,
-  BusinessError,
   getEnvironmentVariable,
   hashString,
   compareStringToHash,
@@ -40,6 +39,8 @@ export const updateUserById = async (
 ): Promise<User> => {
   logger.info(`Update user [${id}]`);
 
+  // TODO: Hash password
+
   const updatedUser = await UserModel.findByIdAndUpdate(id, user).exec();
 
   if (!updatedUser) {
@@ -50,11 +51,11 @@ export const updateUserById = async (
   return updatedUser;
 };
 
-export const register = async (
+export const registerUser = async (
   emailAddress: string,
   password: string,
 ): Promise<Auth> => {
-  logger.info(`Register user with email address [${emailAddress}]`);
+  logger.info(`Register user [${emailAddress}]`);
 
   const passwordHash = await hashString(password);
 
@@ -70,16 +71,16 @@ export const register = async (
   return { user, accessToken: jwt };
 };
 
-export const login = async (
+export const loginUser = async (
   emailAddress: string,
   password: string,
 ): Promise<Auth> => {
-  logger.info(`Login user with email address [${emailAddress}]`);
+  logger.info(`Login user [${emailAddress}]`);
 
   const user = await UserModel.findOne({ emailAddress }).exec();
 
   if (!user) {
-    logger.info(`User [${emailAddress}] not found`);
+    logger.verbose(`User [${emailAddress}] not found`);
     throw new GeneralError(
       `Wrong email or password`,
       ErrorCode.INVALID_LOGIN_CREDENTIALS,
@@ -92,9 +93,10 @@ export const login = async (
     Date.now() - user.lastBadLoginAttempt.getTime() <= LOGIN_ATTEMPTS_LOCK_TIME
   ) {
     logger.info(`User [${emailAddress}] is temporarily locked`);
-    throw new BusinessError(
-      'Too many login attempts. The user account is temporarily locked.',
+    throw new GeneralError(
+      'Too many login attempts, the user account is temporarily locked',
       ErrorCode.MAX_LOGIN_ATTEMPTS,
+      403,
     );
   }
 
@@ -104,9 +106,10 @@ export const login = async (
   );
 
   if (!passwordIsCorrect) {
-    logger.info(`User with [${emailAddress}] did not match passwords`);
+    logger.info(`User [${emailAddress}] provided a wrong password`);
     await user
       .updateOne({
+        // TODO check if this is correct
         $inc: { badLoginAttempts: 1 },
         lastBadLoginAttempt: Date.now(),
       })
@@ -117,6 +120,8 @@ export const login = async (
       403,
     );
   }
+
+  // TODO: Reset bad login state
 
   const jwt = await createAuthToken({
     user: {
