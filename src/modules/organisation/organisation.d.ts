@@ -4,6 +4,4 @@ export interface Organisation {
   name: string;
 }
 
-export interface CreateOrganisationInput {
-  name: string;
-}
+export type CreateOrganisationInput = Omit<Organisation, 'id' | 'ownerId'>;

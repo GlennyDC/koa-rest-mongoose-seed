@@ -4,6 +4,4 @@ export interface Location {
   name: string;
 }
 
-export interface CreateLocationInput {
-  name: string;
-}
+export type CreateLocationInput = Omit<Location, 'id' | 'organisationId'>;
