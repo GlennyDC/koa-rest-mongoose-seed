@@ -12,6 +12,7 @@ export const connectWithDatabase = async (
       useNewUrlParser: true,
       useFindAndModify: false,
       useUnifiedTopology: true,
+      useCreateIndex: true,
     });
 
     // Change the default returnOriginal option of findOneAndUpdate(),

@@ -11,7 +11,7 @@ interface UserDocument extends mongoose.Document {
 
 const userSchema = new mongoose.Schema(
   {
-    emailAddress: { type: String, required: true },
+    emailAddress: { type: String, required: true, index: { unique: true } },
     passwordHash: { type: String, required: true },
     roles: [{ type: String, required: true }],
     badLoginAttempts: { type: Number, required: true, default: 0 },

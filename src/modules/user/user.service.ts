@@ -59,7 +59,22 @@ export const registerUser = async (
 
   const passwordHash = await hashString(password);
 
-  const user = await new UserModel({ emailAddress, passwordHash }).save();
+  // TODO: find out if it's not better to check for a user
+  // with this email address first
+  let user;
+  try {
+    user = await new UserModel({ emailAddress, passwordHash }).save();
+  } catch (err) {
+    if (err.code === 11000) {
+      logger.info(`Email address [${emailAddress}] already exists`);
+      throw new GeneralError(
+        `Email address [${emailAddress}] already exists`,
+        ErrorCode.EMAILADDRESS_ALREADY_EXISTS,
+        400,
+      );
+    }
+    throw err;
+  }
 
   const jwt = await createAuthToken({
     user: {
