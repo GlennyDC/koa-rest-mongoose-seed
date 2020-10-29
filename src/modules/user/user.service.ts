@@ -115,12 +115,12 @@ export const loginUser = async (
     );
   }
 
-  const passwordIsCorrect = await compareStringToHash(
+  const isPasswordCorrect = await compareStringToHash(
     password,
     user.passwordHash,
   );
 
-  if (!passwordIsCorrect) {
+  if (!isPasswordCorrect) {
     logger.info(`User [${emailAddress}] provided a wrong password`);
     await user
       .updateOne({
@@ -136,7 +136,13 @@ export const loginUser = async (
     );
   }
 
-  // TODO: Reset bad login state
+  // TODO check if this is correct
+  await user
+    .updateOne({
+      // TODO check if this is correct
+      badLoginAttempts: 0,
+    })
+    .exec();
 
   const jwt = await createAuthToken({
     user: {
