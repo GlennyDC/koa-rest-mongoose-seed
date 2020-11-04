@@ -11,6 +11,7 @@ export { request } from './request';
 export { applyMiddleware } from './middleware';
 export { validateArgs } from './inputValidation';
 export { installGraphQLServer, Resolvers } from './graphqlServer';
+export { installRestServer } from './restServer';
 export { connectWithDatabase } from './connectWithDatabase';
 export { getEnvironmentVariable } from './getEnvironmentVariable';
 export { handler } from './handler';

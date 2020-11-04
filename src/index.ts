@@ -13,8 +13,6 @@ const SERVER_HOSTNAME = getEnvironmentVariable<string>('SERVER_HOSTNAME');
 (async (): Promise<void> => {
   const logger = createLogger('server');
 
-  let serverIsShuttingDown = false;
-
   try {
     const mongooseInstance = await connectWithDatabase(logger);
 
@@ -31,15 +29,7 @@ const SERVER_HOSTNAME = getEnvironmentVariable<string>('SERVER_HOSTNAME');
 
     // Graceful shutdown of the server
     const shutdown = async (): Promise<void> => {
-      if (serverIsShuttingDown) {
-        // FIXME: Sometimes during development the process
-        // receives both SIGTERM and SIGINT signals
-        logger.info('Server is already shutting down');
-        return;
-      }
-
       logger.info('Start graceful shutdown of server');
-      serverIsShuttingDown = true;
 
       logger.info('Disconnect from database');
       await mongooseInstance.disconnect();
