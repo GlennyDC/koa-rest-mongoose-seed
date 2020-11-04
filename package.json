@@ -22,7 +22,6 @@
     "lint:fix": "eslint . --cache --ext .ts,.json --fix"
   },
   "dependencies": {
-    "@graphql-toolkit/file-loading": "^0.10.7",
     "apollo-server-koa": "^2.18.2",
     "bcryptjs": "^2.4.3",
     "cls-hooked": "^4.2.2",
