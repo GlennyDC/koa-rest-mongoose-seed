@@ -6,11 +6,12 @@ import type Koa from 'koa';
 import { join } from 'path';
 import type { Logger } from 'winston';
 
-import { createLocationLoader } from '../modules/location/location.loader';
-import { createOrganisationLoader } from '../modules/organisation/organisation.loader';
-import { transformGraphQLError } from './error';
-import { getEnvironmentVariable } from './getEnvironmentVariable';
-import { Context } from './types/context';
+import { createLocationLoader } from '../../modules/location/location.loader';
+import { createOrganisationLoader } from '../../modules/organisation/organisation.loader';
+import { transformGraphQLError } from '../error';
+import { getEnvironmentVariable } from '../getEnvironmentVariable';
+import { Context } from './context';
+import { bootstrapSchema } from './utils';
 
 export const createContext = ({
   ctx: koaCtx,
@@ -39,7 +40,7 @@ const EXPOSE_ERROR_STACK_TRACES = getEnvironmentVariable<boolean>(
   'EXPOSE_ERROR_STACK_TRACES',
 );
 
-const bootstrapSchema = (): GraphQLSchema => {
+const bootstrapSchemaX = async (): Promise<GraphQLSchema> => {
   const queryTypeDef = gql`
     type Query
   `;
@@ -48,9 +49,11 @@ const bootstrapSchema = (): GraphQLSchema => {
     type Mutation
   `;
 
-  const typeDefs = loadFiles<string>(
-    join(__dirname, '../modules/**/*.typeDefs.*'),
-  );
+  // const typeDefs = loadFiles<string>(
+  //   join(__dirname, '../modules/**/*.typeDefs.*'),
+  // );
+
+  const typeDefs = await bootstrapSchema();
 
   const resolvers = loadFiles<IResolvers>(
     join(__dirname, '../modules/**/*.resolvers.*'),
@@ -64,11 +67,14 @@ const bootstrapSchema = (): GraphQLSchema => {
   return schema;
 };
 
-export const installApolloServer = (app: Koa, logger: Logger): void => {
+export const installGraphQLServer = async (
+  app: Koa,
+  logger: Logger,
+): Promise<void> => {
   logger.info('Install Apollo server');
 
   try {
-    const schema = bootstrapSchema();
+    const schema = await bootstrapSchemaX();
     const apolloServer = new ApolloServer({
       schema,
       context: createContext,

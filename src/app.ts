@@ -1,6 +1,6 @@
 import Koa from 'koa';
 
-import { createLogger, applyMiddleware, installApolloServer } from './global';
+import { createLogger, applyMiddleware, installGraphQLServer } from './global';
 
 export const createApp = async (): Promise<Koa> => {
   const logger = createLogger('app');
@@ -11,7 +11,7 @@ export const createApp = async (): Promise<Koa> => {
 
   applyMiddleware(app, logger);
 
-  installApolloServer(app, logger);
+  await installGraphQLServer(app, logger);
 
   // Log any handled Koa error
   // (will probably never occur except for 404 Not found)

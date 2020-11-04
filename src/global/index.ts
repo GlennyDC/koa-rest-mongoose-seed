@@ -1,4 +1,3 @@
-export { Resolvers } from './types';
 export { createLogger } from './createLogger';
 export {
   createAuthToken,
@@ -11,7 +10,7 @@ export * from './error';
 export { request } from './request';
 export { applyMiddleware } from './middleware';
 export { validateArgs } from './inputValidation';
-export { installApolloServer } from './installApolloServer';
+export { installGraphQLServer, Resolvers } from './graphqlServer';
 export { connectWithDatabase } from './connectWithDatabase';
 export { getEnvironmentVariable } from './getEnvironmentVariable';
 export { handler } from './handler';

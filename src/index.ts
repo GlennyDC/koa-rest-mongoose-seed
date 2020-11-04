@@ -16,9 +16,9 @@ const SERVER_HOSTNAME = getEnvironmentVariable<string>('SERVER_HOSTNAME');
   let serverIsShuttingDown = false;
 
   try {
-    const app = await createApp();
-
     const mongooseInstance = await connectWithDatabase(logger);
+
+    const app = await createApp();
 
     logger.info('Create server');
     const server = http.createServer(app.callback());
