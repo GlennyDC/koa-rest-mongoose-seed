@@ -1,3 +1,5 @@
+import { serializeError } from 'serialize-error';
+
 import { getEnvironmentVariable } from '../getEnvironmentVariable';
 import { BaseError } from './errors/baseError';
 
@@ -9,7 +11,7 @@ const createKnownRESTError = (error: BaseError): any => {
   const { status } = error;
   return {
     status,
-    body: JSON.stringify(error),
+    body: serializeError(error),
   };
 };
 

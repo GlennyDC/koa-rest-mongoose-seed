@@ -41,6 +41,9 @@ export abstract class BaseError extends Error {
      * or a for...in loop. You can still access the property directly
      * on the object though.
      */
-    Object.defineProperty(this, 'name', { value: this.constructor.name });
+    Object.defineProperty(this, 'name', {
+      value: this.constructor.name,
+      enumerable: false,
+    });
   }
 }
