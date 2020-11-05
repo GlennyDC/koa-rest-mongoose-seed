@@ -1,6 +1,6 @@
 import type Koa from 'koa';
 
-import { ErrorCode, NotFoundError, transformRESTError } from '../error';
+import { ErrorCode, NotFoundError } from '../error';
 
 /**
  * Create a Koa error responder middleware in case an error occurs.
@@ -21,10 +21,9 @@ export const createErrorResponderMiddleware = (): Koa.Middleware => {
         );
       }
     } catch (err) {
-      const { status, body } = transformRESTError(err);
-      ctx.status = status;
-      ctx.body = body;
-      ctx.type = 'application/json';
+      ctx.status = err.status || 500;
+      ctx.body = err.status === 404 ? 'Not found' : 'Internal Server Error';
+      ctx.type = 'text/plain';
     }
   };
 };

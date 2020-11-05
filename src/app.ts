@@ -1,11 +1,6 @@
 import Koa from 'koa';
 
-import {
-  createLogger,
-  applyMiddleware,
-  installGraphQLServer,
-  installRestServer,
-} from './global';
+import { createLogger, applyMiddleware, installGraphQLServer } from './global';
 
 export const createApp = async (): Promise<Koa> => {
   const logger = createLogger('app');
@@ -17,7 +12,6 @@ export const createApp = async (): Promise<Koa> => {
   applyMiddleware(app, logger);
 
   await installGraphQLServer(app, logger);
-  await installRestServer(app, logger);
 
   return app;
 };

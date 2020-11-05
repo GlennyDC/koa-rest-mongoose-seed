@@ -22,7 +22,6 @@
     "lint:fix": "eslint . --cache --ext .ts,.json --fix"
   },
   "dependencies": {
-    "@koa/router": "^10.0.0",
     "apollo-server-koa": "^2.18.2",
     "bcryptjs": "^2.4.3",
     "cls-hooked": "^4.2.2",
@@ -36,7 +35,6 @@
     "mongoose": "^5.10.11",
     "nanoid": "^3.1.16",
     "node-fetch": "^2.6.1",
-    "serialize-error": "^7.0.1",
     "source-map-support": "^0.5.19",
     "winston": "^3.3.3"
   },
@@ -51,7 +49,6 @@
     "@types/jest": "^26.0.15",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/koa-helmet": "^6.0.1",
-    "@types/koa__router": "^8.0.3",
     "@types/mongoose": "^5.7.36",
     "@types/node": "^14.14.6",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
