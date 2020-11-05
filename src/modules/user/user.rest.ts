@@ -1,5 +1,5 @@
+import Router from '@koa/router';
 import type Koa from 'koa';
-import Router from 'koa-router';
 
 import { createLogger } from '../../global';
 import * as userService from './user.service';

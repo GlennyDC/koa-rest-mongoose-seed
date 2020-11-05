@@ -1,17 +1,19 @@
-import { serializeError } from 'serialize-error';
-
 import { getEnvironmentVariable } from '../getEnvironmentVariable';
 import { BaseError } from './errors/baseError';
+import { sanitizeError } from './sanitizeError';
 
 const EXPOSE_UNKNOWN_ERRORS = getEnvironmentVariable<boolean>(
   'EXPOSE_UNKNOWN_ERRORS',
+);
+const EXPOSE_ERROR_STACK_TRACES = getEnvironmentVariable<boolean>(
+  'EXPOSE_ERROR_STACK_TRACES',
 );
 
 const createKnownRESTError = (error: BaseError): any => {
   const { status } = error;
   return {
     status,
-    body: serializeError(error),
+    body: sanitizeError(error),
   };
 };
 

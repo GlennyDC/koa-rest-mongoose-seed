@@ -30,16 +30,6 @@ const SERVER_HOSTNAME = getEnvironmentVariable<string>('SERVER_HOSTNAME');
     // Graceful shutdown of the server
     const shutdown = async (): Promise<void> => {
       logger.info('Start graceful shutdown of server');
-      if (process.env.NODE_ENV === 'development') {
-        logger.info('Process is running in development mode, exit immediately');
-        server.close((err) => {
-          if (err) {
-            logger.error(`Could not gracefully close server: `, err);
-            process.exitCode = 1;
-          }
-          process.exit();
-        });
-      }
 
       logger.info('Disconnect from database');
       await mongooseInstance.disconnect();
