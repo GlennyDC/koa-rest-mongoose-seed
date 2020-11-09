@@ -13,6 +13,7 @@ const SERVER_HOSTNAME = getEnvironmentVariable<string>('SERVER_HOSTNAME');
 (async (): Promise<void> => {
   const logger = createLogger('server');
 
+  logger.info('Initialize process');
   try {
     const mongooseInstance = await connectWithDatabase(logger);
 
