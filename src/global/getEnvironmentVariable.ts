@@ -1,10 +1,8 @@
+import config from 'config';
+
 export const getEnvironmentVariable = <T>(
   environmentVariableName: string,
 ): T => {
-  const environmentVariable = process.env[environmentVariableName];
-  if (!environmentVariable) {
-    throw new Error('Environment variable is not set');
-  }
-  // TODO cast
+  const environmentVariable = config.get(environmentVariableName);
   return (environmentVariable as unknown) as T;
 };
