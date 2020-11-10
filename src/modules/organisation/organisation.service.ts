@@ -38,9 +38,10 @@ export const getOrganisationsOfUser = async (
   userId: string,
   offset: number,
   limit: number,
+  order: any,
 ): Promise<Organisation[]> => {
   logger.info(
-    `Get organisations of user [${userId}] with offset [${offset}] and limit [${limit}]`,
+    `Get organisations of user [${userId}] with offset [${offset}], limit [${limit}] and order [${order}]`,
   );
 
   const organisations = await OrganisationModel.find({
@@ -48,6 +49,7 @@ export const getOrganisationsOfUser = async (
   })
     .skip(offset)
     .limit(limit)
+    .sort(order)
     .exec();
 
   return organisations;

@@ -48,6 +48,7 @@ export type QueryOrganisationArgs = {
 export type QueryOrganisationsArgs = {
   offset?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
+  order?: Maybe<SortOrganisationsInput>;
 };
 
 export type Capsule = {
@@ -129,6 +130,10 @@ export type CreateLocationInput = {
 
 export type CreateOrganisationInput = {
   name: Scalars['String'];
+};
+
+export type SortOrganisationsInput = {
+  name?: Maybe<Sort>;
 };
 
 export enum Sort {
@@ -242,6 +247,7 @@ export type ResolversTypes = {
   Location: ResolverTypeWrapper<ILocation>;
   CreateLocationInput: CreateLocationInput;
   CreateOrganisationInput: CreateOrganisationInput;
+  SortOrganisationsInput: SortOrganisationsInput;
   Sort: Sort;
   Auth: ResolverTypeWrapper<Auth>;
   User: ResolverTypeWrapper<User>;
@@ -261,6 +267,7 @@ export type ResolversParentTypes = {
   Location: ILocation;
   CreateLocationInput: CreateLocationInput;
   CreateOrganisationInput: CreateOrganisationInput;
+  SortOrganisationsInput: SortOrganisationsInput;
   Auth: Auth;
   User: User;
   UpdateUserInput: UpdateUserInput;

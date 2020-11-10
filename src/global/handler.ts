@@ -36,9 +36,10 @@ export const handler = <T>(
 
     const convertedValues = await validateArgs(args, schema);
 
+    // TODO: get rid of null prototype
     // eslint-disable-next-line
     // @ts-ignore
-    return f(root, convertedValues, ctx, info);
+    return f(root, JSON.parse(JSON.stringify(convertedValues)), ctx, info);
   };
 
   return (resolverFunction as unknown) as T;

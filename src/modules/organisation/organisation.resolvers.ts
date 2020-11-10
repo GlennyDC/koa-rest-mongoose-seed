@@ -28,13 +28,18 @@ const organisationResolvers: Resolvers = {
         Joi.object({
           offset: Joi.number().integer().min(0),
           limit: Joi.number().integer().positive().max(100),
+          order: Joi.object({
+            name: Joi.string().lowercase().valid('asc', 'desc').optional(),
+          })
+            .or('name')
+            .optional(),
         }),
-      async (_, { offset, limit }, { userId }) => {
+      async (_, { offset, limit, order }, { userId }) => {
         logger.silly(
-          `Get organisations with offset [${offset}] and limit [${limit}]`,
+          `Get organisations with offset [${offset}], limit [${limit}] and order [${order}]`,
         );
 
-        return getOrganisationsOfUser(userId, offset, limit);
+        return getOrganisationsOfUser(userId, offset, limit, order);
       },
     ),
   },
