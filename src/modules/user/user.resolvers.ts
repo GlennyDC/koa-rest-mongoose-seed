@@ -44,7 +44,7 @@ const UserResolvers: Resolvers = {
           user: Joi.object({
             emailAddress: Joi.string().email().optional(),
             password: Joi.string().optional(),
-          }).or('emailAddress', 'password'),
+          }).min(1),
         }),
       async (root, { user }, { userId }) => {
         logger.silly(`Update viewer [${userId}]`);

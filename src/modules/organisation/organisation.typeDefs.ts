@@ -6,7 +6,7 @@ const organisationTypeDefs = gql`
     organisations(
       offset: Int = 0
       limit: Int = 100
-      order: SortOrganisationsInput
+      order: [OrganisationsOrderInput!]
     ): [Organisation!]!
   }
 
@@ -27,8 +27,14 @@ const organisationTypeDefs = gql`
     name: String!
   }
 
-  input SortOrganisationsInput {
-    name: Sort
+  input OrganisationsOrderInput {
+    field: OrganisationsOrderFieldInput!
+    sort: Sort = ASC
+  }
+
+  enum OrganisationsOrderFieldInput {
+    name
+    ownerId
   }
 `;
 

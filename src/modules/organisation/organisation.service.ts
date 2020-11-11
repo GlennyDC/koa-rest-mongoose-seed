@@ -49,7 +49,7 @@ export const getOrganisationsOfUser = async (
   })
     .skip(offset)
     .limit(limit)
-    .sort(order)
+    .sort(order) // TODO: Make this an array of arrays
     .exec();
 
   return organisations;
