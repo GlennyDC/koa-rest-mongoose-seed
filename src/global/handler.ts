@@ -39,7 +39,7 @@ export const handler = <T>(
     // TODO: get rid of null prototype
     // eslint-disable-next-line
     // @ts-ignore
-    return f(root, JSON.parse(JSON.stringify(convertedValues)), ctx, info);
+    return f(root, convertedValues, ctx, info);
   };
 
   return (resolverFunction as unknown) as T;

@@ -39,11 +39,14 @@ const organisationResolvers: Resolvers = {
             .optional(),
         }),
       async (_, { offset, limit, order }, { userId }) => {
+        // TODO: Remove null proto
+        const fix = JSON.parse(JSON.stringify(order));
+        console.log(fix);
         logger.silly(
-          `Get organisations with offset [${offset}], limit [${limit}] and order [${order}]`,
+          `Get organisations with offset [${offset}], limit [${limit}] and order [${fix}]`,
         );
 
-        return getOrganisationsOfUser(userId, offset, limit, order);
+        return getOrganisationsOfUser(userId, offset, limit, fix);
       },
     ),
   },
