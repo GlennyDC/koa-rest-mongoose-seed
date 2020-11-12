@@ -1,18 +1,16 @@
 import Joi from 'joi';
 import mongoose from 'mongoose';
 
-interface ObjectIdStringSchema extends Joi.StringSchema {
-  objectId(): this;
-}
+type ObjectIdValidator = {
+  string(): Joi.StringSchema & { objectId(): Joi.StringSchema };
+};
 
-export interface CustomJoi extends Joi.Root {
-  string(): ObjectIdStringSchema;
-}
-
-const extendJoiWithObjectIdValidator = (baseJoi: Joi.Root): CustomJoi =>
-  baseJoi.extend({
+const extendJoiWithObjectIdValidator = <T extends Joi.Root>(
+  joiToExtend: T,
+): T & ObjectIdValidator =>
+  joiToExtend.extend({
     type: 'string',
-    base: baseJoi.string(),
+    base: joiToExtend.string(),
     messages: {
       'string.objectId': '{{#label}} must be a valid id',
     },
@@ -29,4 +27,35 @@ const extendJoiWithObjectIdValidator = (baseJoi: Joi.Root): CustomJoi =>
     },
   });
 
-export const customJoi = extendJoiWithObjectIdValidator(Joi);
+type OrderValidator = {
+  order(...validOrderFields: string[]): Joi.ArraySchema;
+};
+
+const extendJoiWithOrderValidator = <T extends Joi.Root>(
+  joiToExtend: T,
+): T & OrderValidator =>
+  joiToExtend.extend({
+    type: 'order',
+    base: joiToExtend.array().min(1),
+    args: (schema, ...validOrderFields) => {
+      // Types are wrong, see
+      // https://github.com/sideway/joi/issues/2511
+      // eslint-disable-next-line
+      // @ts-ignore
+      return schema.items(
+        Joi.object({
+          field: Joi.string().valid(...validOrderFields),
+          sort: Joi.string().lowercase().valid('asc', 'desc'),
+        }),
+      );
+    },
+  });
+
+export interface CustomJoi extends Joi.Root {
+  string(): Joi.StringSchema & { objectId(): Joi.StringSchema };
+  order(...validOrderFields: string[]): Joi.ArraySchema;
+}
+
+export const customJoi: CustomJoi = extendJoiWithOrderValidator(
+  extendJoiWithObjectIdValidator(Joi),
+);

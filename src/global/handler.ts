@@ -15,7 +15,7 @@ type Options = {
   requiredPermissions?: string[];
 };
 
-type SchemaMaker = ((Joi: CustomJoi) => Joi.Schema) | null;
+type SchemaMaker = ((joi: CustomJoi) => Joi.Schema) | null;
 
 export const handler = <T>(
   schemaMaker: SchemaMaker,

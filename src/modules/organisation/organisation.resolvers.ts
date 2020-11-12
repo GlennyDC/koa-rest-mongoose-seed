@@ -28,15 +28,7 @@ const organisationResolvers: Resolvers = {
         Joi.object({
           offset: Joi.number().integer().min(0),
           limit: Joi.number().integer().positive().max(100),
-          order: Joi.array()
-            .items(
-              Joi.object({
-                field: Joi.string().valid('name', 'ownerId'),
-                sort: Joi.string().lowercase().valid('asc', 'desc'),
-              }),
-            )
-            .min(1)
-            .optional(),
+          order: Joi.order('name', 'ownerId').optional(),
         }),
       async (_, { offset, limit, order }, { userId }) => {
         // TODO: Remove null proto

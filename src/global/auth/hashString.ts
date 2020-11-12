@@ -1,16 +1,26 @@
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 
-// TODO: Find a way to store global constants that don't change
-// in dirrent environments, so not in the environment
 const NUMBER_OF_SALT_ROUNDS = 12;
 
 export const hashString = async (string: string): Promise<string> => {
-  return await bcrypt.hash(string, NUMBER_OF_SALT_ROUNDS);
+  try {
+    return await bcrypt.hash(string, NUMBER_OF_SALT_ROUNDS);
+  } catch (err) {
+    // TODO: log err
+    console.log(err);
+    throw err;
+  }
 };
 
 export const compareStringToHash = async (
   string: string,
   hash: string,
 ): Promise<boolean> => {
-  return await bcrypt.compare(string, hash);
+  try {
+    return await bcrypt.compare(string, hash);
+  } catch (err) {
+    // TODO: log err
+    console.log(err);
+    throw err;
+  }
 };
