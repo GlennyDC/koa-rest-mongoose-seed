@@ -6,9 +6,9 @@ export const connectWithDatabase = async (
 ): Promise<mongoose.Mongoose> => {
   logger.info('Connect with database');
   try {
-    // Make sure that Mongoose doesn't use deprecated
-    // MongoDb Node.js driver functions.
     const mongooseInstance = await mongoose.connect('mongodb://db:27017', {
+      // Make sure that Mongoose doesn't use deprecated
+      // MongoDb Node.js driver functions.
       useNewUrlParser: true,
       useFindAndModify: false,
       useUnifiedTopology: true,
@@ -21,9 +21,13 @@ export const connectWithDatabase = async (
     // the update and not the original document before the update.
     mongooseInstance.set('returnOriginal', false);
 
-    // This should work, but it doesn't...
-    // https://github.com/Automattic/mongoose/issues/6912
-    // mongoose.ObjectId.get((v) => v.toString());
+    // TODO
+    // Types are not correct
+    // eslint-disable-next-line
+    // @ts-ignore
+    mongooseInstance.ObjectId.get((v: mongoose.Types.ObjectId) =>
+      v == null ? v : v.toString(),
+    );
 
     return mongooseInstance;
   } catch (err) {

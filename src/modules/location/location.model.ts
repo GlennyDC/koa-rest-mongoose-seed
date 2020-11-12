@@ -8,11 +8,7 @@ interface LocationDocument extends mongoose.Document {
 
 const locationSchema = new mongoose.Schema(
   {
-    organisationId: {
-      type: mongoose.Schema.Types.ObjectId,
-      get: (v: mongoose.Schema.Types.ObjectId): string => v.toString(),
-      required: true,
-    },
+    organisationId: { type: mongoose.Schema.Types.ObjectId, required: true },
     name: { type: String, required: true },
   },
   { timestamps: true },

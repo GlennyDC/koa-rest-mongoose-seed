@@ -6,13 +6,10 @@ interface OrganisationDocument extends mongoose.Document {
   name: string;
 }
 
+console.log('TODO this always gets executed before init');
 const organisationSchema = new mongoose.Schema(
   {
-    ownerId: {
-      type: mongoose.Schema.Types.ObjectId,
-      get: (v: mongoose.Schema.Types.ObjectId): string => v.toString(),
-      required: true,
-    },
+    ownerId: { type: mongoose.Schema.Types.ObjectId, required: true },
     name: { type: String, required: true },
   },
   { timestamps: true },
