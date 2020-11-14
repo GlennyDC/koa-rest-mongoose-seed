@@ -1,5 +1,12 @@
 version: '3.8'
 services:
+  db:
+    image: 'mongo'
+    ports:
+      - '27017:27017'
+    logging:
+      driver: 'none'
+    container_name: api_seed_db_prd
   api:
     build:
       context: .
@@ -7,8 +14,10 @@ services:
       target: prd
     ports:
       - '3000:3000'
+    depends_on:
+      - db
     # Run an init inside the container that forwards signals
     # and reaps processes.
     init: true
-    image: api_seed
-    container_name: api_seed
+    image: api_seed_prd
+    container_name: api_seed_prd
