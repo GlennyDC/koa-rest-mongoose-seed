@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "docker:dev": "docker-compose -f docker-compose.dev.yml up --build",
-    "docker:prd": "docker-compose -f docker-compose.prd.yml up --build",
+    "docker:dev": "docker-compose -f env/docker-compose.dev.yml up --build",
+    "docker:prd": "docker-compose -f env/docker-compose.prd.yml up --build",
     "prebuild": "rimraf dist/* && yarn run generate:gql-types",
     "build": "tsc -p tsconfig.json",
     "start": "cross-env NODE_ENV=production node -r source-map-support/register dist/index.js",

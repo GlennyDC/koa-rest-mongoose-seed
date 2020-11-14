@@ -9,8 +9,8 @@ services:
     container_name: api_seed_db_prd
   api:
     build:
-      context: .
-      dockerfile: Dockerfile.prd
+      context: ..
+      dockerfile: env/Dockerfile.prd
       target: prd
     ports:
       - '3000:3000'
