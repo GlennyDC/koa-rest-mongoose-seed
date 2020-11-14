@@ -1,5 +1,6 @@
 # API seed
 
+<!--
 ## Features
 
 #### Advanced input validation
@@ -70,3 +71,4 @@ Below is a summarization of the upcoming tasks necessary to complete this API se
 - Check for a more strict eslint config. For example the `require-await` rule is not enabled per default.
 - Check for faster transpile time with `ts-node`. `--transpile-only` ?
 - Put in linting / tests inside Docker prd multi-stage?
+-->
