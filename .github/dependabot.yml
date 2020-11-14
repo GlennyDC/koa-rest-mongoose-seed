@@ -12,5 +12,5 @@ updates:
       interval: 'daily'
     open-pull-requests-limit: 1
     ignore:
-      - dependency-name: 'docker'
+      - dependency-name: 'node'
       - versions: ['15.x']
