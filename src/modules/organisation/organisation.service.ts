@@ -63,10 +63,10 @@ export const createOrganisationForUser = async (
     `Create organisation [${organisation.name}] for user [${userId}]`,
   );
 
-  const createdOrganisation = await new OrganisationModel({
+  const createdOrganisation = await OrganisationModel.create({
     ownerId: userId,
     ...organisation,
-  }).save();
+  });
 
   return createdOrganisation;
 };

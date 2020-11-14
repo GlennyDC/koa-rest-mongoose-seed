@@ -55,10 +55,10 @@ export const createLocationForOrganisation = async (
     `Create location [${location.name}] for organisation [${organisationId}]`,
   );
 
-  const createdLocation = await new LocationModel({
+  const createdLocation = await LocationModel.create({
     organisationId,
     ...location,
-  }).save();
+  });
 
   return createdLocation;
 };
