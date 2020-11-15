@@ -1,6 +1,6 @@
 # API seed
 
-[![CI](https://github.com/GlennyDC/api-seed/workflows/CI/badge.svg)](https://github.com/GlennyDC/api-seed/actions)
+[![CI](https://github.com/GlennyDC/api-seed/workflows/CI/badge.svg)](https://github.com/GlennyDC/api-seed/actions?query=workflow%3ACI)
 
 <!--
 ## Features
