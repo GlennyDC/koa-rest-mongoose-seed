@@ -1,5 +1,7 @@
 # API seed
 
+[![CI](https://github.com/GlennyDC/api-seed/workflows/CI/badge.svg)](https://github.com/GlennyDC/api-seed/actions)
+
 <!--
 ## Features
 
