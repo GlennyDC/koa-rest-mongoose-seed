@@ -25,7 +25,7 @@
     "apollo-server-koa": "^2.19.0",
     "bcrypt": "^5.0.0",
     "cls-hooked": "^4.2.2",
-    "config": "^3.3.2",
+    "config": "^3.3.3",
     "dataloader": "^2.0.0",
     "glob": "^7.1.6",
     "graphql": "^15",
