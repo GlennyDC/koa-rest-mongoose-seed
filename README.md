@@ -1,4 +1,4 @@
-# API seed
+# Koa GraphQL Mongoose API seed
 
 [![CI](https://github.com/GlennyDC/koa-graphql-mongoose-seed/workflows/CI/badge.svg)](https://github.com/GlennyDC/koa-graphql-mongoose-seed/actions?query=workflow%3ACI)
 
