@@ -1,9 +1,9 @@
 {
-  "name": "api-seed",
+  "name": "koa-graphql-mongoose-seed",
   "version": "0.0.0",
-  "description": "Seed for an easy and ready to go containerized GraphQL Koa API.",
+  "description": "Seed for an easy and ready to go Koa GraphQL API with Mongoose and MongoDB integration.",
   "main": "src/index.ts",
-  "repository": "https://github.com/GlennyDC/api-seed",
+  "repository": "https://github.com/GlennyDC/koa-graphql-mongoose-seed",
   "author": "Glenny De Cock",
   "license": "MIT",
   "private": false,
