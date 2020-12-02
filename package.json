@@ -1,9 +1,9 @@
 {
-  "name": "koa-graphql-mongoose-seed",
+  "name": "koa-rest-mongoose-seed",
   "version": "0.0.0",
-  "description": "Seed for an easy and ready to go Koa GraphQL API with Mongoose and MongoDB integration.",
+  "description": "Seed for an easy and ready to go Koa REST API with Mongoose and MongoDB integration.",
   "main": "src/index.ts",
-  "repository": "https://github.com/GlennyDC/koa-graphql-mongoose-seed",
+  "repository": "https://github.com/GlennyDC/koa-rest-mongoose-seed",
   "author": "Glenny De Cock",
   "license": "MIT",
   "private": false,
@@ -15,8 +15,6 @@
     "start": "cross-env NODE_ENV=production node -r source-map-support/register dist/index.js",
     "dev": "tsc-watch --noClear --onSuccess node ./dist/index.js",
     "test": "jest --expand --verbose",
-    "generate:gql-types": "graphql-codegen --config codegen.yml",
-    "watch:gql-types": "graphql-codegen --config codegen.yml --watch 'src/modules/**/*.typeDefs.ts'",
     "lint": "eslint . --cache --ext .ts,.json",
     "lint:fix": "eslint . --cache --ext .ts,.json --fix"
   },
