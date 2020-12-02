@@ -41,7 +41,7 @@
   "devDependencies": {
     "@graphql-codegen/add": "^2.0.1",
     "@graphql-codegen/cli": "1.19.2",
-    "@graphql-codegen/typescript": "1.17.11",
+    "@graphql-codegen/typescript": "1.19.0",
     "@graphql-codegen/typescript-resolvers": "1.17.11",
     "@types/bcrypt": "^3.0.0",
     "@types/cls-hooked": "^4.3.1",
