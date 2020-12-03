@@ -14,64 +14,44 @@ const SERVER_HOSTNAME = getEnvironmentVariable<string>('SERVER_HOSTNAME');
   const logger = createLogger('server');
 
   logger.info('Initialize process');
-  try {
-    const mongooseInstance = await connectWithDatabase(logger);
 
-    const app = await createApp();
+  const mongooseInstance = await connectWithDatabase(logger);
 
-    logger.info('Create server');
-    const server = http.createServer(app.callback());
+  const app = await createApp();
 
-    server.listen(SERVER_PORT, SERVER_HOSTNAME, () => {
-      logger.info(
-        `Server listening at ${SERVER_HOSTNAME}:${SERVER_PORT} in ${process.env.NODE_ENV} mode`,
-      );
-    });
+  logger.info('Create server');
+  const server = http.createServer(app.callback());
 
-    // Graceful shutdown of the server
-    const shutdown = async (): Promise<void> => {
-      logger.info('Start graceful shutdown of server');
-
-      logger.info('Disconnect from database');
-      await mongooseInstance.disconnect();
-
-      logger.info('Close server');
-      server.close((err) => {
-        if (err) {
-          logger.error(`Could not gracefully close server: `, err);
-          process.exitCode = 1;
-        }
-        process.exit();
-      });
-    };
-
-    // SIGINT signal (CTRL-C)
-    process.on('SIGINT', () => {
-      logger.warn('Received SIGINT signal');
-      shutdown();
-    });
-
-    // SIGTERM signal (Docker stop)
-    process.on('SIGTERM', () => {
-      logger.warn('Received SIGTERM signal');
-      shutdown();
-    });
-
-    process.on('uncaughtException', (error) => {
-      logger.error('Uncaught exception: ', error);
-      shutdown();
-    });
-
-    process.on('unhandledRejection', (reason, promise) => {
-      logger.error('Unhandled rejection: ', JSON.stringify(reason), promise);
-      shutdown();
-    });
-  } catch (err) {
-    // TODO: Delete this
-    logger.error(
-      'Wooah there, this should never ever occur ########### (except during a startup error):',
-      err,
+  server.listen(SERVER_PORT, SERVER_HOSTNAME, () => {
+    logger.info(
+      `Server listening at ${SERVER_HOSTNAME}:${SERVER_PORT} in ${process.env.NODE_ENV} mode`,
     );
-    process.exit(1);
-  }
+  });
+
+  // Graceful shutdown of the server
+  const shutdown = async (): Promise<void> => {
+    logger.info('Start graceful shutdown of server');
+
+    logger.info('Disconnect from database');
+    await mongooseInstance.disconnect();
+
+    logger.info('Close server');
+    server.close((err) => {
+      if (err) {
+        logger.error(`Could not gracefully close server: `, err);
+        process.exitCode = 1;
+      }
+      process.exit();
+    });
+  };
+
+  process.on('uncaughtException', (error) => {
+    logger.error('Uncaught exception: ', error);
+    shutdown();
+  });
+
+  process.on('unhandledRejection', (reason, promise) => {
+    logger.error('Unhandled rejection: ', JSON.stringify(reason), promise);
+    shutdown();
+  });
 })();

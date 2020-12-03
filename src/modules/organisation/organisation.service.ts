@@ -15,6 +15,7 @@ export const getOrganisationById = async (
 
   const organisation = await OrganisationModel.findById(id).exec();
 
+  console.log('ok');
   if (!organisation) {
     logger.info(`Organisation [${id}] not found`);
     throw new NotFoundError(
