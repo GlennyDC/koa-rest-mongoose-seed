@@ -30,13 +30,9 @@ export const handler = <T>(
 
     const schema = schemaMaker ? schemaMaker(customJoi) : customJoi.object({});
 
-    try {
-      // eslint-disable-next-line
+    // eslint-disable-next-line
       // @ts-ignore
-      await f(ctx);
-    } catch (err) {
-      console.log(err);
-    }
+    await f(ctx);
   };
 
   return (routeFunction as unknown) as T;

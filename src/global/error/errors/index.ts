@@ -6,3 +6,4 @@ export { NotFoundError } from './notFoundError';
 export { RequestError } from './requestError';
 export { BusinessError } from './businessError';
 export { GeneralError } from './generalError';
+export { BaseError } from './baseError';

@@ -1,6 +1,7 @@
 import type Koa from 'koa';
 
-import { ErrorCode, NotFoundError } from '../error';
+import { ErrorCode, NotFoundError, BaseError } from '../error';
+import { sanitizeError } from '../error/sanitizeError';
 
 /**
  * Create a Koa error responder middleware in case an error occurs.
@@ -13,6 +14,7 @@ export const createErrorResponderMiddleware = (): Koa.Middleware => {
   return async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
     try {
       await next();
+      console.log('after next');
       // Handle 404 resource errors just like any other error
       if (ctx.response.status === 404 && !ctx.response.body) {
         throw new NotFoundError(
@@ -21,9 +23,14 @@ export const createErrorResponderMiddleware = (): Koa.Middleware => {
         );
       }
     } catch (err) {
-      ctx.status = err.status || 500;
-      ctx.body = err.status === 404 ? 'Not found' : 'Internal Server Error';
-      ctx.type = 'text/plain';
+      console.log(err);
+      if (err instanceof BaseError) {
+        ctx.status = err.status;
+        ctx.body = sanitizeError(err);
+      } else {
+        ctx.status = 500;
+        ctx.body = 'Internal Server Error';
+      }
     }
   };
 };

@@ -8,7 +8,7 @@ import {
   compareStringToHash,
   GeneralError,
 } from '../../global';
-import { Auth, User, UpdateUserInput } from './user';
+import { Auth, User, UpdateUserInput, RegisterUserInput } from './user';
 import { UserModel } from './user.model';
 
 const LOGIN_MAX_ATTEMPTS_COUNT = getEnvironmentVariable<number>(
@@ -39,8 +39,6 @@ export const updateUserById = async (
 ): Promise<User> => {
   logger.info(`Update user [${id}]`);
 
-  // TODO: Hash password
-
   const updatedUser = await UserModel.findByIdAndUpdate(id, user).exec();
 
   if (!updatedUser) {
@@ -51,24 +49,26 @@ export const updateUserById = async (
   return updatedUser;
 };
 
-export const registerUser = async (
-  emailAddress: string,
-  password: string,
-): Promise<Auth> => {
-  logger.info(`Register user [${emailAddress}]`);
+export const registerUser = async (user: RegisterUserInput): Promise<Auth> => {
+  logger.info(`Register user [${user.emailAddress}]`);
 
-  const passwordHash = await hashString(password);
+  const passwordHash = await hashString(user.password);
 
   // TODO: find out if it's not better to check for a user
   // with this email address first
-  let user;
+  let createdUser;
   try {
-    user = await new UserModel({ emailAddress, passwordHash }).save();
+    createdUser = await new UserModel({
+      firstName: user.firstName,
+      passwordHash,
+      lastName: user.lastName,
+      emailAddress: user.emailAddress,
+    }).save();
   } catch (err) {
     if (err.code === 11000) {
-      logger.info(`Email address [${emailAddress}] already exists`);
+      logger.info(`Email address [${user.emailAddress}] already exists`);
       throw new GeneralError(
-        `Email address [${emailAddress}] already exists`,
+        `Email address [${user.emailAddress}] already exists`,
         ErrorCode.EMAILADDRESS_ALREADY_EXISTS,
         400,
       );
@@ -78,12 +78,12 @@ export const registerUser = async (
 
   const jwt = await createAuthToken({
     user: {
-      id: user.id,
-      roles: user.roles,
+      id: createdUser.id,
+      roles: createdUser.roles,
     },
   });
 
-  return { user, accessToken: jwt };
+  return { user: createdUser, accessToken: jwt };
 };
 
 export const loginUser = async (
