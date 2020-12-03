@@ -5,3 +5,5 @@ export interface Organisation {
 }
 
 export type CreateOrganisationInput = Omit<Organisation, 'id' | 'ownerId'>;
+
+export type UpdateOrganisationInput = Partial<CreateOrganisationInput>;

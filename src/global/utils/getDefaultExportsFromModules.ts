@@ -17,7 +17,9 @@ const getMatchingFileNamesInDir = async (
     );
   });
 
-type ModuleWithDefaultExport = { default: any };
+interface ModuleWithDefaultExport {
+  default: any;
+}
 
 const importModules = async (
   absoluteFilePaths: string[],

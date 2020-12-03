@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 
 interface OrganisationDocument extends mongoose.Document {
   id: string;
@@ -6,7 +6,6 @@ interface OrganisationDocument extends mongoose.Document {
   name: string;
 }
 
-console.log('TODO this always gets executed before init');
 const organisationSchema = new mongoose.Schema(
   {
     ownerId: { type: mongoose.Schema.Types.ObjectId, required: true },

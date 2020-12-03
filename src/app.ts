@@ -1,6 +1,6 @@
 import Koa from 'koa';
 
-import { createLogger, applyMiddleware } from './global';
+import { createLogger, applyMiddleware, installRoutes } from './global';
 
 export const createApp = async (): Promise<Koa> => {
   const logger = createLogger('app');
@@ -10,6 +10,8 @@ export const createApp = async (): Promise<Koa> => {
   const app = new Koa();
 
   applyMiddleware(app, logger);
+
+  await installRoutes(app, logger);
 
   return app;
 };

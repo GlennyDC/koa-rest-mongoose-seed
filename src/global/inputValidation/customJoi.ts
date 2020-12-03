@@ -27,35 +27,8 @@ const extendJoiWithObjectIdValidator = <T extends Joi.Root>(
     },
   });
 
-type OrderValidator = {
-  order(...validOrderFields: string[]): Joi.ArraySchema;
-};
-
-const extendJoiWithOrderValidator = <T extends Joi.Root>(
-  joiToExtend: T,
-): T & OrderValidator =>
-  joiToExtend.extend({
-    type: 'order',
-    base: joiToExtend.array().min(1),
-    args: (schema, ...validOrderFields) => {
-      // Types are wrong, see
-      // https://github.com/sideway/joi/issues/2511
-      // eslint-disable-next-line
-      // @ts-ignore
-      return schema.items(
-        Joi.object({
-          field: Joi.string().valid(...validOrderFields),
-          sort: Joi.string().lowercase().valid('asc', 'desc'),
-        }),
-      );
-    },
-  });
-
 export interface CustomJoi extends Joi.Root {
   string(): Joi.StringSchema & { objectId(): Joi.StringSchema };
-  order(...validOrderFields: string[]): Joi.ArraySchema;
 }
 
-export const customJoi: CustomJoi = extendJoiWithOrderValidator(
-  extendJoiWithObjectIdValidator(Joi),
-);
+export const customJoi: CustomJoi = extendJoiWithObjectIdValidator(Joi);

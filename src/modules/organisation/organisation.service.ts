@@ -1,5 +1,9 @@
 import { createLogger, NotFoundError, ErrorCode } from '../../global';
-import { Organisation, CreateOrganisationInput } from './organisation';
+import {
+  Organisation,
+  CreateOrganisationInput,
+  UpdateOrganisationInput,
+} from './organisation';
 import { OrganisationModel } from './organisation.model';
 
 const logger = createLogger('organisation-service');
@@ -38,18 +42,14 @@ export const getOrganisationsOfUser = async (
   userId: string,
   offset: number,
   limit: number,
-  order: any,
 ): Promise<Organisation[]> => {
-  logger.info(
-    `Get organisations of user [${userId}] with offset [${offset}], limit [${limit}] and order [${order}]`,
-  );
+  logger.info(`Get organisations of user [${userId}]`);
 
   const organisations = await OrganisationModel.find({
     ownerId: userId,
   })
     .skip(offset)
     .limit(limit)
-    .sort(order) // TODO: Make this an array of arrays
     .exec();
 
   return organisations;
@@ -59,9 +59,7 @@ export const createOrganisationForUser = async (
   userId: string,
   organisation: CreateOrganisationInput,
 ): Promise<Organisation> => {
-  logger.info(
-    `Create organisation [${organisation.name}] for user [${userId}]`,
-  );
+  logger.info(`Create organisation for user [${userId}]`);
 
   const createdOrganisation = await OrganisationModel.create({
     ownerId: userId,
@@ -69,4 +67,26 @@ export const createOrganisationForUser = async (
   });
 
   return createdOrganisation;
+};
+
+export const updateOrganisation = async (
+  id: string,
+  organisation: UpdateOrganisationInput,
+): Promise<Organisation> => {
+  logger.info(`Update organisation [${id}]`);
+
+  const updatedOrganisation = await OrganisationModel.findByIdAndUpdate(
+    id,
+    organisation,
+  ).exec();
+
+  if (!updatedOrganisation) {
+    logger.info(`Organisation [${id}] not found`);
+    throw new NotFoundError(
+      `Organisation [${id}] not found`,
+      ErrorCode.ORGANISATION_NOT_FOUND,
+    );
+  }
+
+  return updatedOrganisation;
 };

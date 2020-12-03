@@ -12,3 +12,4 @@ export { applyMiddleware } from './middleware';
 export { validateArgs } from './inputValidation';
 export { connectWithDatabase } from './connectWithDatabase';
 export { getEnvironmentVariable } from './getEnvironmentVariable';
+export { installRoutes } from './installRoutes';
