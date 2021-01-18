@@ -21,12 +21,4 @@ describe('Organisation module', () => {
   describe('mutation > createOrganisation', () => {
     test.todo('should create an organisation');
   });
-
-  describe('this is a test', () => {
-    test('return 404 i guess', async () => {
-      const response = await api.get('/');
-      expect(response.status).toBe(404);
-      expect(response.text).toBe('Not found');
-    });
-  });
 });
