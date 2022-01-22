@@ -30,7 +30,7 @@
     "koa-helmet": "^6.0.0",
     "koa-router": "^10.0.0",
     "mongoose": "^5.10.15",
-    "nanoid": "^3.1.20",
+    "nanoid": "^3.1.31",
     "node-fetch": "^2.6.1",
     "source-map-support": "^0.5.19",
     "winston": "^3.3.3"
